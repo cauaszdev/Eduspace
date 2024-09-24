@@ -12,6 +12,49 @@ body {
     justify-content: center;
     align-items: center;
 }
+* Estilo padrão para desktops */
+body {
+font-size: 16px;
+}
+.container, .policy-container {
+width: 80%;
+margin: auto;
+}
+
+/* Ajustes para tablets (largura máxima de 768px) */
+@media (max-width: 768px) {
+body {
+font-size: 14px;
+}
+
+.container, .policy-container {
+width: 95%;
+}
+}
+
+/* Ajustes para smartphones (largura máxima de 480px) */
+@media (max-width: 480px) {
+body {
+    font-size: 12px;
+    }
+
+     .container, .policy-container  {
+    width: 100%;
+    padding: 10px;
+    }
+}
+/* Usando Flexbox */
+.container, .policy-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+/* Usando Grid */
+.grid-container, .policy-container {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 10px;
+}
 .policy-container {
     background-color: white;
     padding: 40px 60px;
