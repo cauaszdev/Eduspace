@@ -7,7 +7,7 @@
     <meta name="description" content="Eduspace - Plataforma de agendamento de salas de forma rápida e fácil.">
     <meta name="keywords" content="agendamento, salas, ensino, educação, Eduspace">
     <meta name="author" content="Cauã Souza">
-    <link href="https://fonts.googleapis.com/css2?family=Stretch+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <title>Eduspace</title>
 </head>
@@ -56,30 +56,11 @@
     
     <section class="info-section" id="sobre-nos-info">
         <h2>Sobre Nós</h2>
-        <p>O Eduspace é uma plataforma digital criada pelo 3°am tec com o objetivo de simplificar e agilizar o processo de agendamento de salas no CEAAT. Com o Eduspace, você pode reservar salas de forma rápida e fácil, visualizar a disponibilidade de cada ambiente e receber notificações sobre seus agendamentos.</p>
+        <p>O Eduspace é uma plataforma digital criada pelo 3°am tec com o objetivo de simplificar e agilizar o processo de agendamento de salas no CEAAT.</p>
     </section>
 
     <footer>
         © 2024 Eduspace - Todos os direitos reservados.
     </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const politicas = document.getElementById('politicas');
-            const dropdownPoliticas = document.getElementById('dropdown-politicas');
-
-            politicas.addEventListener('mouseenter', () => dropdownPoliticas.style.display = 'block');
-            politicas.addEventListener('mouseleave', () => {
-                setTimeout(() => {
-                    if (!dropdownPoliticas.matches(':hover')) {
-                        dropdownPoliticas.style.display = 'none';
-                    }
-                }, 200);
-            });
-            dropdownPoliticas.addEventListener('mouseleave', () => {
-                dropdownPoliticas.style.display = 'none';
-            });
-        });
-    </script>
 </body>
 </html>

@@ -1,108 +1,17 @@
-body, html {  
+body, html {
     font-family: 'Inter', sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
-    height: 100%; /* Para ocupar toda a tela */
-    overflow-x: hidden; /* Evita a rolagem horizontal */
-    box-sizing: border-box;
-}
-
-*, *::before, *::after {
-    box-sizing: inherit; /* Garante que o padding e border sejam incluídos no tamanho total do elemento */
-}
-
-/* Estilo padrão para desktops */
-body {
-    font-size: 16px;
-}
-
-.container, .main-content {
-    width: 80%;
-    margin: auto;
-}
-
-/* Ajustes para tablets (largura máxima de 768px) */
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
-
-    .container, .main-content {
-        width: 95%;
-        padding: 0 15px;
-    }
-
-    nav ul {
-        flex-direction: column; /* Menu em coluna */
-        gap: 20px;
-    }
-
-    nav a {
-        padding: 10px;
-    }
-}
-
-/* Ajustes para smartphones (largura máxima de 480px) */
-@media (max-width: 480px) {
-    body {
-        font-size: 12px;
-    }
-
-    .container, .main-content {
-        width: 100%;
-        padding: 10px;
-    }
-
-    nav ul {
-        flex-direction: column; /* Menu em coluna */
-        gap: 15px;
-    }
-
-    nav a {
-        padding: 8px 20px;
-    }
-
-    #logo {
-        width: 200px; /* Ajusta o tamanho do logo para telas menores */
-    }
-
-    .main-content {
-        padding: 20px;
-    }
-
-    .separator-line {
-        width: 90%; /* Ajusta a linha separadora */
-    }
-
-    .info-section {
-        padding: 0 5px;
-    }
-
-    #agendar, #conectar, #cadastrar {
-        padding: 8px 15px;
-    }
-}
-
-/* Usando Flexbox */
-.container, .main-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-/* Usando Grid */
-.grid-container, .main-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
+    min-height: 100%;
+    overflow-x: hidden;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 10px 5%;
     background-color: #f8f8f8;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -115,13 +24,13 @@ nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    gap: 60px;
+    gap: 20px;
 }
 
 nav a {
     text-decoration: none;
     color: #000;
-    padding: 5px 40px;
+    padding: 5px 15px;
     transition: background-color 0.3s;
 }
 
@@ -154,8 +63,8 @@ nav li:hover .dropdown {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 120vh; /* Ocupar a maior parte da tela */
-    padding: 40px;
+    min-height: 80vh;
+    padding: 20px;
 }
 
 #agendar, #conectar, #cadastrar {
@@ -175,44 +84,72 @@ nav li:hover .dropdown {
 }
 
 #logo {
-    width: 300px; /* Ajuste o tamanho conforme necessário */
-    height: auto; /* Mantém a proporção */
-    display: inline-block;
-    vertical-align: middle; /* Alinha o logo com o texto */
+    width: 180px;
+    height: auto;
 }
 
 #main-image {
     width: 100%;
-    max-width: 1300px;
-    margin: 30px auto;
-    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
 }
 
 .image-size-control {
     width: 100%;
-    max-width: 900px;
     height: auto;
+    max-width: 100%;
 }
 
 .separator-line {
     width: 80%;
-    height: 9px;
+    height: 4px;
     background-color: #ccc;
-    margin: 50px auto;
+    margin: 20px auto;
 }
 
 .info-section {
     margin: 20px auto;
-    max-width: 880px;
+    padding: 0 5%;
     text-align: left;
-    padding: 0 10px;
 }
 
 footer {
     padding: 20px;
     background-color: #f8f8f8;
     text-align: center;
-    margin-top: 50px;
     font-size: 14px;
     color: #777;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #agendar, #conectar, #cadastrar {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+
+    #logo {
+        width: 150px;
+    }
+
+    .separator-line {
+        width: 90%;
+    }
+
+    .info-section {
+        padding: 0 2%;
+    }
 }
