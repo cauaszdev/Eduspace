@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -15,23 +15,17 @@
     <header>
         <nav>
             <img src="img/font.svg" alt="Logo" id="logo">
-            <ul>
-                <li>
-                    <a href="#" id="politicas">Políticas e Termos</a>
-                    <div class="dropdown" id="dropdown-politicas">
-                        <a href="politicas.html">Clique aqui para ser direcionado aos termos e serviços</a>
-                    </div>
-                </li>
-                <li><a href="#recursos-info">Recursos</a></li>
-                <li><a href="#contato-info">Contato</a></li>
-                <li><a href="#sobre-nos-info">Sobre Nós</a></li>
-            </ul>
-            <div class="buttons">
+            <div class="nav-buttons">
                 <button id="conectar" onclick="window.location.href='login.html'">Conecte-se</button>
                 <button id="cadastrar" onclick="window.location.href='cadastre-se.html'">Cadastre-se</button>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
             </div>
         </nav>
     </header>
+
     <section class="main-content">
         <h1>Simples, rápido e prático.</h1>
         <p>Simplificamos seu agendamento, maximizamos seu ensino.</p>
@@ -39,30 +33,65 @@
         <img src="img/note.png" alt="Imagem principal" class="main-image image-size-control" id="main-image">
     </section>
 
-    <div class="separator-line"></div>
-    
-    <section class="info-section" id="recursos-info">
-        <h2>Recursos</h2>
-        <p>Agendamento Intuitivo: Reserve salas em poucos cliques, escolhendo data, horário e recursos adicionais.</p>
-        <p>Calendário Compartilhado: Visualize a agenda de todas as salas em um único lugar, evitando conflitos de horários.</p>
-        <p>Notificações Personalizadas: Receba lembretes por email ou notificações push sobre seus agendamentos e eventos importantes.</p>
-        <p>Relatórios Detalhados: Gere relatórios personalizados para acompanhar o uso das salas e identificar tendências.</p>
-    </section>
-    
-    <section class="info-section" id="contato-info">
-        <h2>Contato</h2>
-        <p>Para mais informações ou suporte, entre em contato conosco:</p>
-        <p>Email: cauasilva251@aluno.enova.educacao.ba.gov.br</p>
-        <p>Telefone: 71 98621-5422</p>
-    </section>
-    
-    <section class="info-section" id="sobre-nos-info">
-        <h2>Sobre Nós</h2>
-        <p>O Eduspace é uma plataforma digital criada pelo 3°am tec com o objetivo de simplificar e agilizar o processo de agendamento de salas no CEAAT.</p>
-    </section>
-
-    <footer>
+    <footer class="footer">
         © 2024 Eduspace - Todos os direitos reservados.
     </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="modalMenu">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalMenu')">&times;</span>
+            <h2>Menu</h2>
+            <div class="menu-buttons">
+                <button onclick="showInfo('sobreNos')">Sobre Nós</button>
+                <button onclick="showInfo('recursos')">Recursos</button>
+                <button onclick="showInfo('contato')">Contato</button>
+            </div>
+            <div id="info" class="info-box"></div>
+        </div>
+    </div>
+
+    <script>
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        function toggleMenu() {
+            const modal = document.getElementById('modalMenu');
+            modal.style.display = "block"; // Exibe a modal ao abrir o menu
+        }
+
+        function showInfo(section) {
+            const infoBox = document.getElementById('info');
+            let content = '';
+
+            switch (section) {
+                case 'sobreNos':
+                    content = `<h3>Sobre Nós</h3>
+                               <p>Somos uma plataforma dedicada ao agendamento de salas, com foco em facilitar a vida acadêmica de nossos usuários.</p>`;
+                    break;
+                case 'recursos':
+                    content = `<h3>Recursos</h3>
+                               <p>Oferecemos uma variedade de recursos para tornar seu agendamento mais eficiente e prático.</p>`;
+                    break;
+                case 'contato':
+                    content = `<h3>Contato</h3>
+                               <p>Entre em contato conosco através do e-mail: caua.silva251@aluno.enova.educacao.ba.gob.br</p>`;
+                    break;
+                default:
+                    content = `<h3>Erro</h3><p>Informações não encontradas.</p>`;
+            }
+
+            infoBox.innerHTML = content;
+            infoBox.classList.add('fade-in'); // Adiciona classe para animação
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('modalMenu');
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>

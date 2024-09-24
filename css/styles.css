@@ -1,4 +1,3 @@
-/* Global Styles */
 body, html {
     font-family: 'Inter', sans-serif;
     text-align: center;
@@ -6,6 +5,11 @@ body, html {
     padding: 0;
     min-height: 100%;
     overflow-x: hidden;
+}
+
+header {
+    position: relative;
+    z-index: 1000;
 }
 
 nav {
@@ -17,45 +21,42 @@ nav {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
-    z-index: 1000;
-    flex-wrap: wrap; /* Permite que o conteúdo se mova para uma nova linha se necessário */
 }
 
-nav ul {
+.nav-buttons {
     display: flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    gap: 20px;
+    align-items: center;
 }
 
-nav a {
-    text-decoration: none;
-    color: #000;
-    padding: 5px 15px;
+.nav-buttons button {
+    padding: 10px 20px;
+    background-color: #04a2eb;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 10px; /* Adiciona espaço entre os botões */
     transition: background-color 0.3s;
 }
 
-nav .dropdown {
-    display: none;
-    position: absolute;
-    background: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    z-index: 50;
-    width: 200px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+.nav-buttons button:hover {
+    background-color: #0281a8;
 }
 
-nav li {
-    position: relative;
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: 20px;
 }
 
-nav li:hover .dropdown {
-    display: block;
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: black; /* Alterado para preto */
+    margin: 4px 0;
 }
 
-/* Main Content */
 .main-content {
     display: flex;
     flex-direction: column;
@@ -63,10 +64,10 @@ nav li:hover .dropdown {
     align-items: center;
     min-height: 80vh;
     padding: 20px;
+    margin-top: 20px; /* Espaço entre a parte superior e a imagem */
 }
 
-/* Buttons */
-#agendar, #conectar, #cadastrar {
+#agendar {
     margin-top: 20px;
     padding: 10px 20px;
     background-color: #04a2eb;
@@ -78,13 +79,15 @@ nav li:hover .dropdown {
     transition: all 0.3s;
 }
 
-/* Logo */
+#agendar:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 255, 1);
+}
+
 #logo {
-    width: 150px; /* Ajuste a largura do logo */
+    width: 180px;
     height: auto;
 }
 
-/* Main Image */
 #main-image {
     width: 100%;
     max-width: 100%;
@@ -92,55 +95,93 @@ nav li:hover .dropdown {
     margin: 20px 0;
 }
 
-/* Separator */
-.separator-line {
-    width: 80%;
-    height: 4px;
-    background-color: #ccc;
-    margin: 20px auto;
+.image-size-control {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
 }
 
-/* Info Sections */
-.info-section {
-    margin: 20px auto;
-    padding: 0 5%;
-    text-align: left;
-}
-
-/* Footer */
-footer {
-    padding: 20px;
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
     background-color: #f8f8f8;
     text-align: center;
     font-size: 14px;
     color: #777;
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column; /* Exibe os itens em coluna para telas menores */
-        align-items: center;
-    }
-    nav {
-        flex-direction: column; /* Permite que o nav se ajuste em coluna */
-    }
-    #logo {
-        width: 120px; /* Reduz o logo em telas menores */
-    }
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    right: 0; /* Modal agora aparece do lado direito */
+    top: 0;
+    width: 300px; /* Largura da janela modal */
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: all 0.3s ease; /* Animação suave ao abrir */
 }
 
-@media (max-width: 480px) {
-    nav {
-        padding: 5px; /* Reduz o padding do nav em telas menores */
-    }
-    #agendar, #conectar, #cadastrar {
-        width: 100%; /* Botões ocupam toda a largura em telas menores */
-    }
-    .separator-line {
-        width: 90%; /* Aumenta a largura da linha separadora */
-    }
-    .info-section {
-        padding: 0 2%; /* Ajusta o padding nas seções de informação */
-    }
+.modal-content {
+    background-color: #fefefe;
+    margin: 0;
+    padding: 20px;
+    border: 1px solid #888;
+    height: 100%;
+    animation: slideIn 0.5s; /* Animação de entrada */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px; /* Espaço entre o título e os botões */
+}
+
+.menu-buttons button {
+    padding: 10px;
+    background-color: #04a2eb;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+.menu-buttons button:hover {
+    background-color: #0281a8;
+}
+
+/* Animação de entrada */
+@keyframes slideIn {
+    from {transform: translateX(100%);}
+    to {transform: translateX(0);}
+}
+
+.info-box {
+    margin-top: 20px; /* Espaço acima da caixa de informações */
+    animation: fadeIn 0.5s; /* Animação de entrada */
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
