@@ -1,0 +1,86 @@
+<!DOCTYPE html> 
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eduspace - Plataforma de agendamento de salas de forma rápida e fácil.">
+    <meta name="keywords" content="agendamento, salas, ensino, educação, Eduspace">
+    <meta name="author" content="Cauã Souza">
+    <link href="https://fonts.googleapis.com/css2?family=Stretch+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Eduspace</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="/img/font.svg" alt="Logo" id="logo">
+            <ul>
+                <li>
+                    <a href="#" id="politicas">Políticas e Termos</a>
+                    <div class="dropdown" id="dropdown-politicas">
+                        <a href="politicas.html">Clique aqui para ser direcionado aos termos e serviços</a>
+                    </div>
+                </li>
+                <li><a href="#recursos-info">Recursos</a></li>
+                <li><a href="#contato-info">Contato</a></li>
+                <li><a href="#sobre-nos-info">Sobre Nós</a></li>
+            </ul>
+            <button id="conectar" onclick="window.location.href='login.html'">Conecte-se</button>
+            <button id="cadastrar" onclick="window.location.href='cadastre-se.html'">Cadastre-se</button>
+        </nav>
+    </header>
+    
+    <section class="main-content">
+        <h1>Simples, rápido e prático.</h1>
+        <p>Simplificamos seu agendamento, maximizamos seu ensino.</p>
+        <button id="agendar" onclick="window.location.href='cadastre-se.html'">Quero agendar agora!</button>
+        <img src="img/note.png" alt="Imagem principal" class="main-image image-size-control" id="main-image">
+    </section>
+
+    <div class="separator-line"></div>
+    
+    <section class="info-section" id="recursos-info">
+        <h2>Recursos</h2>
+        <p>Agendamento Intuitivo: Reserve salas em poucos cliques, escolhendo data, horário e recursos adicionais.</p>
+        <p>Calendário Compartilhado: Visualize a agenda de todas as salas em um único lugar, evitando conflitos de horários.</p>
+        <p>Notificações Personalizadas: Receba lembretes por email ou notificações push sobre seus agendamentos e eventos importantes.</p>
+        <p>Relatórios Detalhados: Gere relatórios personalizados para acompanhar o uso das salas e identificar tendências.</p>
+    </section>
+    
+    <section class="info-section" id="contato-info">
+        <h2>Contato</h2>
+        <p>Para mais informações ou suporte, entre em contato conosco:</p>
+        <p>Email: cauasilva251@aluno.enova.educacao.ba.gov.br</p>
+        <p>Telefone: 71 98621-5422</p>
+    </section>
+    
+    <section class="info-section" id="sobre-nos-info">
+        <h2>Sobre Nós</h2>
+        <p>O Eduspace é uma plataforma digital criada pelo 3°am tec com o objetivo de simplificar e agilizar o processo de agendamento de salas no CEAAT. Com o Eduspace, você pode reservar salas de forma rápida e fácil, visualizar a disponibilidade de cada ambiente e receber notificações sobre seus agendamentos.</p>
+    </section>
+
+    <footer>
+        © 2024 Eduspace - Todos os direitos reservados.
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const politicas = document.getElementById('politicas');
+            const dropdownPoliticas = document.getElementById('dropdown-politicas');
+
+            politicas.addEventListener('mouseenter', () => dropdownPoliticas.style.display = 'block');
+            politicas.addEventListener('mouseleave', () => {
+                setTimeout(() => {
+                    if (!dropdownPoliticas.matches(':hover')) {
+                        dropdownPoliticas.style.display = 'none';
+                    }
+                }, 200);
+            });
+            dropdownPoliticas.addEventListener('mouseleave', () => {
+                dropdownPoliticas.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

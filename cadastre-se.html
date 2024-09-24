@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre-se</title>
+    <link rel="stylesheet" href="css/cadastro.css"> <!-- Certifique-se de ter o CSS em um arquivo chamado styles.css -->
+</head>
+<body>
+    <div class="login-container">
+        <img src="/img/font.svg" alt="Logo"> <!-- Substitua pelo caminho da sua logo -->
+        <h2>Cadastre-se</h2>
+        <p>Preencha os dados abaixo para criar sua conta.</p>
+        <form action="cadastrar.php" method="POST">
+            <input type="text" name="nome" class="input-field" placeholder="Nome" required>
+            <input type="email" name="email" class="input-field" placeholder="Email" required>
+            <input type="password" name="senha" class="input-field" placeholder="Senha" required>
+            <button type="submit" class="login-btn">Cadastrar</button>
+        </form>
+        <a href="index.html" class="back-btn">Voltar para Home</a>
+    </div>
+</body>
+</html>
