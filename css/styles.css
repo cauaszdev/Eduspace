@@ -163,37 +163,33 @@ nav {
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
-    margin-bottom: 10px; /* Espaço entre os botões da janela modal */
-    transition: box-shadow 0.3s; /* Transição suave para o efeito neon */
+    margin-bottom: 10px; /* Espaço entre os botões */
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .menu-buttons button:hover {
+    background-color: #0281a8;
     box-shadow: 0 0 20px rgba(0, 162, 235, 1); /* Efeito neon ao passar o mouse */
 }
 
 .info-box {
-    margin-top: 20px;
+    margin-top: 20px; /* Espaço acima da caixa de informações */
 }
 
 .fade-in {
-    animation: fadeIn 0.5s;
+    animation: fadeIn 0.5s; /* Animação de fade-in */
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* Adiciona animação de deslizamento para a janela modal */
 @keyframes slideIn {
     from {
-        transform: translateX(100%);
+        right: -300px; /* Animação de entrada da janela modal */
     }
     to {
-        transform: translateX(0);
+        right: 0;
     }
 }
