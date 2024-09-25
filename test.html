@@ -8,7 +8,7 @@
     <meta name="keywords" content="agendamento, salas, ensino, educação, Eduspace">
     <meta name="author" content="Cauã Souza">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/test.css">
     <title>Eduspace</title>
 </head>
 <body>
@@ -41,11 +41,10 @@
     <div class="modal" id="modalMenu">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modalMenu')">&times;</span>
-            <h2>Menu</h2>
             <div class="menu-buttons">
-                <button onclick="showInfo('sobreNos')">Sobre Nós</button>
-                <button onclick="showInfo('recursos')">Recursos</button>
-                <button onclick="showInfo('contato')">Contato</button>
+                <button onclick="toggleInfo('sobreNos')">Sobre Nós</button>
+                <button onclick="toggleInfo('recursos')">Recursos</button>
+                <button onclick="toggleInfo('contato')">Contato</button>
             </div>
             <div id="info" class="info-box"></div>
         </div>
@@ -61,9 +60,10 @@
             modal.style.display = "block"; // Exibe a modal ao abrir o menu
         }
 
-        function showInfo(section) {
+        function toggleInfo(section) {
             const infoBox = document.getElementById('info');
             let content = '';
+            const currentContent = infoBox.innerHTML;
 
             switch (section) {
                 case 'sobreNos':
@@ -82,8 +82,13 @@
                     content = `<h3>Erro</h3><p>Informações não encontradas.</p>`;
             }
 
-            infoBox.innerHTML = content;
-            infoBox.classList.add('fade-in'); // Adiciona classe para animação
+            // Alterna a exibição do conteúdo
+            if (currentContent.includes(content)) {
+                infoBox.innerHTML = ''; // Limpa se o conteúdo já está visível
+            } else {
+                infoBox.innerHTML = content; // Exibe o conteúdo
+                infoBox.classList.add('fade-in'); // Adiciona classe para animação
+            }
         }
 
         window.onclick = function(event) {
