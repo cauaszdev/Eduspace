@@ -439,6 +439,7 @@ svg {
     #menu {
         position: absolute;
         width: 160px;
+        background: #ece7e7;
         top: -160px;
         bottom: 200px;
         right: -40px;
@@ -452,6 +453,54 @@ svg {
         font-size: 10px;
         color: #fff;
       }
+
+      #sobre {
+        padding: 8px 20px; /* Diminuindo o padding */
+        background-color: #04a2eb;
+        border: none;
+        border-radius: 100px;
+        color: #ffffff;
+        cursor: pointer;
+        margin: 50px 2px; /* Espaço entre os botões, apenas em cima e embaixo */
+        margin-top: 60px;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        transition: all 0.3s;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+    }
+    
+    #recursos {
+        padding: 8px 20px; /* Diminuindo o padding */
+        background-color: #04a2eb;
+        border: none;
+        border-radius: 100px;
+        color: #fff;
+        cursor: pointer;
+        margin: 50px 2px; /* Espaço entre os botões, apenas em cima e embaixo */
+        margin-top: -10px;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        transition: all 0.3s;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+    }
+    
+    #contato {
+        padding: 8px 20px; /* Diminuindo o padding */
+        background-color: #04a2eb;
+        border: none;
+        border-radius: 100px;
+        color: #fff;
+        cursor: pointer;
+        margin: 50px 2px; /* Espaço entre os botões, apenas em cima e embaixo */
+        margin-top: -10px;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        transition: all 0.3s;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+    }
 
     .main-content {
         padding: 30px; /* Reduzir padding em telas menores */
