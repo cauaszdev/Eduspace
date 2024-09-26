@@ -28,22 +28,31 @@ nav {
     align-items: center;
 }
 
-.nav-buttons button {
-    padding: 10px 20px;
+#cadastrar, #conectar {
+    padding: 10px 30px;
     background-color: #04a2eb;
     border: none;
-    border-radius: 5px;
+    border-radius: 100px;
     color: #fff;
     cursor: pointer;
     margin: 0 10px; /* Adiciona espaço entre os botões */
-    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+    transition: all 0.3s;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
 }
 
-.nav-buttons button:hover {
+#cadastrar i, #conectar i {
+    margin-right: 2px;
+    margin-left: 10px;
+    font-size: 1em;
+}
+
+#cadastrar:hover, #conectar:hover {
     background-color: #0281a8;
-    box-shadow: 0 0 20px rgba(0, 162, 235, 1); /* Efeito neon ao passar o mouse */
+    box-shadow: 0 0 20px rgba(0, 0, 255, 1);
 }
-
 .hamburger {
     display: flex;
     flex-direction: column;
@@ -63,9 +72,23 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 80vh;
-    padding: 20px;
-    margin-top: 20px; /* Espaço entre a parte superior e a imagem */
+    min-height: 90vh;
+    padding: 80px;
+    margin-top: 50px; /* Espaço entre a parte superior e a imagem */
+}
+
+.titulo {
+    font-size: 2.5em; /* Tamanho do título */
+    color: #000000; /* Cor do título */
+    text-align: center; /* Centraliza o título */
+    margin-bottom: 0px; /* Espaço abaixo do título */
+}
+
+.subtitulo {
+    font-size: 1.2em; /* Tamanho do subtítulo */
+    color: #666; /* Cor do subtítulo */
+    text-align: center; /* Centraliza o subtítulo */
+    margin-bottom: 0px; /* Espaço abaixo do subtítulo */
 }
 
 #agendar {
@@ -73,7 +96,7 @@ nav {
     padding: 10px 20px;
     background-color: #04a2eb;
     border: none;
-    border-radius: 5px;
+    border-radius: 100px;
     color: #fff;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
@@ -149,29 +172,6 @@ nav {
     text-decoration: none;
     cursor: pointer;
 }
-
-.menu-buttons {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px; /* Espaço entre o título e os botões */
-}
-
-.menu-buttons button {
-    padding: 10px;
-    background-color: #04a2eb;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    margin-bottom: 10px; /* Espaço entre os botões */
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-.menu-buttons button:hover {
-    background-color: #0281a8;
-    box-shadow: 0 0 20px rgba(0, 162, 235, 1); /* Efeito neon ao passar o mouse */
-}
-
 .info-box {
     margin-top: 20px; /* Espaço acima da caixa de informações */
 }
@@ -179,6 +179,59 @@ nav {
 .fade-in {
     animation: fadeIn 0.5s; /* Animação de fade-in */
 }
+
+.calendar-integration {
+    display: flow-root;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px;
+    background-color: #fff;
+    color: #000;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.calendar-integration h2 {
+    font-size: 4rem; /* Tamanho maior para o título */
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 30px;
+    text-align: left; /* Centraliza o texto */
+}
+
+.grid-container {
+    display: flex; /* Altera para flex para organizar os itens */
+    flex-wrap: wrap; /* Permite que os itens se organizem em várias linhas */
+    justify-content: flex-end; /* Alinha os itens à direita */
+    max-width: 9000%; /* Permite ocupar toda a largura */
+    margin-top: 60px;
+}
+
+.grid-item {
+    background-color: #04a2eb; /* Cor de fundo azul */
+    border-radius: 40px; /* Borda arredondada */
+    margin: 60px; /* Espaçamento entre os blocos */
+    padding: 60px; /* Aumenta o preenchimento */
+    min-height: 30px; /* Altura mínima */
+    flex: 0 0 calc(30% - 40px); /* Ajusta a largura dos itens para 3 em uma linha */
+    display: flex; /* Flex para centralizar conteúdo */
+    align-items: center; /* Alinha verticalmente ao centro */
+    justify-content: flex-end; /* Alinha horizontalmente ao centro */
+    color: #fff; /* Cor do texto */
+    opacity: 1; /* Começa visível */
+    transition: opacity 0.5s ease; /* Efeito de desvanecimento */
+}
+
+.grid-item:nth-child(odd) {
+    min-height: 200px; /* Aumenta a altura dos itens ímpares */
+}
+
+.grid-item:hover {
+    opacity: 2; /* Efeito de sumiço ao passar o mouse */
+}
+
 
 @keyframes fadeIn {
     from { opacity: 0; }
@@ -192,4 +245,9 @@ nav {
     to {
         right: 0;
     }
+}
+
+.main-content {
+    visibility: hidden;
+
 }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinação de Flex e Grid</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Contêiner principal usando Grid */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Três colunas de igual largura */
+            gap: 20px; /* Espaçamento entre os itens da grid */
+            padding: 20px;
+        }
+
+        /* Estilo para cada item da grid */
+        .item {
+            background-color: #f2f2f2; /* Cor de fundo */
+            padding: 20px; /* Espaçamento interno */
+            text-align: center; /* Centraliza o texto */
+            border: 1px solid #ccc; /* Borda ao redor do item */
+        }
+
+        /* Contêiner flexível dentro de um item da grid */
+        .flex-container {
+            display: flex; /* Habilita o Flexbox */
+            justify-content: space-between; /* Espaço igual entre os itens */
+            align-items: center; /* Alinha os itens verticalmente ao centro */
+            padding: 10px; /* Espaçamento interno */
+            border: 1px solid #000; /* Borda ao redor do contêiner flexível */
+        }
+
+        /* Estilo para cada item do Flexbox */
+        .flex-item {
+            flex: 1; /* Cada item ocupa espaço igual */
+            margin: 5px; /* Margem entre os itens flexíveis */
+            background-color: #e0e0e0; /* Cor de fundo para os itens flexíveis */
+            padding: 10px; /* Espaçamento interno */
+            text-align: center; /* Centraliza o texto */
+        }
+
+        /* Responsividade: uma coluna em telas pequenas */
+        @media (max-width: 600px) {
+            .container {
+                grid-template-columns: 1fr; /* Uma coluna para telas pequenas */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">
+            <div class="flex-container">
+                <div class="flex-item">Flex Item 1</div>
+                <div class="flex-item">Flex Item 2</div>
+                <div class="flex-item">Flex Item 3</div>
+            </div>
+        </div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+        <div class="item">Item 5</div>
+    </div>
+</body>
+</html>

@@ -7,7 +7,9 @@
     <meta name="description" content="Eduspace - Plataforma de agendamento de salas de forma rápida e fácil.">
     <meta name="keywords" content="agendamento, salas, ensino, educação, Eduspace">
     <meta name="author" content="Cauã Souza">
+    <script src="https://unpkg.com/scrollreveal"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <title>Eduspace</title>
 </head>
@@ -16,8 +18,14 @@
         <nav>
             <img src="img/font.svg" alt="Logo" id="logo">
             <div class="nav-buttons">
-                <button id="conectar" onclick="window.location.href='login.html'">Conecte-se</button>
-                <button id="cadastrar" onclick="window.location.href='cadastre-se.html'">Cadastre-se</button>
+                <button id="conectar" 
+                onclick="window.location.href='login.html'">
+                Conecte-se<i class="fa-solid fa-right-to-bracket"></i>
+            </button>
+                <button id="cadastrar" 
+                onclick="window.location.href='cadastre-se.html'">
+                Cadastre-se<i class="fa-solid fa-user"></i>
+            </button>
                 <div class="hamburger" onclick="toggleMenu()">
                     <div class="bar"></div>
                     <div class="bar"></div>
@@ -27,11 +35,27 @@
     </header>
 
     <section class="main-content">
-        <h1>Simples, rápido e prático.</h1>
-        <p>Simplificamos seu agendamento, maximizamos seu ensino.</p>
-        <button id="agendar" onclick="window.location.href='cadastre-se.html'">Quero agendar agora!</button>
-        <img src="img/note.png" alt="Imagem principal" class="main-image image-size-control" id="main-image">
+        <h1 class="titulo"> Simples, rápido e prático.</h1>
+        <h3 class="subtitulo"> Simplificamos o seu agendamento, maximizamos o seu ensino.</h3>
+        <button id="agendar" class="agendar" onclick="window.location.href='cadastre-se.html'">Quero agendar agora!</button>
+        <img src="img/note.png" alt="Imagem principal" class="main-image" id="main-image">
     </section>
+
+    <section class="calendar-integration">
+        <h2 class="text-reveal"> Integração com 
+            calendários
+        </h2> 
+        <div class="grid-container">
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+
+        </div>
+    </section>
+    
 
     <footer class="footer">
         © 2024 Eduspace - Todos os direitos reservados.
@@ -49,54 +73,6 @@
             <div id="info" class="info-box"></div>
         </div>
     </div>
-
-    <script>
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = "none";
-        }
-
-        function toggleMenu() {
-            const modal = document.getElementById('modalMenu');
-            modal.style.display = "block"; // Exibe a modal ao abrir o menu
-        }
-
-        function toggleInfo(section) {
-            const infoBox = document.getElementById('info');
-            let content = '';
-            const currentContent = infoBox.innerHTML;
-
-            switch (section) {
-                case 'sobreNos':
-                    content = `<h3>Sobre Nós</h3>
-                               <p>Somos uma plataforma dedicada ao agendamento de salas, com foco em facilitar a vida acadêmica de nossos usuários.</p>`;
-                    break;
-                case 'recursos':
-                    content = `<h3>Recursos</h3>
-                               <p>Oferecemos uma variedade de recursos para tornar seu agendamento mais eficiente e prático.</p>`;
-                    break;
-                case 'contato':
-                    content = `<h3>Contato</h3>
-                               <p>Entre em contato conosco através do e-mail: suporte@eduspace.com</p>`;
-                    break;
-                default:
-                    content = `<h3>Erro</h3><p>Informações não encontradas.</p>`;
-            }
-
-            // Alterna a exibição do conteúdo
-            if (currentContent.includes(content)) {
-                infoBox.innerHTML = ''; // Limpa se o conteúdo já está visível
-            } else {
-                infoBox.innerHTML = content; // Exibe o conteúdo
-                infoBox.classList.add('fade-in'); // Adiciona classe para animação
-            }
-        }
-
-        window.onclick = function(event) {
-            const modal = document.getElementById('modalMenu');
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
