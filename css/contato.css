@@ -1,0 +1,145 @@
+body {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 310px;
+    margin-right: 310px;
+    padding: 12em;
+    height: 100vh;
+    background: linear-gradient(to right, #ffffff, #87cae0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+}
+
+.contact-container {
+    width: 100%;
+    height: 100%;
+}
+
+.contact-card {
+    background-color: #fff;
+    border-radius: 40px;
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    padding: 40px;
+}
+
+.info-section {
+    border-right: 1px solid #dfe4ea;
+}
+
+.info-section h4 {
+    font-weight: bold;
+    color: #333;
+}
+
+.info-section p {
+    font-size: 19px;
+    margin: 10px;
+    margin-top: 31px;
+    margin-bottom: 11px;
+    color: #555;
+}
+
+.social-icons {
+    margin: 10px;
+    margin-top: 85px;
+    margin-left: 11px;
+  
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 25px;
+    position: relative;
+    bottom: -52px;
+    margin-right: 65px;
+    display: inline-block;
+}
+
+.social-icons i {
+    pointer-events: none;
+}
+
+.social-icons a:hover {
+    color: #0056b3;
+}
+
+.form-section {
+    padding-left: 550px;
+    margin-top: -222px;
+}
+
+.mb-1 {
+    position: relative;
+    top: -80px;
+    width: 1011px;
+    padding-left: 30px;
+    padding-top: 0px;
+    margin-top: 31px;
+}
+
+.mb-2 {
+    position: relative;
+    top: -80px;
+    width: 1101px;
+    padding-left: 30px;
+    padding-top: 0px;
+    margin-top: 31px;
+}
+
+.mb-3 {
+    position: relative;
+    top: -80px;
+    width: 1101px; 
+    padding-left: 30px;
+    padding-top: 0px;
+    margin-top: 31px;
+    margin-right: 0px;
+}
+
+.input-field {
+    border: 1px solid #ced4da;
+    border-radius: 11px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #888;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    position: relative;
+    top: -21px;
+    margin-left: 31px;
+    margin-right: 111px;
+    padding: 7px;
+    border-radius: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transition: background-color 0.3s;
+}
+
+@media (max-width: 768px) {
+    .contact-card {
+        flex-direction: column;
+    }
+    .info-section {
+        border-right: none;
+        border-bottom: 1px solid #dfe4ea;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    .form-section {
+        padding-left: 0;
+    }
+}
