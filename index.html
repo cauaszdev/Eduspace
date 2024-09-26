@@ -16,7 +16,7 @@
 <body>
     <header>
         <nav>
-            <img src="img/font.svg" alt="Logo" id="logo">
+            <img src="img/font.svg" alt="Logo" class="logo" id="logo">
             <div class="nav-buttons">
                 <button id="conectar" 
                 onclick="window.location.href='login.html'">
@@ -41,10 +41,10 @@
         <img src="img/note.png" alt="Imagem principal" class="main-image" id="main-image">
     </section>
 
-    <section class="calendar-integration">
-        <h2 class="text-reveal"> Integração com 
-            calendários
+    <div class="calendar-integration">
+        <h2> Integração com <span class="text-reveal">calendário</span>
         </h2> 
+    </div>
         <div class="grid-container">
             <div class="grid-item"></div>
             <div class="grid-item"></div>
@@ -73,6 +73,6 @@
             <div id="info" class="info-box"></div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="java/script.js"></script>
 </body>
 </html>

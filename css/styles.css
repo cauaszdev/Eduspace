@@ -100,7 +100,7 @@ nav {
     align-items: center;
     min-height: 90vh;
     padding: 80px;
-    margin-top: 50px; /* Espaço entre a parte superior e a imagem */
+    margin-top: 1px; /* Espaço entre a parte superior e a imagem */
 }
 
 .titulo {
@@ -108,6 +108,7 @@ nav {
     color: #000000; /* Cor do título */
     text-align: center; /* Centraliza o título */
     margin-bottom: 0px; /* Espaço abaixo do título */
+    margin-top: 50px; /* Margem superior padrão */
 }
 
 .subtitulo {
@@ -139,16 +140,10 @@ nav {
 }
 
 #main-image {
-    width: 100%;
-    max-width: 100%;
+    width: 130%;
+    max-width: 2000%;
     height: auto;
     margin: 20px 0;
-}
-
-.image-size-control {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
 }
 
 .footer {
@@ -207,7 +202,7 @@ nav {
 }
 
 .calendar-integration {
-    display: flow-root;
+    display: block;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
@@ -219,7 +214,7 @@ nav {
     margin: 0 auto;
 }
 
-.calendar-integration h2 {
+.calendar-integration {
     font-size: 4rem; /* Tamanho maior para o título */
     font-weight: 600;
     color: #000;
@@ -276,4 +271,86 @@ nav {
 .main-content {
     visibility: hidden;
 
+}
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+
+    #conectar {
+        padding: 5px 10px; /* Reduzir o padding em telas menores */
+        font-size: 9px; /* Ajusta o tamanho da fonte */
+        width: 50%;
+    }
+
+    #cadastrar {
+        padding: 5px 10px; /* Reduzir o padding em telas menores */
+        font-size: 9px; /* Ajusta o tamanho da fonte */
+        width: 40%;
+    }
+
+    #agendar {
+        padding: 10px 10px; /* Reduzir o padding em telas menores */
+        font-size: 15px; /* Ajusta o tamanho da fonte */
+        width: 80%;
+    }
+
+    .titulo {
+        font-size: 10em; /* Tamanho do título em telas menores */
+        margin-top: 1px; /* Diminui a margem superior em telas pequenas */
+    }
+
+    .subtitulo {
+        font-size: 20em; /* Tamanho do subtítulo em telas menores */
+    }
+
+    .main-content {
+        padding: 20px; /* Reduzir padding em telas menores */
+        margin-top: 20px; /* Ajusta a margem superior */
+    }
+
+    #main-image {
+        width: 140%;
+        max-width: 2000%;
+        height: auto;
+        margin: 60px 0;
+    }
+
+    .grid-item {
+        flex: 1 2 calc(100% - 40px); /* Um item por linha em telas menores */
+        margin: 20px; /* Reduzir o espaço entre os itens */
+        padding: 10px; /* Reduzir o preenchimento */
+    }
+
+    .hamburger {
+        margin-left: 5px; /* Ajustar espaço da hamburguer em telas menores */
+    }
+
+    .modal {
+        width: 50%; /* Modal ocupa 100% da largura em telas menores */
+    }
+
+    .text-reveal {
+        display: block; /* Exibe como bloco, forçando a quebra de linha */
+        font-size: 1em; /* Tamanho do texto menor */
+    }
+    .calendar-integration {
+        font-size: 3rem; /* Tamanho maior para o título */
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 30px;
+        text-align: left; /* Centraliza o texto */
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo {
+        font-size: 2.5em; /* Tamanho do título ainda menor em telas pequenas */
+    }
+
+    .subtitulo {
+        font-size: 1.2em; /* Tamanho do subtítulo ainda menor em telas pequenas */
+    }
+
+    #logo {
+        width: 120px; /* Logo menor em telas pequenas */
+    }
 }
