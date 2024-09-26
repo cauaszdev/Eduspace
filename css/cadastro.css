@@ -42,7 +42,7 @@ p {
 .input-field:focus {
     border-color: #007BFF;
 }
-.login-btn {
+.cadastro-btn {
     width: 100%;
     padding: 15px;
     background-color: #007BFF;
@@ -51,54 +51,35 @@ p {
     border-radius: 55px;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 11px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    transition: all 0.3s;
 }
-.login-btn:hover {
-    background-color: #0056b3;
-}
-.forgot-password {
+.cadastro-btn:hover {
+    background: #0aa8e6;
+    color: #000;
+    box-shadow: 0 0 20px #0aa8e6, 0 0 40px #0aa8e6, 0 0 70px #0aa8e6;
+  }
+
+.conta-btn {
     display: block;
     margin-top: 15px;
     color: #888;
     text-decoration: none;
 }
-.forgot-password:hover {
+.conta-btn {
+    display: block;
+    margin-top: 15px;
+    color: #888;
+    text-decoration: none;
+}
+
+.conta-btn:hover {
     color: #007BFF;
 }
-.back-btn {
-    width: 100%;
-    padding: 1px;
-    background-color: transparent;
-    color: #007BFF;
-    border: 2px solid #007BFF;
-    border-radius: 55px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 10px;
-    position: relative;
-    overflow: hidden;
-    text-decoration: none; /* Remove underline */
-    display: inline-block; /* Make it a block element */
-}
-.back-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 123, 255, 0.3);
-    filter: blur(5px);
-    z-index: 0;
-    transition: all 0.5s;
-    opacity: 0;
-}
-.back-btn:hover::before {
-    opacity: 1;
-}
-.back-btn:hover {
-    color: white;
-}
+
+
 
 /* Responsividade */
 @media (max-width: 768px) {
@@ -122,7 +103,7 @@ p {
     }
 
     .cadastro-container {
-        width: 100%;
+        width: 80%;
         padding: 20px;
     }
 
