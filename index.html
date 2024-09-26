@@ -16,7 +16,7 @@
 <body>
     <header>
         <nav>
-            <img src="img/font.svg" alt="Logo" class="logo" id="logo">
+           <img src="img/font.svg" alt="Logo" class="logo" id="logo">
             <div class="nav-buttons">
                 <button id="conectar" 
                 onclick="window.location.href='login.html'">
@@ -26,14 +26,38 @@
                 onclick="window.location.href='cadastre-se.html'">
                 Cadastre-se<i class="fa-solid fa-user"></i>
             </button>
-                <div class="hamburger" onclick="toggleMenu()">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
+            <div id="menuToggle">
+
+                <input type="checkbox" />
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+                <ul id="menu">
+
+                <a id="sobre"
+                 href="#"><li>
+                    Sobre Nós <i class="fa-solid fa-circle-info"></i>
+                </li>
+            </a>
+
+                 <a id="recursos" href="#">
+                    <li>
+                        Recursos <i class="fa-solid fa-book"></i>
+                    </li>
+                </a>
+
+                <a id="contato"
+                href="#"><li>
+                    Contato <i class="fa-solid fa-phone"></i>
+                </li>
+            </a>
+                </ul>
             </div>
         </nav>
-    </header>
-
+            </div>
+            
     <section class="main-content">
         <h1 class="titulo"> Simples, rápido e prático.</h1>
         <h3 class="subtitulo"> Simplificamos o seu agendamento, maximizamos o seu ensino.</h3>
@@ -137,23 +161,10 @@
     
     </section>
     
-
     <footer class="footer">
         © 2024 Eduspace - Todos os direitos reservados.
     </footer>
 
-    <!-- Modal -->
-    <div class="modal" id="modalMenu">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modalMenu')">&times;</span>
-            <div class="menu-buttons">
-                <button onclick="toggleInfo('sobreNos')">Sobre Nós</button>
-                <button onclick="toggleInfo('recursos')">Recursos</button>
-                <button onclick="toggleInfo('contato')">Contato</button>
-            </div>
-            <div id="info" class="info-box"></div>
-        </div>
-    </div>
     <script src="java/script.js"></script>
 </body>
 </html>
