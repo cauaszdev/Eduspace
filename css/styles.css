@@ -53,6 +53,32 @@ nav {
     background-color: #0281a8;
     box-shadow: 0 0 20px rgba(0, 0, 255, 1);
 }
+
+.menu-buttons {
+    display: flex;
+    flex-direction: column; /* Alinha os botões verticalmente */
+    align-items: center; /* Centraliza os botões horizontalmente */
+    gap: 20px; /* Adiciona distância entre os botões */
+}
+
+.menu-buttons button {
+    padding: 10px 30px;
+    background-color: #04a2eb;
+    border: none;
+    border-radius: 100px;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+    transition: all 0.3s;
+    font-size: 13px;
+    margin: 0; /* Remove margem padrão para controle mais preciso */
+}
+
+
+.menu-buttons button:hover {
+    background-color: #0281a8;
+    box-shadow: 0 0 20px rgba(0, 0, 255, 1);
+}
 .hamburger {
     display: flex;
     flex-direction: column;
