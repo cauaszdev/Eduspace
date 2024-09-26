@@ -5,7 +5,8 @@ body {
     margin-left: 310px;
     margin-right: 310px;
     padding: 12em;
-    height: 100vh;
+    overflow-x: hidden;
+    height: 100px;
     background: linear-gradient(to right, #ffffff, #87cae0);
     display: flex;
     align-items: center;
@@ -117,29 +118,178 @@ input::placeholder, textarea::placeholder {
     background-color: #007bff;
     border: none;
     position: relative;
-    top: -21px;
-    margin-left: 31px;
+    top: -51px;
+    margin-left:31px;
     margin-right: 111px;
-    padding: 7px;
-    border-radius: 10px;
+    padding: 10px;
+    border-radius: 55px;
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
-    transition: background-color 0.3s;
+    background: #0aa8e6;
+    color: #000;
+    box-shadow: 0 0 10px #0aa8e6, 0 0 40px #0aa8e6, 0 0 70px #0aa8e6;
 }
 
-@media (max-width: 768px) {
-    .contact-card {
-        flex-direction: column;
+.back-btn {
+    width: 4%;
+    padding: 4px;
+    background-color: transparent;
+    color: #007BFF;
+    border: 2px solid #007BFF;
+    border-radius: 55px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 11px;
+    position: relative;
+    top: -31px;
+    overflow: hidden;
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make it a block element */
+    
+}
+
+.back-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 123, 255, 0.3);
+    filter: blur(5px);
+    z-index: 0;
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+.back-btn:hover::before {
+    opacity: 1;
+}
+
+.back-btn:hover {
+    color: white;
+}
+
+@media (max-width: 1024px) {
+    body {
+        margin: 0;
+        padding: 8em 1em; /* Adiciona padding lateral para evitar overflow */
     }
+
+    .contact-card {
+        flex-direction: column; /* Empilha as seções em telas menores */
+        padding: 20px;
+    }
+
     .info-section {
         border-right: none;
         border-bottom: 1px solid #dfe4ea;
-        padding-bottom: 20px;
         margin-bottom: 20px;
     }
+
     .form-section {
         padding-left: 0;
+        margin-top: 20px;
+    }
+
+    .social-icons {
+        margin-left: 61px;
+        margin-top: 15px;
+    }
+
+    .social-icons a {
+        margin-right: 15px;
+        bottom: 0;
     }
 }
+
+@media (max-width: 768px) {
+    body {
+        padding: 1em; /* Mantém o padding */
+    }
+
+    .form-section {
+        margin-top: 110px;
+    }
+
+    .mb-1,
+    .mb-2,
+    .mb-3 {
+        position: relative;
+        top: -80px;
+        width: calc(100% - 60px); /* Ajusta a largura para 100% menos padding */
+        padding-left: 40px;
+        padding-top: 0px;
+        margin-top: 31px;
+    }
+
+    .social-icons a {
+        font-size: 20px;
+        margin-top: 20px;
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+
+    .btn-primary,
+    .back-btn {
+        width: 90%; /* Botão se adapta à largura da tela */
+        margin-left: auto; /* Centraliza o botão */
+        margin-right: auto; /* Centraliza o botão */
+        text-align: center;
+    }
+
+    .back-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 123, 255, 0.3);
+        filter: blur(5px);
+        z-index: 0;
+        transition: all 0.5s;
+        opacity: 0;
+    }
+
+    .back-btn:hover::before {
+        opacity: 1;
+    }
+
+    .back-btn:hover {
+        color: white;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 4em 1em; /* Mantém padding lateral */
+    }
+
+    .contact-card {
+        padding: 10px;
+    }
+
+    .info-section h4 {
+        font-size: 16px;
+    }
+
+    .info-section p {
+        font-size: 14px;
+    }
+
+    .input-field {
+        font-size: 12px;
+    }
+
+    .btn-primary {
+        font-size: 14px;
+    }
+
+    .social-icons a {
+        font-size: 18px;
+    }
+}
+
