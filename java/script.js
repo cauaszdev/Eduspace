@@ -1,54 +1,49 @@
 window.sr = ScrollReveal({ reset: true} ); // Adicionando ScrollReveal
- 
-
-
-sr.reveal('.grid-item', {
-    duration: 800,
-    origin: 'bottom',
-    distance: '20px',
-    opacity: 0, // Começa invisível
-    interval: 100 // Intervalo entre os itens
-});
 
 sr.reveal('.titulo', {
-    duration: 1000,
+    duration: 2000,
     origin: 'bottom',
-    distance: '20px',
+    distance: '100px',
     opacity: 0, // Começa invisível
     interval: 100 // Intervalo entre os itens
 });
 
 sr.reveal('.subtitulo', {
-    duration: 1000,
+    duration: 2000,
     origin: 'bottom',
-    distance: '20px',
+    distance: '100px',
     opacity: 0, // Começa invisível
     interval: 100 // Intervalo entre os itens
 });
 
 
 sr.reveal('.main-image', {
-    duration: 1000,
+    duration: 2000,
     origin: 'bottom',
-    distance: '20px',
+    distance: '100px',
     opacity: 0, // Começa invisível
     interval: 100 // Intervalo entre os itens
 });
 
 sr.reveal('.agendar', {
-    duration: 1000,
+    duration: 2000,
     origin: 'bottom',
-    distance: '20px',
+    distance: '100px',
     opacity: 0, // Começa invisível
     interval: 100 // Intervalo entre os itens
 })
 
 sr.reveal('.calendar-integration', {
-    duration: 1200,
+    duration: 2000,
     origin: 'left',
-    distance: '50px'
+    distance: '400px'
 });
 
+sr.reveal('.svg-container', {
+    duration: 2000,
+    origin: 'right',
+    distance: '400px'
+});
 
 function closeModal(modalId) {
     document.getElementById(modalId).style.display = "none"; // Adicionei o ponto e vírgula
@@ -95,4 +90,5 @@ window.onclick = function(event) {
     if (event.target === modal) {
         modal.style.display = "none"; // Ponto e vírgula adicionado
     }
+
 }

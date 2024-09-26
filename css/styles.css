@@ -129,7 +129,6 @@ nav {
     color: #fff;
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    transition: all 0.3s;
 }
 
 #agendar:hover {
@@ -206,24 +205,33 @@ nav {
 }
 
 .calendar-integration {
-    display: block;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 50px;
+    display: flex; /* Para alinhar o título na horizontal */
+    flex-direction: column; /* Mantém o texto em coluna */
+    align-items: flex-start; /* Alinha os itens no início */
+    justify-content: flex-start;
+    padding: 100px;
     background-color: #fff;
     color: #000;
-    width: 100%;
-    max-width: 1200px;
+    width: 50%;
+    max-width: 800px;
     margin: 0 auto;
+    margin-left: 1px;
+    margin-right: 1px;
 }
 
-.calendar-integration {
-    font-size: 4rem; /* Tamanho maior para o título */
+.calendar-integration h2 {
+    font-size: 6rem; /* Tamanho maior para o título */
     font-weight: 600;
     color: #000;
-    margin-bottom: 30px;
-    text-align: left; /* Centraliza o texto */
+    margin-bottom: 0; /* Remove a margem inferior para alinhamento */
+    text-align: left; /* Mantido para alinhar o texto à esquerda */
+}
+
+.integration-section {
+    display: flex; /* Para alinhar o calendário e o container SVG lado a lado */
+    align-items: flex-start; /* Alinha os itens no topo */
+    gap: 20px; /* Espaçamento entre o calendário e o container SVG */
+    margin-top: 60px; /* Espaçamento superior para a seção */
 }
 
 .grid-container {
@@ -231,30 +239,32 @@ nav {
     flex-wrap: wrap; /* Permite que os itens se organizem em várias linhas */
     justify-content: flex-end; /* Alinha os itens à direita */
     max-width: 9000%; /* Permite ocupar toda a largura */
-    margin-top: 60px;
 }
 
-.grid-item {
-    background-color: #04a2eb; /* Cor de fundo azul */
-    border-radius: 40px; /* Borda arredondada */
-    margin: 60px; /* Espaçamento entre os blocos */
-    padding: 60px; /* Aumenta o preenchimento */
-    min-height: 30px; /* Altura mínima */
-    flex: 0 0 calc(30% - 40px); /* Ajusta a largura dos itens para 3 em uma linha */
-    display: flex; /* Flex para centralizar conteúdo */
-    align-items: center; /* Alinha verticalmente ao centro */
-    justify-content: flex-end; /* Alinha horizontalmente ao centro */
-    color: #fff; /* Cor do texto */
-    opacity: 1; /* Começa visível */
-    transition: opacity 0.5s ease; /* Efeito de desvanecimento */
+.container {
+    width: 60%; /* Largura do contêiner */
+    max-width: 2000px; /* Largura máxima do contêiner */
+    margin: auto;
+    margin-top: 0px;
+    margin-left: 800px;
+    margin-right: 0px;
+    position: relative; /* Para posicionamento absoluto de elementos filhos */
 }
 
-.grid-item:nth-child(odd) {
-    min-height: 200px; /* Aumenta a altura dos itens ímpares */
+.svg-container {
+    width: 100%; /* O SVG ocupa 100% da largura do contêiner */
+    height: auto; /* A altura é automática para manter a proporção */
+    display: block; /* Usa flexbox para o layout */
+    justify-content: center; /* Centraliza o SVG horizontalmente */
+    align-items: flex-start; /* Alinha o SVG na parte superior */
+    position: relative; /* Para efeitos de posicionamento */
+    flex-direction: column; /* Para manter SVGs em coluna */
 }
 
-.grid-item:hover {
-    opacity: 2; /* Efeito de sumiço ao passar o mouse */
+/* Faz o SVG ser responsivo */
+svg {
+    width: 90%; /* O SVG ocupa 90% da largura do contêiner */
+    height: auto; /* A altura é automática para manter a proporção */
 }
 
 
@@ -289,8 +299,17 @@ nav {
     #cadastrar {
         padding: 5px 10px; /* Reduzir o padding em telas menores */
         font-size: 9px; /* Ajusta o tamanho da fonte */
-        width: 40%;
+        width: 45%;
         box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    }
+
+    .titulo {
+        font-size: 10em; /* Tamanho do título em telas menores */
+        margin-top: 0px; /* Diminui a margem superior em telas pequenas */
+    }
+
+    .subtitulo {
+        font-size: 20em; /* Tamanho do subtítulo em telas menores */
     }
 
     #agendar {
@@ -300,35 +319,19 @@ nav {
         box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
     }
 
-    .titulo {
-        font-size: 10em; /* Tamanho do título em telas menores */
-        margin-top: 1px; /* Diminui a margem superior em telas pequenas */
-    }
-
-    .subtitulo {
-        font-size: 20em; /* Tamanho do subtítulo em telas menores */
-    }
-
     .main-content {
-        padding: 20px; /* Reduzir padding em telas menores */
-        margin-top: 20px; /* Ajusta a margem superior */
+        padding: 30px; /* Reduzir padding em telas menores */
+        margin-top: 0px; /* Ajusta a margem superior */
     }
 
     #main-image {
-        width: 140%;
-        max-width: 2000%;
+        width: 130%;
+        max-width: 1000%;
         height: auto;
         margin: 60px 0;
     }
-
-    .grid-item {
-        flex: 1 2 calc(100% - 40px); /* Um item por linha em telas menores */
-        margin: 20px; /* Reduzir o espaço entre os itens */
-        padding: 10px; /* Reduzir o preenchimento */
-    }
-
     .hamburger {
-        margin-left: 5px; /* Ajustar espaço da hamburguer em telas menores */
+        margin-left: 8px; /* Ajustar espaço da hamburguer em telas menores */
     }
 
     .modal {
@@ -339,12 +342,20 @@ nav {
         display: block; /* Exibe como bloco, forçando a quebra de linha */
         font-size: 1em; /* Tamanho do texto menor */
     }
+    
     .calendar-integration {
-        font-size: 3rem; /* Tamanho maior para o título */
-        font-weight: 600;
-        color: #000;
-        margin-bottom: 30px;
-        text-align: left; /* Centraliza o texto */
+        padding: 30px; /* Reduz o padding em telas menores */
+        flex-direction: column; /* Alinha os elementos verticalmente */
+        margin-top: 0px;
+        margin-left: 0px;
+        align-items: start; /* Centraliza os itens horizontalmente */
+    }
+
+    .calendar-integration h2 {
+        font-size: 2rem; /* Reduz o tamanho da fonte do título */
+        text-align: start; /* Centraliza o texto do título */
+        margin-top: 0px;
+        margin-bottom: 0px; /* Adiciona espaço abaixo do título */
     }
 }
 
