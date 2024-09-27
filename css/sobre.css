@@ -1,0 +1,250 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do Body */
+body {
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ffffff, #87cae0);
+}
+
+/* Seção principal */
+section.container {
+    background-color: #fff;
+    border-radius: 28px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+h2 {
+    color: #000000;
+    margin-top: 81px;
+    margin-left: 20px;
+}
+
+/* Estilo das imagens */
+.img-fluid {
+    border-radius: 8px;
+    width: 700px;
+    height: auto;
+}
+
+.texto1 {
+    width: 500px;
+    margin-left: 20px;
+    margin-top: 50px;
+    text-align: left;
+}
+
+.texto2 {
+    margin-top: 40px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.icone-escola {
+    font-size: 40px;
+    color: #478ac9;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 30px;
+}
+
+.escola {
+    border-left: 1px;
+    color: #000000;
+    margin: 0;
+}
+
+/* Estilo para o ícone e o texto da localização */
+.icone-localizacao {
+    font-size: 40px;
+    color: #478ac9;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.loc {
+    color: #000000;
+    margin: 0;
+}
+
+/* Alinhamento dos ícones e texto */
+.d-flex {
+    align-items: center;
+}
+
+/* Ícones do Font Awesome */
+.d-flex i {
+    width: 55px;
+}
+
+/* Estilo do texto da informação */
+.d-flex p {
+    margin-left: 10px;
+    color: #555;
+}
+
+/* Espaçamento entre as colunas */
+.row {
+    margin-bottom: 22px;
+}
+
+/* Ajuste de margens e fontes */
+.mb-3 {
+    margin-bottom: 15px;
+}
+
+.mt-4 {
+    margin-top: 20px;
+}
+
+/* Estilo adicional para a descrição */
+p {
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Estilo do botão flutuante */
+.btn-flutuante {
+    position: fixed;
+    bottom: 20px; /* Distância da parte inferior da tela */
+    right: 20px; /* Distância da parte direita da tela */
+    background-color: #478ac9; /* Cor de fundo */
+    color: rgb(255, 255, 255); /* Cor do ícone */
+    border: none; /* Sem borda */
+    border-radius: 50%; /* Botão redondo */
+    width: 50px; /* Largura do botão */
+    height: 50px; /* Altura do botão */
+    display: flex; /* Usar flexbox para centralizar o ícone */
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center; /* Centralizar verticalmente */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    text-decoration: none; /* Sem sublinhado */
+    transition: background-color 0.3s; /* Efeito de transição */
+}
+
+.btn-flutuante:hover {
+    background-color: #f3f8fd; /* Cor de fundo ao passar o mouse */
+}
+/* Media Queries */
+@media (max-width: 768px) {
+
+    body {
+    overflow-x: hidden;    
+    width: 450px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+    /* Para dispositivos com largura de até 768px */
+    section.container {
+        width: 100%;
+        margin: 0;
+        padding: 10px; /* Reduzir o preenchimento do container */
+        border-radius: 30px; /* Reduzir o raio da borda */
+    }
+
+    .row {
+        margin: 0;
+        margin-left: 0;
+        margin-right: 0;
+        box-shadow: none;
+    }
+    h2 {
+        margin-top: 30px; /* Reduzir margem superior */
+        margin-left: 30px; /* Ajustar margem esquerda */
+        font-size: 1.3rem; /* Diminuir o tamanho da fonte */
+    }
+
+    .texto1 {
+        width: 450px;
+        margin-left: 100px; /* Ajustar margem esquerda */
+        font-size: 12px; /* Diminuir o tamanho da fonte */
+    }
+    
+    .texto2 {
+        width: 500px;
+        margin-left: 30px; /* Ajustar margem esquerda */
+        font-size: 1px; /* Diminuir o tamanho da fonte */
+    }
+
+    .img-fluid {
+        width: 100%; /* Garantir que a imagem ocupe 100% da largura */
+        height: auto;
+        max-height: 300px; /* Definir uma altura máxima para a imagem */
+        object-fit: contain; /* Cobrir o espaço sem distorcer a imagem */
+    }
+
+    .d-flex {
+        flex-direction: column; /* Empilhar ícone e texto em coluna */
+        align-items: flex-start; /* Alinhar à esquerda */
+    }
+
+    .d-flex i {
+        margin-bottom: 15px; /* Espaçamento inferior entre ícone e texto */
+    }
+
+    .icone-escola {
+        margin-top: 0px;
+        bottom: 1px;
+    }
+
+    .icone-localizacao {
+        margin-left: 40px;
+    }
+
+    .escola {
+        width: 400px;
+        margin-left: 110px;
+    }
+
+    .loc {
+        width: 300px;
+        margin-left: 110px;
+    }
+
+    .btn-flutuante {
+        width: 45px; /* Largura do botão */
+        height: 45px; /* Altura do botão */
+        bottom: 300px; /* Distância da parte inferior da tela */
+        right: 80px; /* Distância da parte direita da tela */
+        display: flex; /* Usar flexbox para centralizar o ícone */
+    }
+
+    .col-md-6 {
+        padding: 0;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Para dispositivos com largura de até 576px */
+    section.container {
+        padding: 5px; /* Reduzir ainda mais o preenchimento do container */
+        border-radius: 15px; /* Reduzir ainda mais o raio da borda */
+    }
+
+    h2 {
+        font-size: 1.1rem; /* Diminuir ainda mais o tamanho da fonte */
+    }
+
+    .texto1, .texto2 {
+        font-size: 0.8rem; /* Diminuir o tamanho da fonte do texto */
+        margin-left: 5px; /* Ajustar margem esquerda */
+    }
+
+    .img-fluid {
+        max-height: 150px; /* Definir uma altura máxima para a imagem em telas menores */
+    }
+
+    .d-flex p {
+        margin-left: 5px; /* Ajustar margem para o texto */
+    }
+}
