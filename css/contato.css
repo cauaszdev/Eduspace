@@ -7,7 +7,7 @@ body {
     padding: 12em;
     overflow-x: hidden;
     height: 100px;
-    background: linear-gradient(to right, #ffffff, #87cae0);
+    background: linear-gradient(to right, #bec4c5, #ffffff);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,6 +17,8 @@ body {
 .contact-container {
     width: 100%;
     height: 100%;
+    border-radius: 20px;
+    box-shadow: 3px 0px 8px 4px rgba(0, 0, 0, 0.1);
 }
 
 .contact-card {
@@ -108,6 +110,7 @@ body {
     border-radius: 11px;
     padding: 10px;
     font-size: 14px;
+    resize: none;
 }
 
 input::placeholder, textarea::placeholder {
@@ -170,6 +173,10 @@ input::placeholder, textarea::placeholder {
 
 .back-btn:hover {
     color: white;
+}
+
+.textarea {
+    resize: none !important;
 }
 
 @media (max-width: 1024px) {

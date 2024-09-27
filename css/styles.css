@@ -226,7 +226,8 @@ nav {
   right: -70px;
   padding: 50px;
   padding-top: 125px;
-  background: #fff8f8;
+  background: #f8f8f8;
+  box-shadow: 0 0 11px 8px rgba(0, 0, 0, 0.1);
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   
