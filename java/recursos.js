@@ -21,13 +21,13 @@ $(document).ready(function() {
         '104': {
             title: 'Sala dos Chrome-Books',
             capacity: 'Capacidade: 35 alunos',
-            description: 'Sala ideal para aulas de até 35 alunos, com mesas em formato de U.',
+            description: 'Sala ideal para aulas de até 35 alunos, com assistência técnica.',
             features: ['Computadores Chromebook', 'Conectividade Wi-Fi', 'Suporte técnico']
         },
         '105': {
             title: 'Sala Multimidía',
             capacity: 'Capacidade: 20 alunos',
-            description: 'Sala ideal para aulas de até 20 alunos, com materiais didáticos disponíveis.',
+            description: 'Sala ideal para aulas de até 20 alunos, ideial para pequenas apresentações.',
             features: ['Televisão', 'Conexão Wi-Fi', 'Ambiente silencioso']
         }
     };
