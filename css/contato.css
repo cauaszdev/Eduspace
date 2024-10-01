@@ -12,6 +12,27 @@ body {
   margin: 0;
 }
 
+body, html {
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  overflow-x: hidden;
+  background-image: linear-gradient(to left, white, #cbe7f1, white);
+  background-size: 500% 100%;
+  animation: degrade-animado 10s infinite alternate;
+}
+
+@keyframes degrade-animado {
+  0% {
+      background-position-x: 0%;
+  }
+  100% {
+      background-position-x: 100%;
+  }
+}
+
 .wk-desk-1 {
   width: 8.333333%;
 }

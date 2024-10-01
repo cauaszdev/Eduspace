@@ -5,6 +5,18 @@ body, html {
     padding: 0;
     min-height: 100%;
     overflow-x: hidden;
+    background-image: linear-gradient(to left, white, #cbe7f1, white);
+    background-size: 500% 100%;
+    animation: degrade-animado 5s infinite alternate;
+}
+
+@keyframes degrade-animado {
+    0% {
+        background-position-x: 0%;
+    }
+    100% {
+        background-position-x: 100%;
+    }
 }
 
 header {
@@ -226,8 +238,7 @@ nav {
   right: -70px;
   padding: 50px;
   padding-top: 125px;
-  background: #f8f8f8;
-  box-shadow: 0 0 11px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 11px 8px rgba(255, 255, 255, 0.966);
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   
@@ -316,7 +327,6 @@ nav {
     align-items: flex-start; /* Alinha os itens no início */
     justify-content: flex-start;
     padding: 100px;
-    background-color: #fff;
     color: #000;
     width: 50%;
     max-width: 800px;

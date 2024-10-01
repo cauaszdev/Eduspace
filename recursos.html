@@ -1,71 +1,92 @@
-<link rel="stylesheet" href="css/recursos.css">
-<div class="responsive-container-block Container">
-  <div class="imgContainer">
-    <img class="backgroundImage" src="img/calendario.png" alt="Descrição da Imagem de Fundo">
-  </div>
-  <div class="responsive-container-block textSide">
-    <p class="text-blk heading">
-      Recursos
-    </p>
-    <p class="text-blk subHeading">
-      Na Eduspace, entendemos que uma gestão eficiente do espaço escolar requer uma gama de ferramentas e funcionalidades que atendam às necessidades variadas de nossos usuários. Por isso, nossa plataforma é repleta de recursos projetados para facilitar o agendamento e maximizar a utilização das salas no CEAAT.
-    </p>
-    <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
-      <div class="cardImgContainer">
-        <img class="cardImg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/id2.svg">
-      </div>
-      <div class="cardText">
-        <p class="text-blk cardHeading">
-          Sala dos ChromeBooks
-        </p>
-        <p class="text-blk cardSubHeading">
-          Ambiente dedicado ao uso de Chromebooks, facilitando o aprendizado digital e a autonomia dos alunos.
-        </p>
-      </div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Salas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/recursos.css">
+</head>
+<body>
+
+    <header class="text-center py-5">
+        <h1 class="display-4">Salas Disponíveis</h1>
+        <p class="lead">Descubra as salas disponíveis para agendamento.</p>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card shadow-sm" data-sala="101">
+                    <img src="img/info.jpg" alt="Sala 101" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Laboratório de Informática</h5>
+                        <p>Capacidade: 30 alunos</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card shadow-sm" data-sala="102">
+                    <img src="img/quimica.jpeg" alt="Sala 102" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Laboratório de Quimíca</h5>
+                        <p>Capacidade: 25 alunos</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card shadow-sm" data-sala="103">
+                    <img src="img/audi.jpeg" alt="Sala 103" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Auditório</h5>
+                        <p>Capacidade: 40 alunos</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card shadow-sm" data-sala="104">
+                    <img src="img/chrome.jpg" alt="Sala 104" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Sala dos Chrome-Books</h5>
+                        <p>Capacidade: 35 alunos</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card shadow-sm" data-sala="105">
+                    <img src="img/multi.jpg" alt="Sala 105" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Sala Multimidía</h5>
+                        <p>Capacidade: 20 alunos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
-      <div class="cardImgContainer">
-        <img class="cardImg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/id2.svg">
-      </div>
-      <div class="cardText">
-        <p class="text-blk cardHeading">
-          Laboratório de Química
-        </p>
-        <p class="text-blk cardSubHeading">
-          Espaço prático para experimentos e aprendizado interativo das ciências químicas, com supervisão de professores.
-        </p>
-      </div>
+
+    <!-- Modal de Detalhes da Sala -->
+    <div id="modal-sala" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-titulo"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="sala-informacoes">
+                    <!-- Informações da sala aparecerão aqui -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
-      <div class="cardImgContainer">
-        <img class="cardImg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/id2.svg">
-      </div>
-      <div class="cardText">
-        <p class="text-blk cardHeading">
-          Laboratório de Informática
-        </p>
-        <p class="text-blk cardSubHeading">
-          Ambiente moderno com computadores de última geração, promovendo o desenvolvimento de habilidades tecnológicas essenciais.
-        </p>
-      </div>
-    </div>
-    <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
-      <div class="cardImgContainer">
-        <img class="cardImg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/id2.svg">
-      </div>
-      <div class="cardText">
-        <p class="text-blk cardHeading">
-          Auditório
-        </p>
-        <p class="text-blk cardSubHeading">
-          Espaço versátil para palestras e eventos culturais, favorecendo a interação e o aprendizado colaborativo.
-        </p>
-      </div>
-    </div>
-    <a>
-      <button class="explore">
-        Explore os serviços
-      </button>
-    </a>
-  </div>
-</div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="java/recursos.js"></script>
+</body>
+</html>

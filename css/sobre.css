@@ -2,6 +2,27 @@
     font-family: Nunito, sans-serif;
   }
   
+  body, html {
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    overflow-x: hidden;
+    background-image: linear-gradient(to left, white, #cbe7f1, white);
+    background-size: 500% 100%;
+    animation: degrade-animado 5s infinite alternate;
+}
+
+@keyframes degrade-animado {
+    0% {
+        background-position-x: 0%;
+    }
+    100% {
+        background-position-x: 100%;
+    }
+}
+
   .responsive-container-block {
     min-height: 75px;
     height: fit-content;
