@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastre-se</title>
-    <link rel="stylesheet" href="css/cadastro.css"> <!-- Certifique-se de ter o CSS em um arquivo chamado cadastro.css -->
+    <link rel="stylesheet" href="css/cadastro.css"> <!-- Certifique-se de que o CSS está no caminho correto -->
 </head>
 <body>
-    <div class="cadastro-container">
-        <img src="img/font.svg" alt="Logo"> <!-- Substitua pelo caminho da sua logo -->
+    <div class="cadastro-container"> 
+        <img src="img/font.svg" alt="Logo" class="logo"> <!-- Substitua pelo caminho da sua logo -->
         <h2>Cadastre-se</h2>
         <p>Preencha os dados abaixo para criar sua conta.</p>
-        <form action="cadastrar.php" method="POST">
+        <form action="php/cadastrar.php" method="POST"> <!-- O action deve apontar para o arquivo PHP -->
             <input type="text" name="nome" class="input-field" placeholder="Nome" required>
             <input type="email" name="email" class="input-field" placeholder="Email" required>
             <input type="password" name="senha" class="input-field" placeholder="Senha" required>
-            <button type="submit" class="cadastro-btn">Cadastrar</button>
+            <input type="submit" name="submit" class="cadastro-btn" value="Cadastrar"> <!-- Corrigi para 'value' -->
         </form>
         <a href="login.html" class="conta-btn">Já tenho uma conta</a>
     </div>

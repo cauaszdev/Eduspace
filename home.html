@@ -1,39 +1,85 @@
-<link rel="stylesheet" href="css/home.css">
-<nav role="navigation">
-    <img src="img/font.svg" alt="Logo" class="logo" id="logo">
-    <div class="nav-buttons">
-        <button id="conectar" onclick="window.location.href='login.html'">
-            Conecte-se <i class="fa-solid fa-right-to-bracket"></i>
-        </button>
-        <button id="cadastrar" onclick="window.location.href='cadastre-se.html'">
-            Cadastre-se <i class="fa-solid fa-user"></i>
-        </button>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Drop Down Sidebar Menu</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="sidebar close">
+    <ul class="nav-links">
+      <li>
+        <a href="#" onclick="showContent('calendarContent')">
+          <i class="fa-solid fa-calendar" style="color: #008bf5;"></i>
+          <span class="link_name">Calendário</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" onclick="showContent('reservationsContent')">
+          <i class="fa-solid fa-box-archive"></i>
+          <span class="link_name">Minhas Reservas</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" onclick="showContent('notificationsContent')">
+          <i class="fa-solid fa-bell"></i>
+          <span class="link_name">Notificações</span>
+        </a>
+      </li>
+      <li class="profile-item">
+        <a href="#" onclick="showContent('profileContent')">
+          <i class="fa-solid fa-user"></i>
+          <span class="link_name">Perfil</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" onclick="showContent('faqContent')">
+          <i class="fa-solid fa-question"></i>
+          <span class="link_name">FAQ</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+  <section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu'></i>
     </div>
-
-    <!-- Container do menu hambúrguer -->
-    <div id="menuToggle">
-        <input type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
-        <ul id="menu">
-            <a href="#"><li>Home</li></a>
-            <a href="#"><li>Sobre Nós</li></a>
-            <a href="#"><li>Recursos</li></a>
-            <a href="#"><li>Contato</li></a>
-            <a href="https://erikterwan.com/" target="_blank"><li>Show me more</li></a>
-        </ul>
-    </div>
-</nav>
-
-<div class="modal" id="modalMenu">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('modalMenu')">&times;</span>
-        <div class="menu-buttons">
-            <button onclick="toggleInfo('sobreNos')">Sobre Nós</button>
-            <button onclick="toggleInfo('recursos')">Recursos</button>
-            <button onclick="toggleInfo('contato')">Contato</button>
+    <div id="mainContent">
+      <div id="calendarContent" class="content-container">
+        <div class="search-container">
+          <i class="fa-solid fa-search"></i>
+          <input type="text" placeholder="Digite Aqui" />
         </div>
-        <div id="info" class="info-box"></div>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="img/agendando.jpg" alt="Descrição da imagem 1" style="width: 100%; height: auto;">
+            </div>
+            <div class="swiper-slide">
+              <img src="img/audi.jpeg" alt="Descrição da imagem 2" style="width: 100%; height: auto;">
+            </div>
+            <div class="swiper-slide">
+              <img src="img/tiktok.png" alt="Descrição da imagem 3" style="width: 100%; height: auto;">
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <div id="reservationsContent" class="content-container">Conteúdo de Minhas Reservas</div>
+      <div id="notificationsContent" class="content-container">Conteúdo de Notificações</div>
+      <div id="profileContent" class="content-container">Conteúdo do Perfil</div>
+      <div id="faqContent" class="content-container">Conteúdo do FAQ</div>
     </div>
-</div>
+  </section>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="java/home.js"></script>
+</body>
+</html>

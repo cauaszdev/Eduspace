@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Eduspace</title>
-    <link rel="stylesheet" href="css/login.css"> <!-- Certifique-se de que o arquivo CSS está na pasta correta -->
+    <link rel="stylesheet" href="css/login.css"> <!-- Certifique-se de que o CSS está no caminho correto -->
 </head>
 <body>
     <div class="login-container">
-        <img src="img/font.svg" alt="Eduspace"> <!-- Substitua pelo caminho da sua logo -->
+        <img src="img/font.svg" alt="Eduspace" class="logo"> <!-- Substitua pelo caminho da sua logo -->
         <h2>Entrar com e-mail</h2>
         <p>Simples, rápido e prático.</p>
-        <input type="email" class="input-field" placeholder="Email" required>
-        <input type="password" class="input-field" placeholder="Senha" required>
-        <button class="login-btn">Entrar</button>
-        <a href="index.html" class="back-btn">Voltar</a>
+        <form action="login.php" method="POST"> <!-- Certifique-se de que o PHP está correto -->
+            <input type="email" name="email" class="input-field" placeholder="Email" required>
+            <input type="password" name="senha" class="input-field" placeholder="Senha" required>
+            <button type="submit" class="login-btn">Entrar</button>
+        </form>
         <a href="redefinir.html" class="forgot-password">Esqueci minha senha</a>
     </div>
 </body>

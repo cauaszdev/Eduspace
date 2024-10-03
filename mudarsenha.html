@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redefinir Senha</title>
+    <link rel="stylesheet" href="css/mudarsenha.css"> <!-- Certifique-se de ter o CSS -->
+</head>
+<body>
+    <div class="container">
+        <h2>Redefinir Senha</h2>
+        <form action="atualizar_senha.php" method="POST">
+            <input type="hidden" name="token" value="<?php echo $_GET['token']; ?>">
+            <input type="password" name="nova_senha" placeholder="Nova Senha" required>
+            <button type="submit">Atualizar Senha</button>
+        </form>
+    </div>
+</body>
+</html>
