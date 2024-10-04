@@ -11,18 +11,9 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 16px; /* Estilo padrão para desktops */
-}
-
-body, html {
-    font-family: 'Inter', sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-    overflow-x: hidden;
-    background-image: linear-gradient(to left, white, #cbe7f1, white);
+    background-image: linear-gradient(to left, white, #0a2549, white);
     background-size: 500% 100%;
-    animation: degrade-animado 5s infinite alternate;
+    animation: degrade-animado 7s infinite alternate;
 }
 
 @keyframes degrade-animado {
@@ -33,23 +24,66 @@ body, html {
         background-position-x: 100%;
     }
 }
+body, html {
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    overflow-x: hidden;
+   z-index: 1;
+}
+
+.vectors {
+    position: absolute;
+    width: 820px;
+    height: 526px;
+    top: 311px;
+    left: 121px;
+    filter: blur(210px);
+    z-index: -1;
+    background: linear-gradient(135deg, 
+    rgb(0, 38, 255) 34%,
+    rgb(255, 0, 0) 70%,     /* Azul (cima direita) */
+    rgb(251, 255, 0) 68%  /* Amarelo (cima esquerda) */
+     /* Vermelho (baixo direita) */
+)}
 
 .login-container {
     background-color: white;
-    padding: 40px 60px;
+    padding: 20px 60px;
     border-radius: 20px;
     box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 350px;
+    width: 490px;
+    height: 640px;
 }
 
 .login-container img {
-    width: 150px;
-    margin-bottom: 20px;
+    width: 210px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+.emailtext {
+    position: relative;
+    right: 160px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 17px;
+}
+
+.senhatext {
+    position: relative;
+    right: 160px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    font-size: 17px;
 }
 
 h2 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 40px;
     font-size: 24px;
 }
 
@@ -60,10 +94,10 @@ p {
 
 .input-field {
     width: 100%;
-    padding: 15px;
+    padding: 9px;
     margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    border-radius: 13px;
+    border: 1px solid #000000;
     font-size: 16px;
 }
 
@@ -77,10 +111,10 @@ p {
     background-color: #007BFF;
     color: white;
     border: none;
-    border-radius: 55px;
+    border-radius: 30px;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 80px;
     margin-bottom: 11px;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
     transition: all 0.3s;
@@ -93,6 +127,9 @@ p {
   }
 
 .forgot-password {
+    position: relative;
+    left: 102px;
+    bottom: 151px;
     display: block;
     margin-top: 15px;
     color: #888;
