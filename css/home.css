@@ -1,5 +1,7 @@
 /* Google Fonts Import Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -10,14 +12,14 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
   width: 260px;
   background: #ffffff;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
   z-index: 100;
   transition: all 0.5s ease;
-  border-radius: 20px;
+  border-radius: 20px 30px 30px 20px;
 }
+
 .sidebar.close{
   width: 78px;
 }
@@ -55,7 +57,7 @@
   min-width: 78px;
   text-align: center;
   line-height: 50px;
-  color: #007BFF;
+  color: #39434d;
   font-size: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -74,7 +76,7 @@
 .sidebar .nav-links li a .link_name {
   font-size: 18px;
   font-weight: 400;
-  color: #007BFF;
+  color: #3f4750;
   transition: all 0.4s ease;
 }
 .sidebar.close .nav-links li a .link_name {
@@ -142,7 +144,7 @@
   margin: 10px 0;
 }
 .nav-links li.profile-item {
-  margin-top: 420px;
+  margin-top: 510px;
 }
 .home-section{
   position: relative;
@@ -184,6 +186,236 @@
     display: block;
   }
 
+  .notification-panel {
+    position: fixed;
+    top: 180px; /* Ajuste a posição vertical conforme necessário */
+    left: -400px; /* Inicialmente escondido à esquerda */
+    width: 400px; /* Largura total da notificação */
+    height: 402px; /* Altura ajustável */
+    background: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Mudado para sombra à direita */
+    transition: left 0.5s ease, height 0.5s ease; /* Animação suave */
+    z-index: 200;
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow-y: auto; /* Permite rolagem se necessário */
+  }
+  
+  .notification-panel.active {
+    top: 210px;
+    left: 80px; /* Ajuste para a posição quando visível */
+      display: block; /* Torna o modal visível quando a classe 'active' é adicionada */
+  }
+  
+
+  .notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #ffffff; /* Cor de fundo do cabeçalho */
+    color: white;
+    border-radius: 10px 0 0 0; /* Arredondar o canto superior */
+  }
+
+  .notification-header h3 {
+    color: #000;
+    margin-top: 10px; /* Remove margens */
+    margin-left: 30px;
+    font-size: 20px; /* Tamanho da fonte */
+    text-align: left; /* Centraliza o texto, se necessário */
+}
+  
+  .notification-content {
+    padding: 10px;
+    margin-top: 20px;
+  }
+
+ .notification-header button {
+    background: transparent; /* Fundo transparente */
+    border: none; /* Remove a borda */
+    color: #8799ac; /* Cor do texto */
+    font-size: 22px; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    transition: color 0.3s ease; /* Transição suave para a cor */
+    margin-top: 0px;
+    margin-right: 20px;
+}
+  
+  .notification-header button:hover {
+    color: #ff0000; /* Cor ao passar o mouse */
+  }
+
+  .notification-icon {
+    margin-top: 40px;
+    text-align: center; /* Centraliza o ícone e o texto */
+}
+
+.notification-icon i {
+    font-size: 120px; /* Tamanho do ícone do sino */
+    color: #3e6186; /* Cor do ícone */
+}
+
+.notification-icon p {
+    margin-top: 10px; /* Espaçamento entre o ícone e o texto */
+    color: #333; /* Cor do texto */
+    font-size: 16px; /* Tamanho do texto */
+}
+
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.notification-count {
+  position: fixed;
+  top: 167px;
+  right: 1853px;
+  background-color: red;
+  color: white;
+  border-radius: 50px;
+  padding: 3px;
+  font-size: 9px;
+  display: inline-block;
+  min-width: 23px;
+  text-align: center;
+  z-index: 1111;
+}
+
+.notification-list {
+  padding: 0; /* Remove o preenchimento */
+  margin: 0; /* Remove a margem */
+  list-style: none; /* Remove marcadores de lista */
+}
+
+#notification-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ff0000;
+}
+
+.notification-header1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.btn-clear {
+  position: relative;
+  top: -10px;
+
+  background: transparent;
+  border: none;
+  color: #007bff;
+  font-size: 12px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.btn-clear:hover {
+  color: #ff0000;
+}
+
+.notification-list {
+  padding: 10px;
+}
+
+.notification-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  animation: slideIn 0.3s ease;
+}
+
+.notification-item:hover {
+  background-color: #f9f9f9;
+}
+
+.thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.notification-content {
+  flex-grow: 1;
+}
+
+.notification-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+  color: #000000;
+}
+
+.notification-description {
+  font-size: 12px; /* Tamanho da fonte */
+  color: #000000; /* Cor do texto */
+  margin: 5px 0 0; /* Margens superior e inferior */
+  max-width: 90%; /* Define a largura máxima para 80% do contêiner pai */
+  line-height: 1.2; /* Ajusta o espaçamento entre linhas */
+}
+.notification-time {
+  font-size: 10px;
+  color: #999;
+}
+
+.notification-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.btn-action {
+  background: transparent;
+  border: none;
+  color: #555;
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.2s;
+}
+
+.btn-action:hover {
+  color: #007bff;
+}
+
+@keyframes slideIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+
+.divider {
+  border: none; /* Remove a borda padrão */
+  border-top: 2px solid #ddd; /* Linha acima dos elementos */
+  margin: 10px auto; /* Margem superior e inferior de 10px, centralizando horizontalmente */
+  width: 70%; /* Ajuste a largura total conforme necessário (80% é um exemplo) */
+}
+
+.divider1 {
+  position: relative;
+  top: 20px;
+  border: none; /* Remove a borda padrão */
+  border-top: 2px solid #ddd; /* Linha acima dos elementos */
+  margin: 10px auto; /* Margem superior e inferior de 10px, centralizando horizontalmente */
+  width: 70%; /* Ajuste a largura total conforme necessário (80% é um exemplo) */
+}
+
+.divider2 {
+  border: none; /* Remove a borda padrão */
+  border-top: 2px solid #ddd; /* Linha acima dos elementos */
+  margin: 0px auto; /* Margem superior e inferior de 10px, centralizando horizontalmente */
+  width: 70%; /* Ajuste a largura total conforme necessário (80% é um exemplo) */
+}
+
   .search-container {
     position: relative;
     bottom: 20px;
@@ -223,7 +455,330 @@
     background: #34d6f3; /* Cor de fundo para os slides */
   }
   
+ 
   
+  /* Estilo da seção de Salas Disponíveis */
+  .salas-disponiveis {
+    position: relative;
+    right: -53px;
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 20px;
+    padding-right: 150px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block; /* Ajusta ao tamanho do conteúdo */
+    max-width: 100%; /* Evita que cresça além do necessário */
+    margin-top: 100px; /* Centraliza, se necessário */
+}
+  
+  .salas-disponiveis h3 {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .salas-disponiveis ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .salas-disponiveis li {
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+  
+  .ver-mais, .esconder {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  
+  /* Estilo da imagem do calendário */
+  .imagem-calendario {
+    position: relative;
+    top: -240px;
+    left: 1200px; 
+    height: 300px; 
+    margin-top: -10px; 
+  
+  }
+ 
+
+  /* Perfil */
+
+  .profile-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 100px;
+    position: relative;
+  }
+  
+  /* Imagem de perfil */
+  .profile-img {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    border-radius: 50%;
+    padding: 10px;
+  }
+  
+  /* Conteúdo do perfil */
+  .profile-content {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Ações do perfil */
+  .profile-actions button {
+    min-width: 120px;
+  }
+  
+  /* Card de disciplinas */
+  .disciplines-card {
+    background-color: #e3f2fd;
+    border-radius: 10px;
+  }
+  
+  /* Formulário de senha */
+  .password-form input {
+    border-radius: 5px;
+  }
+  
+  .password-form button {
+    border-radius: 5px;
+  }
+
+  
+
+/* FAQ Section Styles */
+.faq-section {
+  background: #fdfdfd;
+  min-height: 100vh;
+  padding: 0 0 0; /* Sem padding superior */
+}
+
+/* FAQ Title */
+.faq-title {
+  text-align: center;
+  padding-bottom: 45px;
+}
+
+.faq-title h2 {
+  position: relative;
+  margin-bottom: 45px;
+  display: inline-block;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.faq-title h2::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 60px;
+  height: 2px;
+  background: #007BFF;
+  bottom: -25px;
+  margin-left: -30px;
+}
+
+/* FAQ List */
+.faq {
+  background: #FFFFFF;
+  box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+}
+
+.faq .card {
+  border: none;
+  background: none;
+  border-bottom: 1px dashed #CEE1F8;
+}
+
+.faq .card .card-header {
+  padding: 0;
+  border: none;
+  background: none;
+  transition: all 0.3s ease;
+}
+
+.faq .card .card-header:hover {
+  background: rgba(30, 169, 233, 0.1);
+  padding-left: 10px;
+}
+
+/* FAQ Title within Card */
+.faq .card .card-header .faq-title {
+  width: 100%;
+  text-align: left;
+  padding: 20px 30px; /* Combined padding */
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #3B566E;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* FAQ Badge */
+.faq .card .card-header .faq-title .badge {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 14px;
+  border-radius: 100px;
+  text-align: center;
+  background: #007BFF;
+  color: #fff;
+  font-size: 12px;
+  margin-right: 20px;
+}
+
+/* FAQ Body */
+.faq .card .card-body {
+  padding: 30px 35px 16px; /* Combined padding */
+  font-weight: 400;
+  font-size: 16px;
+  color: #6F8BA4;
+  line-height: 28px;
+  letter-spacing: 1px;
+  border-top: 1px solid #F3F8FF;
+}
+
+.faq .card .card-body p {
+  margin-bottom: 14px;
+}
+
+
+  
+@media (max-width: 991px) {
+  .faq {
+    margin-bottom: 30px;
+  }
+  .faq .card .card-header .faq-title {
+    line-height: 26px;
+    margin-top: 10px;
+  }
+}
+
+
+
+/* Ajustes para Tela Pequena */
+@media (max-width: 900px) {
+  /* Sidebar */
+  .sidebar {
+    width: 200px; /* Ajusta largura para telas pequenas */
+  }
+  
+  .sidebar.close {
+    width: 50px; /* Ajusta largura da sidebar fechada */
+  }
+
+  /* Home Section */
+  .home-section {
+    left: 200px; /* Ajusta posição */
+    width: calc(100% - 200px); /* Ajusta largura */
+  }
+
+  .sidebar.close ~ .home-section {
+    left: 50px; /* Ajusta posição da home section */
+    width: calc(100% - 50px); /* Ajusta largura */
+  }
+
+  /* Notificação */
+  .notification-panel {
+    width: 300px; /* Ajusta largura da notificação */
+  }
+}  
+  
+
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Largura da sidebar para dispositivos menores */
+  }
+
+  .sidebar.close {
+    width: 60px; /* Largura da sidebar fechada para dispositivos menores */
+  }
+
+  .home-section {
+    left: 200px; /* Ajusta a posição da seção principal */
+    width: calc(100% - 200px); /* Ajusta largura da seção principal */
+  }
+
+  .sidebar.close ~ .home-section {
+    left: 60px; /* Ajusta posição quando sidebar está fechada */
+    width: calc(100% - 60px); /* Ajusta largura quando sidebar está fechada */
+  }
+
+  .notification-panel {
+    width: 300px; /* Largura da notificação para dispositivos menores */
+    height: 350px; /* Altura da notificação para dispositivos menores */
+  }
+
+
+
+
+
+
+
+
+  .salas-disponiveis {
+    padding-right: 30px; /* Ajusta o padding para dispositivos menores */
+    margin-top: 50px; /* Reduz a margem superior */
+    right: 0; /* Reseta o deslocamento para o lado */
+}
+
+.salas-disponiveis h3 {
+    font-size: 18px; /* Ajusta o tamanho da fonte do título */
+}
+
+.salas-disponiveis li {
+    font-size: 14px; /* Ajusta o tamanho da fonte dos itens da lista */
+}
+
+.imagem-calendario {
+    top: -120px; /* Ajusta a posição vertical da imagem */
+    left: 0; /* Reseta a posição horizontal da imagem */
+    height: 200px; /* Ajusta a altura da imagem */
+}
+}
+
+
+
+
+
+
+@media (max-width: 576px) {
+  .sidebar {
+    width: 100%; /* Largura total para telas pequenas */
+  }
+
+  .sidebar.close {
+    width: 70px; /* Largura da sidebar fechada para telas pequenas */
+  }
+
+  .home-section {
+    left: 0; /* Ajusta a posição da seção principal */
+    width: 100%; /* Largura total da seção principal */
+  }
+
+  .notification-panel {
+    width: 90%; /* Largura da notificação para telas pequenas */
+    height: 250px; /* Altura da notificação para telas pequenas */
+    left: 5%; /* Centraliza horizontalmente */
+  }
+}
+
 @media (max-width: 400px) {
   .sidebar.close .nav-links li .sub-menu{
     display: none;
