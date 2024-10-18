@@ -83,6 +83,28 @@
           <div class="swiper-button-prev"></div>
           <div class="swiper-pagination"></div>
         </div>
+        <div class="salas-calendario-container">
+            <!-- Seção de Salas Disponíveis -->
+            <div class="salas-disponiveis">
+              <h3>Salas disponíveis</h3>
+              <ul class="lista-salas">
+                <li>Sala Chromebook</li>
+                <li>Sala de Dança</li>
+                <li>Laboratório</li>
+                <li>Auditório</li>
+                <!-- Salas extras, inicialmente escondidas -->
+                <li class="extra-salas" style="display: none;">Laboratório de Química</li>
+                <li class="extra-salas" style="display: none;">Sala de Computação</li>
+              </ul>
+              <a href="#" class="ver-mais" onclick="mostrarSalas(event)">Ver mais</a>
+              <a href="#" class="esconder" style="display: none;" onclick="esconderSalas(event)">Esconder</a>
+            </div>
+          
+            <!-- Seção de Calendário -->
+            <div class="calendario-card">
+              <img src="img/calendariohome.jfif" alt="Calendário" class="imagem-calendario">
+            </div>
+          </div>
       </div>
 
 
@@ -139,7 +161,46 @@
 
 
       
-      <div id="profileContent" class="content-container">Conteúdo do Perfil</div>
+      <div id="profileContent" class="content-container">
+        <main class="profile-container">
+            <div class="profile-img">
+              <i class="fas fa-user-circle fa-7x"></i>
+            </div>
+          
+            <div class="profile-content p-4">
+              <h3 class="text-center">Professor</h3>
+              <p class="text-muted text-center">Professor@professor.enova.educacao.gov.br</p>
+          
+              <div class="profile-actions d-flex justify-content-end gap-2">
+                <button class="btn btn-secondary">Carregar foto</button>
+                <button class="btn btn-danger">Excluir</button>
+              </div>
+          
+              <div class="disciplines-card mt-4 p-3">
+                <h5>Disciplinas ensinadas:</h5>
+                <textarea class="form-control" rows="3" disabled></textarea>
+              </div>
+          
+              <h5 class="mt-4">Trocar Senha</h5>
+              <form class="password-form">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <input type="password" class="form-control" placeholder="Senha anterior" required>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="password" class="form-control" placeholder="Nova senha" required>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="password" class="form-control" placeholder="Confirme nova senha" required>
+                  </div>
+                  <div class="col-md-6 d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary w-100">Alterar Senha</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </main>
+      </div>
       
 
 
