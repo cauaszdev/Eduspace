@@ -1,0 +1,102 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333; /* Cor do texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda a altura da tela */
+    background-image: linear-gradient(to left, white, #0a2549, white);
+    background-size: 500% 100%;
+    animation: degrade-animado 7s infinite alternate;
+}
+
+@keyframes degrade-animado {
+    0% {
+        background-position-x: 0%;
+    }
+    100% {
+        background-position-x: 100%;
+    }
+}
+
+.container {
+    background-color: white;
+    padding: 20px 60px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 390px;
+    height: 490px;
+}
+
+.container img {
+    width: 210px;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    margin-top: 40px;
+    font-size: 24px;
+}
+
+p {
+    margin-bottom: 50px; /* Espaçamento abaixo do parágrafo */
+    font-size: 14px; /* Tamanho da fonte do parágrafo */
+    color: #666; /* Cor do texto do parágrafo */
+}
+
+input[type="email"], input[type="password"] {
+    width: 100%; /* Largura total */
+    padding: 10px; /* Espaçamento interno */
+    margin-bottom: 50px; /* Espaçamento abaixo dos campos */
+    border: 1px solid #ccc; /* Borda cinza clara */
+    border-radius: 13px; /* Bordas arredondadas */
+    font-size: 14px; /* Tamanho da fonte */
+}
+
+input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #007BFF; /* Cor da borda quando focado */
+    outline: none; /* Remove contorno padrão */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra ao focar */
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 0px;
+    margin-bottom: 11px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: #0aa8e6;
+    color: #000;
+    box-shadow: 0 0 20px #0aa8e6, 0 0 40px #0aa8e6, 0 0 70px #0aa8e6;
+  }
+
+a {
+    color: #007BFF; /* Cor do link */
+    text-decoration: none; /* Remove sublinhado */
+    font-size: 14px; /* Tamanho da fonte */
+}
+
+a:hover {
+    text-decoration: underline; /* Sublinha ao passar o mouse */
+}
+
