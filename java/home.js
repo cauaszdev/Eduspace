@@ -172,5 +172,27 @@ document.getElementById("mark-read").addEventListener("click", function() {
   this.style.display = "none"; // Oculta o botão após marcar como lidas
 });
 
+function mostrarSalas(event) {
+  event.preventDefault();
+  // Exibir salas adicionais
+  const salasExtras = document.querySelectorAll('.extra-salas');
+  salasExtras.forEach(sala => sala.style.display = 'list-item');
+  
+  // Esconder o botão "Ver mais" e mostrar o botão "Esconder"
+  document.querySelector('.ver-mais').style.display = 'none';
+  document.querySelector('.esconder').style.display = 'block';
+}
+
+function esconderSalas(event) {
+  event.preventDefault();
+  // Ocultar salas adicionais
+  const salasExtras = document.querySelectorAll('.extra-salas');
+  salasExtras.forEach(sala => sala.style.display = 'none');
+  
+  // Mostrar o botão "Ver mais" e esconder o botão "Esconder"
+  document.querySelector('.ver-mais').style.display = 'block';
+  document.querySelector('.esconder').style.display = 'none';
+}
+
 
 
