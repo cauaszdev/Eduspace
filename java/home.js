@@ -13,12 +13,6 @@ function showContent(contentId) {
   }
 }
 
-let sidebar = document.querySelector(".sidebar");
-let sidebarBtn = document.querySelector(".bx-menu");
-sidebarBtn.addEventListener("click", () => {
-  sidebar.classList.toggle("close");
-});
-
 // Inicializando Swiper
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
@@ -33,6 +27,14 @@ var swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+
+
+
+
+
+
+
 
 function showNotifications() {
   document.getElementById('notificationsContent').classList.add('active');
@@ -193,6 +195,188 @@ function esconderSalas(event) {
   document.querySelector('.ver-mais').style.display = 'block';
   document.querySelector('.esconder').style.display = 'none';
 }
+
+function showInfo(type) {
+  const infoDisplay = document.getElementById('infoDisplay');
+  const infoText = document.getElementById('infoText');
+  const buttons = document.querySelectorAll('.info-button'); // Mantém a classe específica
+
+  // Remover a classe 'selected' de todos os botões
+  buttons.forEach(button => button.classList.remove('selected'));
+
+  // Adicionar a classe 'selected' ao botão clicado
+  const activeButton = Array.from(buttons).find(button => button.dataset.type === type); // Muda de innerText para data-type
+  if (activeButton) {
+      activeButton.classList.add('selected');
+  }
+
+  let content = '';
+
+  switch (type) {
+    case 'emAberto':
+        content = `
+            <div class="room">Laboratório de Química <span>22/10/2024</span></div>
+            <div class="separator"></div>
+            <div class="room">Sala Multimídia <span>23/10/2024</span></div>
+            <div class="separator"></div>
+        `;
+        break;
+    case 'finalizadas':
+        content = `
+            <div class="room">Auditório <span>21/10/2024</span></div>
+            <div class="separator"></div>
+            <div class="room">Laboratório de Física <span>20/10/2024</span></div>
+            <div class="separator"></div>
+        `;
+        break;
+    case 'verTodas':
+        content = `
+            <div class="room">Laboratório de Química <span>22/10/2024</span></div>
+            <div class="separator"></div>
+            <div class="room">Auditório <span>21/10/2024</span></div>
+            <div class="separator"></div>
+            <div class="room">Sala Multimídia <span>23/10/2024</span></div>
+            <div class="separator"></div>
+            <div class="room">Laboratório de Física <span>20/10/2024</span></div>
+            <div class="separator"></div>
+        `;
+        break;
+    default:
+        content = '';
+        break;
+  }
+
+  infoText.innerHTML = content; // Atualiza o conteúdo HTML
+  infoDisplay.style.display = 'block'; // Mostrar a área de informação
+}
+
+function mostrarInformacoes(sala) {
+  const informacoesSala = document.getElementById('informacoes-sala');
+  
+  // Limpa as informações anteriores
+  informacoesSala.innerHTML = '';
+
+  // Criação do conteúdo específico para cada sala
+  let swiperContent;
+  let infoContent;
+  let buttonContent;
+  switch(sala) {
+      case 'Sala Chromebook':
+          swiperContent = `
+              <div class="swiper swiper-chromebook">
+                  <div class="swiper-wrapper">
+                      <div class="swiper-slide"><img src="img/sala_chromebook1.jpg" alt="Sala Chromebook 1"></div>
+                      <div class="swiper-slide"><img src="img/sala_chromebook2.jpg" alt="Sala Chromebook 2"></div>
+                  </div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-pagination"></div>
+              </div>`;
+          infoContent = `
+              <p>Equipamentos: Computadores, projetores</p>
+              <p>Climatização: Sim</p>`;
+          buttonContent = `<button onclick="agendarSala('Sala Chromebook')">Agendar</button>`;
+          break;
+      case 'Sala de Dança':
+          swiperContent = `
+              <div class="swiper swiper-danca">
+                  <div class="swiper-wrapper">
+                      <div class="swiper-slide"><img src="img/ds.jpg" alt="Sala de Dança 1"></div>
+                      <div class="swiper-slide"><img src="img/sala_danca2.jpg" alt="Sala de Dança 2"></div>
+                  </div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-pagination"></div>
+              </div>`;
+          infoContent = `
+              <p>Equipamentos: Espelhos, som</p>
+              <p>Climatização: Sim</p>`;
+          buttonContent = `<button onclick="agendarSala('Sala de Dança')">Agendar</button>`;
+          break;
+      case 'Laboratório':
+          swiperContent = `
+              <div class="swiper swiper-laboratorio">
+                  <div class="swiper-wrapper">
+                      <div class="swiper-slide"><img src="img/laboratorio1.jpg" alt="Laboratório 1"></div>
+                      <div class="swiper-slide"><img src="img/laboratorio2.jpg" alt="Laboratório 2"></div>
+                  </div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-pagination"></div>
+              </div>`;
+          infoContent = `
+              <p>Equipamentos: Microscópios, reagentes</p>
+              <p>Climatização: Sim</p>`;
+          buttonContent = `<button onclick="agendarSala('Laboratório')">Agendar</button>`;
+          break;
+      case 'Auditório':
+          swiperContent = `
+              <div class="swiper swiper-auditorio">
+                  <div class="swiper-wrapper">
+                      <div class="swiper-slide"><img src="img/auditorio1.jpg" alt="Auditório 1"></div>
+                      <div class="swiper-slide"><img src="img/auditorio2.jpg" alt="Auditório 2"></div>
+                  </div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-pagination"></div>
+              </div>`;
+          infoContent = `
+              <p>Equipamentos: Som, luz</p>
+              <p>Climatização: Sim</p>`;
+          buttonContent = `<button onclick="agendarSala('Auditório')">Agendar</button>`;
+          break;
+      case 'Laboratório de Química':
+          swiperContent = `
+              <div class="swiper swiper-quimica">
+                  <div class="swiper-wrapper">
+                      <div class="swiper-slide"><img src="img/laboratorio_quimica1.jpg" alt="Laboratório de Química 1"></div>
+                      <div class="swiper-slide"><img src="img/laboratorio_quimica2.jpg" alt="Laboratório de Química 2"></div>
+                  </div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-pagination"></div>
+              </div>`;
+          infoContent = `
+              <p>Equipamentos: Reagentes, vidrarias</p>
+              <p>Climatização: Sim</p>`;
+          buttonContent = `<button onclick="agendarSala('Laboratório de Química')">Agendar</button>`;
+          break;
+      case 'Sala de Computação':
+          swiperContent = `
+              <div class="swiper swiper-computacao">
+                  <div class="swiper-wrapper">
+                      <div class="swiper-slide"><img src="img/sala_computacao1.jpg" alt="Sala de Computação 1"></div>
+                      <div class="swiper-slide"><img src="img/sala_computacao2.jpg" alt="Sala de Computação 2"></div>
+                  </div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-pagination"></div>
+              </div>`;
+          infoContent = `
+              <p>Equipamentos: Computadores, projetores</p>
+              <p>Climatização: Sim</p>`;
+          buttonContent = `<button onclick="agendarSala('Sala de Computação')">Agendar</button>`;
+          break;
+      default:
+          swiperContent = '';
+          infoContent = 'Selecione uma sala para ver as informações.';
+          buttonContent = '';
+  }
+
+  // Adiciona o conteúdo ao elemento informacoesSala
+  informacoesSala.innerHTML = `${swiperContent}<div>${infoContent}</div>${buttonContent}`;
+  
+}
+
+// Função de agendamento (exemplo)
+function agendarSala(sala) {
+  alert(`Sala ${sala} agendada!`);
+}
+
+
+
+
+
 
 
 

@@ -2,189 +2,123 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-.sidebar{
-  position: fixed;
+
+.sidebar {
+  position: fixed; /* Sidebar fixa */
   top: 0;
   left: 0;
-  width: 260px;
-  background: #ffffff;
+  width: 250px; /* Largura fixa da sidebar */
+  height: 100vh; /* Altura total da tela */
+  background: #ffffff; /* Cor de fundo */
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
-  z-index: 100;
-  transition: all 0.5s ease;
-  border-radius: 20px 30px 30px 20px;
+  z-index: 100; /* Certifica-se de que a sidebar está acima de outros elementos */
+  border-radius: 20px 30px 30px 20px; /* Bordas arredondadas */
+  display: flex;
+  flex-direction: column; /* Flexbox para organizar os itens */
 }
 
-.sidebar.close{
-  width: 78px;
+.sidebar .nav-links {
+  flex: 1; /* Faz a lista de links ocupar o espaço restante */
+  padding: 30px 0; /* Espaçamento interno */
+  overflow: auto; /* Permite rolagem se necessário */
+  display: flex;
+  flex-direction: column; /* Organiza os links em coluna */
 }
 
-.sidebar .nav-links{
-  height: 100%;
-  padding: 30px 0 150px 0;
-  overflow: auto;
-}
-.sidebar.close .nav-links{
-  overflow: visible;
-}
-
-.sidebar .nav-links::-webkit-scrollbar{
-  display: none;
-}
-.sidebar .nav-links li{
+.sidebar .nav-links li {
   position: relative;
   list-style: none;
   transition: all 0.4s ease;
 }
-.sidebar .nav-links li:hover{
-  background: #0aa8e6;
+
+.sidebar .nav-links li:hover {
+  box-shadow: 0 0 10px rgba(0, 170, 230, 0.5); /* Sombra azul ao passar o mouse */
 }
-.sidebar .nav-links li .iocn-link{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.sidebar.close .nav-links li .iocn-link{
-  display: block
-}
-.sidebar .nav-links li i{
-  height: 50px;
-  min-width: 78px;
-  text-align: center;
-  line-height: 50px;
-  color: #39434d;
-  font-size: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.sidebar .nav-links li.showMenu i.arrow{
-  transform: rotate(-180deg);
-}
-.sidebar.close .nav-links i.arrow{
-  display: none;
-}
-.sidebar .nav-links li a{
-  display: flex;
-  align-items: center;
+
+
+
+.sidebar .nav-links li a {
+  color: black; /* Cor padrão para os links */
   text-decoration: none;
-}
-.sidebar .nav-links li a .link_name {
-  font-size: 18px;
-  font-weight: 400;
-  color: #3f4750;
-  transition: all 0.4s ease;
-}
-.sidebar.close .nav-links li a .link_name {
-  opacity: 0;
-  pointer-events: none;
-}
-.sidebar .nav-links li .sub-menu{
-  padding: 6px 6px 14px 80px;
-  margin-top: -10px;
-  background: #1d1b31;
-  display: none;
-}
-.sidebar .nav-links li.showMenu .sub-menu{
-  display: block;
-}
-.sidebar .nav-links li .sub-menu a{
-  color: #fff;
-  font-size: 15px;
-  padding: 5px 0;
-  white-space: nowrap;
-  opacity: 0.6;
-  transition: all 0.3s ease;
-}
-.sidebar .nav-links li .sub-menu a:hover{
-  opacity: 1;
-}
-.sidebar.close .nav-links li .sub-menu {
-  position: absolute;
-  left: 100%;
-  top: -10px;
-  margin-top: 0;
-  padding: 10px 20px;
-  border-radius: 0 6px 6px 0;
-  opacity: 0;
-  display: block;
-  pointer-events: none;
-  transition: 0s;
-}
-.sidebar.close .nav-links li:hover .sub-menu{
-  top: 0;
-  opacity: 1;
-  pointer-events: auto;
-  transition: all 0.4s ease;
-}
-.sidebar .nav-links li .sub-menu .link_name {
-  display: none;
-}
-.sidebar.close .nav-links li .sub-menu .link_name {
-  font-size: 38px;
-  opacity: 1;
-  display: block;
-}
-.sidebar .nav-links li .sub-menu.blank{
-  opacity: 1;
-  pointer-events: auto;
-  padding: 3px 20px 6px 16px;
-  opacity: 0;
-  pointer-events: none;
-}
-.sidebar .nav-links li:hover .sub-menu.blank{
-  top: 50%;
-  transform: translateY(-50%);
-}
-.nav-links li {
-  margin: 10px 0;
-}
-.nav-links li.profile-item {
-  margin-top: 510px;
-}
-.home-section{
-  position: relative;
-  background: #ffffff;
-  height: 100vh;
-  left: 260px;
-  width: calc(100% - 260px);
-  transition: all 0.5s ease;
-}
-.sidebar.close ~ .home-section{
-  left: 78px;
-  width: calc(100% - 78px);
-}
-.home-section .home-content{
-  height: 60px;
   display: flex;
   align-items: center;
+  padding: 10px;
+  transition: color 0.3s; /* Transição suave para a cor */
 }
-.home-section .home-content .bx-menu,
-.home-section .home-content .text{
-  color: #11101d;
-  font-size: 35px;
+
+.sidebar .nav-links li.selected a {
+  color: #0aa8e6; /* Cor azul para o botão selecionado */
 }
-.home-section .home-content .bx-menu{
-  width: 110px;
-  margin: 0 5px;
+
+.sidebar .nav-links li a:hover {
+  box-shadow: 0 0 10px rgba(0, 170, 230, 0.5); /* Sombra azul ao passar o mouse */
+}
+
+
+.sidebar .nav-links li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Remove sublinhado */
+}
+
+.sidebar .nav-links li i {
+  height: 50px;
+  min-width: 78px; /* Largura mínima do ícone */
+  text-align: center;
+  line-height: 50px; /* Alinha o texto verticalmente */
+  color: #39434d; /* Cor do ícone */
+  font-size: 20px; /* Tamanho do ícone */
   cursor: pointer;
+  transition: all 0.3s ease;
 }
-.home-section .home-content .text{
-  font-size: 26px;
-  font-weight: 600;
+
+.sidebar .nav-links li a .link_name {
+  font-size: 18px; /* Tamanho do texto */
+  font-weight: 400; /* Peso da fonte */
+  color: #3f4750; /* Cor do texto padrão */
+  transition: all 0.4s ease;
+}
+
+.sidebar .nav-links li.profile-item {
+  margin-top: auto; /* Move Perfil para o final */
+}
+
+.sidebar .nav-links li.faq-item {
+  margin-bottom: 20px; /* Espaço abaixo do item FAQ */
+}
+
+.home-section {
+  position: relative; /* Mantém o conteúdo à direita da sidebar */
+  background: #ffffff; /* Cor de fundo */
+  height: 100vh; /* Altura total da tela */
+  margin-left: 250px; /* Margem à esquerda para acomodar a sidebar */
+  width: calc(100% - 250px); /* Largura do conteúdo */
+  transition: all 0.5s ease;
 }
 
 .content-container {
-    display: none;
-    padding: 20px;
-  }
+  display: none; /* Inicialmente oculto */
+  padding: 20px; /* Espaçamento interno do conteúdo */
+}
+
 .content-container.active {
-    display: block;
-  }
+  display: block; /* Mostra o conteúdo ativo */
+}
+
+.sidebar-footer {
+  padding: 20px; /* Espaçamento interno */
+  text-align: center; /* Centraliza o texto */
+  font-size: 16px; /* Tamanho da fonte */
+  color: #3f4750; /* Cor do texto */
+  margin-top: auto; /* Move o texto para o final da sidebar */
+}
+
 
   .notification-panel {
     position: fixed;
@@ -270,8 +204,8 @@
 
 .notification-count {
   position: fixed;
-  top: 167px;
-  right: 1813px;
+  top: 190px;
+  right: 1790px;
   background-color: red;
   color: white;
   border-radius: 50px;
@@ -391,13 +325,14 @@
       transform: translateY(0);
   }
 }
+ /*HOME*/
 
-
+/* Estilo para as divisões */
 .divider {
   border: none; /* Remove a borda padrão */
   border-top: 2px solid #ddd; /* Linha acima dos elementos */
   margin: 10px auto; /* Margem superior e inferior de 10px, centralizando horizontalmente */
-  width: 70%; /* Ajuste a largura total conforme necessário (80% é um exemplo) */
+  width: calc(100% - 250px); /* Ajuste para ocupar a largura até a sidebar */
 }
 
 .divider1 {
@@ -406,164 +341,277 @@
   border: none; /* Remove a borda padrão */
   border-top: 2px solid #ddd; /* Linha acima dos elementos */
   margin: 10px auto; /* Margem superior e inferior de 10px, centralizando horizontalmente */
-  width: 70%; /* Ajuste a largura total conforme necessário (80% é um exemplo) */
+  width: calc(100% - 250px); /* Ajuste para ocupar a largura até a sidebar */
 }
 
 .divider2 {
   border: none; /* Remove a borda padrão */
   border-top: 2px solid #ddd; /* Linha acima dos elementos */
   margin: 0px auto; /* Margem superior e inferior de 10px, centralizando horizontalmente */
-  width: 70%; /* Ajuste a largura total conforme necessário (80% é um exemplo) */
+  width: calc(100% - 250px); /* Ajuste para ocupar a largura até a sidebar */
 }
 
-  .search-container {
-    position: relative;
-    bottom: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .search-container input {
-    width: 100%;
-    padding: 10px 20px 10px 40px; /* Aumente o padding à esquerda (40px) para acomodar o ícone */
-    border: 1px solid #007BFF;
-    border-radius: 25px;
-    box-sizing: border-box; /* Para garantir que o padding não afete a largura total */
-  }
-  
-  
-  .search-container i {
-    position: absolute;
-    left: 10px; /* Posição do ícone à esquerda */
-    top: 50%;
-    transform: translateY(-50%); /* Centraliza verticalmente o ícone */
-    font-size: 18px;
-    color: #aaa;
-  }
-  
-
-  .swiper {
-    width: 94%;
-    height: 500px; /* Altura do slide */
-    border-radius: 20px;
-  }
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    color: white;
-    background: #34d6f3; /* Cor de fundo para os slides */
-  }
-  
- 
-  
-  /* Estilo da seção de Salas Disponíveis */
-  .salas-disponiveis {
-    position: relative;
-    right: -53px;
-    background-color: transparent;
-    border-radius: 10px;
-    padding: 20px;
-    padding-right: 150px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: inline-block; /* Ajusta ao tamanho do conteúdo */
-    max-width: 100%; /* Evita que cresça além do necessário */
-    margin-top: 100px; /* Centraliza, se necessário */
+/* Estilo para o container de busca */
+.search-container {
+  position: relative;
+  bottom: -20px;
+  left: -210px;
+  margin-bottom: 20px;
+  width: calc(130% - 250px); /* Ocupa a largura total até a sidebar */
 }
-  
-  .salas-disponiveis h3 {
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
-  
-  .salas-disponiveis ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .salas-disponiveis li {
-    margin-bottom: 5px;
-    font-size: 16px;
-  }
-  
-  .ver-mais, .esconder {
-    display: block;
-    margin-top: 10px;
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-    cursor: pointer;
-  }
 
-  
-  /* Estilo da imagem do calendário */
-  .imagem-calendario {
-    position: relative;
-    top: -240px;
-    left: 1200px; 
-    height: 300px; 
-    margin-top: -10px; 
-  
-  }
- 
+.search-container input {
+  width: 100%;
+  padding: 10px 20px 10px 40px; /* Aumente o padding à esquerda (40px) para acomodar o ícone */
+  border: 1px solid #007BFF;
+  border-radius: 25px;
+  box-sizing: border-box; /* Para garantir que o padding não afete a largura total */
+}
+
+.search-container i {
+  position: absolute;
+  left: 10px; /* Posição do ícone à esquerda */
+  top: 50%;
+  transform: translateY(-50%); /* Centraliza verticalmente o ícone */
+  font-size: 18px;
+  color: #aaa;
+}
+
+/* Estilo do swiper */
+.swiper {
+  position: relative;
+  left: -210px;
+  width: calc(130% - 250px); /* Ocupa a largura total até a sidebar */
+  height: 400px; /* Altura do slide */
+  border-radius: 20px;
+  margin-top: 70px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: white;
+  background: #34d6f3; /* Cor de fundo para os slides */
+}
+
+
+.containersalas {
+  max-width: 600px;
+  margin-top: 50px;
+  margin-left: -161px;
+}
+
+h1 {
+  color: #333;
+}
+
+.lista-salas {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; /* Remove a margem padrão */
+}
+
+.lista-salas li {
+  margin: 5px 0; /* Margem reduzida */
+}
+
+button {
+  padding: 4px 10px; /* Diminuindo o tamanho dos botões */
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  width: auto; /* Ajustando para auto para que o botão não ocupe toda a largura */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.informacoes {
+  margin-top: 10px; /* Menor espaço entre a lista de salas e informações */
+}
+
+
+/* Estilo base para todos os swipers */
+
+
+
+
+/*Reservas*/
+
+
+.containerreservas {
+  text-align: start;
+}
+
+.button-container {
+  margin-left: -250px;
+  margin-top: 40px;
+  background-color: #cccccc8a; /* Fundo cinza para o container dos botões */
+  padding: 2px;
+  border-radius: 5px;
+  display: inline-block; /* Centraliza o container dos botões */
+}
+
+.info-button {
+  padding: 4px 17px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent; /* Fundo transparente para os botões */
+  color: black;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.info-button:hover {
+  background-color: rgb(255, 255, 255); /* Efeito hover leve */
+}
+
+.info-button.selected {
+  box-shadow: 0 0 10px rgb(255, 255, 255); /* Sombra branca para o botão selecionado */
+  color: blue; /* Texto azul para o botão selecionado */
+}
+
+.info-display {
+  margin-left: -111px;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #fff;
+  display: none; /* Esconder por padrão */
+}
+
+#infoText {
+  margin-left: -160px;
+  text-align: start; /* Alinha o texto à esquerda */
+  font-weight: bold;
+}
+
+.room {
+  display: flex; /* Usar flexbox para alinhar os elementos */
+  justify-content: space-between; /* Espaço entre sala e data */
+  margin: 10px 0; /* Margem acima e abaixo da sala */
+  padding: 0 10px; /* Adicionar um pouco de padding */
+}
+
+.separator {
+  border-top: 1px solid #ccc;
+  margin: 5px 0; /* Espaço acima e abaixo da linha */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   /* Perfil */
 
   .profile-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding-top: 100px;
-    position: relative;
-  }
-  
-  /* Imagem de perfil */
-  .profile-img {
+    width: calc(100% - 250px); /* Largura total menos a largura da sidebar */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding-top: 150px; /* Aumenta o espaçamento superior para descer mais */
+    position: relative; 
+    height: calc(100vh - 150px); /* Altura total da tela menos o padding superior */
+    overflow: auto; /* Permite rolagem se necessário */
+}
+
+.profile-img {
     position: absolute;
-    top: -50px;
-    left: 50%;
+    top: 0; /* Muda a posição para que fique mais abaixo */
+    left: 53%;
     transform: translateX(-50%);
     background-color: #ffffff;
     border-radius: 50%;
     padding: 10px;
-  }
-  
-  /* Conteúdo do perfil */
-  .profile-content {
+    margin-top: 70px;
+    margin-left: -110px;
+}
+
+.profile-content {
     background-color: #f5f5f5;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Ações do perfil */
-  .profile-actions button {
+    padding: 20px; /* Adicionando um padding para melhor visualização */
+    margin: 0 auto; /* Centraliza o conteúdo */
+    max-width: 800px; /* Largura máxima do conteúdo */
+    margin-top: 60px; /* Espaço acima do conteúdo */
+    margin-left: 56px;
+}
+
+.profile-actions button {
     min-width: 120px;
-  }
-  
-  /* Card de disciplinas */
-  .disciplines-card {
+}
+
+.disciplines-card {
     background-color: #e3f2fd;
     border-radius: 10px;
-  }
-  
-  /* Formulário de senha */
-  .password-form input {
+    margin: 10px 0; /* Espaçamento entre os cards */
+    padding: 15px; /* Padding para os cards */
+}
+
+.password-form input {
     border-radius: 5px;
-  }
-  
-  .password-form button {
+    width: 100%; /* Largura total */
+}
+
+.password-form button {
     border-radius: 5px;
-  }
+}
+
+
 
   
 
 /* FAQ Section Styles */
 .faq-section {
   background: #fdfdfd;
-  min-height: 100vh;
-  padding: 0 0 0; /* Sem padding superior */
+  min-height: 100vh; /* Altura mínima para ocupar toda a tela */
+  padding: 0; /* Removido padding superior */
+  display: flex; /* Usando flexbox para centralização */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  padding-top: 1px; /* Espaço no topo para não ficar muito colado */
+  margin-left: -310px;
+  margin-top: -2px;
 }
 
-/* FAQ Title */
 .faq-title {
   text-align: center;
   padding-bottom: 45px;
@@ -575,6 +623,7 @@
   display: inline-block;
   font-weight: 600;
   line-height: 1;
+  margin-left: -40px;
 }
 
 .faq-title h2::before {
@@ -588,11 +637,12 @@
   margin-left: -30px;
 }
 
-/* FAQ List */
 .faq {
   background: #FFFFFF;
   box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06);
   border-radius: 4px;
+  width: 100%; /* Faz a FAQ ocupar toda a largura disponível até a sidebar */
+  max-width: 600px; /* Largura máxima para manter o conteúdo legível */
 }
 
 .faq .card {
@@ -655,6 +705,7 @@
 .faq .card .card-body p {
   margin-bottom: 14px;
 }
+
 
 
   

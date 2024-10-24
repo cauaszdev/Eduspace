@@ -1,3 +1,20 @@
+<?php
+// 1. Configurações de Conexão com o MySQL
+$host = 'localhost';  // Host do banco de dados
+$user = 'root';        // Usuário do banco de dados
+$password = '';        // Senha (se houver)
+$database = 'AgendamentoSala';  // Nome do banco de dados
+
+// 2. Conectar ao banco de dados
+$conn = new mysqli($host, $user, $password, $database);
+
+// Verificar conexão
+if ($conn->connect_error) {
+    die("Conexão falhou: " . $conn->connect_error);
+}
+
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -12,204 +29,230 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-
-
-
 <body>
-  <div class="sidebar close">
-    <span id="notification-count" class="notification-count"></span>
-    <ul class="nav-links">
-      <li>
-        <a href="#" onclick="showContent('calendarContent')">
-          <i class="fa-solid fa-calendar" style="color: #4e5c66;"></i>
-          <span class="link_name">Calendário</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" onclick="showContent('reservationsContent')">
-          <i class="fa-solid fa-box-archive"></i>
-          <span class="link_name">Minhas Reservas</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" id="btnNotificacoes">
-          <i class="fa-solid fa-bell"></i>
-          <span class="link_name">Notificações</span>
-      </a>
-      </li>
-      <li class="profile-item">
-        <a href="#" onclick="showContent('profileContent')">
-          <i class="fa-solid fa-user"></i>
-          <span class="link_name">Perfil</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" onclick="showContent('faqContent')">
-          <i class="fa-solid fa-question"></i>
-          <span class="link_name">FAQ</span>
-        </a>
-      </li>
+    <div class="sidebar">
+        <span id="notification-count" class="notification-count"></span>
+        <ul class="nav-links">
+            <li>
+                <a href="#" onclick="showContent('menuContent')">
+                    <i class="fa-solid fa-bars"></i>
+                    <span class="link_name">Menu</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showContent('reservationsContent')">
+                    <i class="fa-solid fa-box-archive"></i>
+                    <span class="link_name">Minhas Reservas</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showNotifications()" id="btnNotificacoes">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="link_name">Notificações</span>
+                </a>
+            </li>            
+            <li class="profile-item">
+                <a href="#" onclick="showContent('profileContent')">
+                    <i class="fa-solid fa-user"></i>
+                    <span class="link_name">Perfil</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="showContent('faqContent')">
+                    <i class="fa-solid fa-question"></i>
+                    <span class="link_name">FAQ</span>
+                </a>
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+            <p>Eduspace, seu site de agendamentos.</p>
+        </div>
     </div>
-    </ul>
-  </div>
-  
-
-
-
-
-  <section class="home-section">
-    <div class="home-content">
-      <i class='bx bx-menu'></i>
-    </div>
-    <div id="mainContent">
-      <div id="calendarContent" class="content-container">
-        <div class="search-container">
-          <i class="fa-solid fa-search"></i>
-          <input type="text" placeholder="Digite Aqui" />
-        </div>
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="img/agendando.jpg" alt="Descrição da imagem 1" style="width: 100%; height: auto;">
-            </div>
-            <div class="swiper-slide">
-              <img src="img/audi.jpeg" alt="Descrição da imagem 2" style="width: 100%; height: auto;">
-            </div>
-            <div class="swiper-slide">
-              <img src="img/tiktok.png" alt="Descrição da imagem 3" style="width: 100%; height: auto;">
-            </div>
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
-        </div>
-        <div class="salas-calendario-container">
-            <!-- Seção de Salas Disponíveis -->
-            <div class="salas-disponiveis">
-              <h3>Salas disponíveis</h3>
-              <ul class="lista-salas">
-                <li>Sala Chromebook</li>
-                <li>Sala de Dança</li>
-                <li>Laboratório</li>
-                <li>Auditório</li>
-                <!-- Salas extras, inicialmente escondidas -->
-                <li class="extra-salas" style="display: none;">Laboratório de Química</li>
-                <li class="extra-salas" style="display: none;">Sala de Computação</li>
-              </ul>
-              <a href="#" class="ver-mais" onclick="mostrarSalas(event)">Ver mais</a>
-              <a href="#" class="esconder" style="display: none;" onclick="esconderSalas(event)">Esconder</a>
-            </div>
-          
-            <!-- Seção de Calendário -->
-            <div class="calendario-card">
-              <img src="img/calendariohome.jfif" alt="Calendário" class="imagem-calendario">
-            </div>
-          </div>
-      </div>
-
-
-
-
-      <div id="reservationsContent" class="content-container">Conteúdo de Minhas Reservas</div>
-     
-
-
-
-
-      <div id="notificationsContent" class="notification-panel"> 
-        <!-- Botão de Fechar no Topo -->
-        <div class="notification-header">
-            <h3>Notificações</h3>
-            <button id="close-notification" class="close-button" onclick="closeNotifications()">✖</button>
-        </div>
-        
-        <hr class="divider">
-        
-        <!-- Janela de Notificações -->
-        <div class="notification-window">
-            <div class="notification-header1">
-                <button id="mark-all-as-read" class="btn-clear" onclick="markAllAsRead()">Marcar todas como lidas</button>
-            </div>
     
-            <div class="divider1"></div>
-    
-            <div class="notification-list">
-                <!-- Notificação -->
-                <div class="notification-item">
-                    <img src="https://via.placeholder.com/40" alt="thumb" class="thumb">
-                    <div class="notification-details">
-                        <p class="notification-title">SEM AULA 04 E 07 DE OUTUBRO</p>
-                        <p class="notification-description">A escola estará sob responsabilidade do TRE devido às eleições.</p>
-                        <span class="notification-time"></span>
+    <div class="home-section">
+
+
+        <div class="home-section">
+            <div class="content-container active" id="menuContent">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="img/destaques.jpeg" alt="Descrição da imagem 1" style="width: 100%; height: auto;">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/destaques2.jpeg" alt="Descrição da imagem 2" style="width: 100%; height: auto;">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/destaques3.jpeg" alt="Descrição da imagem 3" style="width: 100%; height: auto;">
+                        </div>
                     </div>
-                    <div class="notification-actions">
-                        <button class="btn-action" onclick="markAsRead(this)">
-                            <i class="fas fa-check"></i>
-                        </button>
-                        <button class="btn-action" onclick="deleteNotification(this)">
-                            <i class="fas fa-trash"></i>
-                        </button>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="containersalas">
+                    <h1>Gerenciamento de Salas</h1>
+                    <div class="salas-disponiveis">
+                        <ul class="lista-salas">
+                            <li>
+                                <button onclick="mostrarInformacoes('Sala Chromebook')">Sala Chromebook</button>
+                            </li>
+                            <li>
+                                <button onclick="mostrarInformacoes('Sala de Dança')">Sala de Dança</button>
+                            </li>
+                            <li>
+                                <button onclick="mostrarInformacoes('Laboratório')">Laboratório</button>
+                            </li>
+                            <li>
+                                <button onclick="mostrarInformacoes('Auditório')">Auditório</button>
+                            </li>
+                            <li>
+                                <button onclick="mostrarInformacoes('Laboratório de Química')">Laboratório de Química</button>
+                            </li>
+                            <li>
+                                <button onclick="mostrarInformacoes('Sala de Computação')">Sala de Computação</button>
+                            </li>
+                        </ul>
+                    </div>
+            
+                    <!-- Área para mostrar informações das salas -->
+                    <div id="informacoes-sala" style="margin-top: 20px;"></div>
+                </div> 
+            </div>
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+            <div class="content-container" id="reservationsContent">
+                <div class="button-container">
+                    <button class="info-button" onclick="showInfo('emAberto')">Em aberto</button>
+                    <button class="info-button" onclick="showInfo('finalizadas')">Finalizadas</button>
+                    <button class="info-button" onclick="showInfo('verTodas')">Ver todas</button>
+                  </div>
+        
+                  <div id="infoDisplay" class="info-display">
+                    <p id="infoText"></p>
+                  </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            <div id="notificationsContent" class="notification-panel"> 
+                <!-- Botão de Fechar no Topo -->
+                <div class="notification-header">
+                    <h3>Notificações</h3>
+                    <button id="close-notification" class="close-button" onclick="closeNotifications()">✖</button>
+                </div>
+                
+                <hr class="divider">
+                
+                <!-- Janela de Notificações -->
+                <div class="notification-window">
+                    <div class="notification-header1">
+                        <button id="mark-all-as-read" class="btn-clear" onclick="markAllAsRead()">Marcar todas como lidas</button>
+                    </div>
+                    <div class="divider1"></div>
+                    <div class="notification-list">
+                        <!-- Notificação -->
+                        <div class="notification-item">
+                            <img src="https://via.placeholder.com/40" alt="thumb" class="thumb">
+                            <div class="notification-details">
+                                <p class="notification-title">SEM AULA 04 E 07 DE OUTUBRO</p>
+                                <p class="notification-description">A escola estará sob responsabilidade do TRE devido às eleições.</p>
+                                <span class="notification-time"></span>
+                            </div>
+                            <div class="notification-actions">
+                                <button class="btn-action" onclick="markAsRead(this)">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                <button class="btn-action" onclick="deleteNotification(this)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="divider2"></div>
+                        <!-- Repita o bloco para mais notificações -->
                     </div>
                 </div>
+            </div>
+            
+
+
+            
+            <div class="content-container" id="profileContent">
+                <main class="profile-container">
+                    <div class="profile-img">
+                      <i class="fas fa-user-circle fa-7x"></i>
+                    </div>
+                  
+                    <div class="profile-content p-4">
+                      <h3 class="text-center">Professor</h3>
+                      <p class="text-muted text-center">Professor@professor.enova.educacao.gov.br</p>
+                  
+                      <div class="profile-actions d-flex justify-content-end gap-2">
+                        <button class="btn btn-secondary">Carregar foto</button>
+                        <button class="btn btn-danger">Excluir</button>
+                      </div>
+                  
+                      <div class="disciplines-card mt-4 p-3">
+                        <h5>Disciplinas ensinadas:</h5>
+                        <textarea class="form-control" rows="3" disabled></textarea>
+                      </div>
+                  
+                      <h5 class="mt-4">Trocar Senha</h5>
+                      <form class="password-form">
+                        <div class="row g-3">
+                          <div class="col-md-6">
+                            <input type="password" class="form-control" placeholder="Senha anterior" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="password" class="form-control" placeholder="Nova senha" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="password" class="form-control" placeholder="Confirme nova senha" required>
+                          </div>
+                          <div class="col-md-6 d-flex justify-content-end">
+                            <button type="submit" class="btn btn-primary w-100">Alterar Senha</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </main>
+            </div>
     
-                <div class="divider2"></div>
-                <!-- Repita o bloco para mais notificações -->
-            </div>
-        </div>
-    </div>
-
-
-
-      
-      <div id="profileContent" class="content-container">
-        <main class="profile-container">
-            <div class="profile-img">
-              <i class="fas fa-user-circle fa-7x"></i>
-            </div>
-          
-            <div class="profile-content p-4">
-              <h3 class="text-center">Professor</h3>
-              <p class="text-muted text-center">Professor@professor.enova.educacao.gov.br</p>
-          
-              <div class="profile-actions d-flex justify-content-end gap-2">
-                <button class="btn btn-secondary">Carregar foto</button>
-                <button class="btn btn-danger">Excluir</button>
-              </div>
-          
-              <div class="disciplines-card mt-4 p-3">
-                <h5>Disciplinas ensinadas:</h5>
-                <textarea class="form-control" rows="3" disabled></textarea>
-              </div>
-          
-              <h5 class="mt-4">Trocar Senha</h5>
-              <form class="password-form">
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <input type="password" class="form-control" placeholder="Senha anterior" required>
-                  </div>
-                  <div class="col-md-6">
-                    <input type="password" class="form-control" placeholder="Nova senha" required>
-                  </div>
-                  <div class="col-md-6">
-                    <input type="password" class="form-control" placeholder="Confirme nova senha" required>
-                  </div>
-                  <div class="col-md-6 d-flex justify-content-end">
-                    <button type="submit" class="btn btn-primary w-100">Alterar Senha</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </main>
-      </div>
-      
 
 
 
 
 
-      <div id="faqContent" class="content-container">
-    
-        <section class="faq-section">
+
+
+            <div class="content-container" id="faqContent">
+                 <section class="faq-section">
           <div class="container">
               <div class="row">
                   <!-- ***** FAQ Start ***** -->
@@ -385,10 +428,12 @@
               </div>
           </div>
       </section>
-
-   
+            </div>
+        </div>
     </div>
-  </section>
+
+
+
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

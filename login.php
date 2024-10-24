@@ -12,12 +12,12 @@
         <img src="img/font.svg" alt="Eduspace" class="logo"> <!-- Substitua pelo caminho da sua logo -->
         <h2>Entrar com e-mail</h2>
         <p>Proporcionamos agilidade no seu agendamento, de forma 100% gratuita.</p>
-        <form action="login.php" method="POST"> <!-- Certifique-se de que o PHP está correto -->
+        <form action="php/login.php" method="POST">
             <h2 class="emailtext">E-mail</h2>
             <input type="email" name="email" class="input-field" placeholder="@professor.enova.educacao.ba.gov.br" required>
             <h2 class="senhatext">Senha</h2>
-            <input type="password" name="senha" class="input-field"  required>
-            <button type="submit" class="login-btn">Entrar</button>
+            <input type="password" name="senha" class="input-field" required>
+            <button type="submit" class="login-btn"  onclick="window.location.href='home.php'">Entrar</button>
         </form>
         <a href="redefinir.html" class="forgot-password">Esqueci minha senha</a>
     </div>
