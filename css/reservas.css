@@ -1,0 +1,35 @@
+/* Reset de margens e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Cor de fundo suave */
+    color: #333; /* Cor do texto */
+}
+
+/* Estilo do container */
+.container {
+    max-width: 800px; /* Largura máxima do container */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 20px;
+    background-color: white; /* Cor de fundo do container */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+/* Estilo do título */
+h1 {
+    color: #003366; /* Azul escuro */
+}
+
+/* Estilo do container das informações */
+.info-text {
+    margin-top: 20px;
+    font-size: 18px; /* Tamanho do texto */
+    text-align: center; /* Centraliza o texto */
+}

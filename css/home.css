@@ -1,4 +1,3 @@
-/* Google Fonts Import Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
 
@@ -7,6 +6,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+}
+
+a, button {
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .sidebar {
@@ -21,6 +24,7 @@
   border-radius: 20px 30px 30px 20px; /* Bordas arredondadas */
   display: flex;
   flex-direction: column; /* Flexbox para organizar os itens */
+  transition: width 0.3s ease;
 }
 
 .sidebar .nav-links {
@@ -93,12 +97,16 @@
   margin-bottom: 20px; /* Espaço abaixo do item FAQ */
 }
 
+:root {
+  --sidebar-width: 250px;
+}
+
 .home-section {
   position: relative; /* Mantém o conteúdo à direita da sidebar */
   background: #ffffff; /* Cor de fundo */
   height: 100vh; /* Altura total da tela */
-  margin-left: 250px; /* Margem à esquerda para acomodar a sidebar */
-  width: calc(100% - 250px); /* Largura do conteúdo */
+  margin-left: var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
   transition: all 0.5s ease;
 }
 
@@ -204,8 +212,8 @@
 
 .notification-count {
   position: fixed;
-  top: 190px;
-  right: 1790px;
+  top: 184px;
+  right: 1801px;
   background-color: red;
   color: white;
   border-radius: 50px;
@@ -397,49 +405,66 @@
 }
 
 
-.containersalas {
-  max-width: 600px;
-  margin-top: 50px;
-  margin-left: -161px;
+
+.salas-disponiveis {
+  position: relative;
+  left: -200px; /* Ajuste para alinhar corretamente */
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 20px; /* Remova o padding-right para evitar que o conteúdo fique muito largo */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: inline-block; /* Ajusta ao tamanho do conteúdo */
+  max-width: 90%; /* Ajusta a largura máxima do elemento */
+  margin: 100px auto 0; /* Centraliza horizontalmente e adiciona margem superior */
 }
 
-h1 {
-  color: #333;
+
+.salas-disponiveis h3 {
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
-.lista-salas {
+.salas-disponiveis ul {
   list-style-type: none;
   padding: 0;
-  margin: 0; /* Remove a margem padrão */
 }
 
-.lista-salas li {
-  margin: 5px 0; /* Margem reduzida */
+.salas-disponiveis li {
+  margin-bottom: 5px;
+  font-size: 16px;
 }
 
-button {
-  padding: 4px 10px; /* Diminuindo o tamanho dos botões */
-  border: none;
-  background-color: #007bff;
-  color: white;
+.ver-mais,
+.esconder {
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
   cursor: pointer;
-  border-radius: 5px;
-  width: auto; /* Ajustando para auto para que o botão não ocupe toda a largura */
 }
 
-button:hover {
-  background-color: #0056b3;
+#agendar {
+margin-left: 470px;
+margin-top: 20px;
+padding: 10px 20px;
+background-color: #00aeff; /* Cor do botão */
+border: none;
+border-radius: 100px;
+font-weight: bolder;
+color: #fff;
+cursor: pointer;
+box-shadow: 
+  0 10px 30px rgba(0, 174, 255, 0.7), /* Aumenta a sombra para baixo */
+  0 10px 50px rgba(0, 174, 255, 0.7); /* Sombra e brilho mais intenso para baixo */
+transition: all 0.3s; /* Efeito de transição suave */
+}    
+
+#agendar:hover {
+  background: #0aa8e6;
+  color: #000;
+  box-shadow: 0 0 20px #0aa8e6, 0 0 40px #0aa8e6, 0 0 70px #0aa8e6;
 }
-
-.informacoes {
-  margin-top: 10px; /* Menor espaço entre a lista de salas e informações */
-}
-
-
-/* Estilo base para todos os swipers */
-
-
-
 
 /*Reservas*/
 
@@ -555,7 +580,7 @@ button:hover {
 .profile-img {
     position: absolute;
     top: 0; /* Muda a posição para que fique mais abaixo */
-    left: 53%;
+    left: 52%;
     transform: translateX(-50%);
     background-color: #ffffff;
     border-radius: 50%;
@@ -599,7 +624,6 @@ button:hover {
 
   
 
-/* FAQ Section Styles */
 .faq-section {
   background: #fdfdfd;
   min-height: 100vh; /* Altura mínima para ocupar toda a tela */
@@ -607,9 +631,8 @@ button:hover {
   display: flex; /* Usando flexbox para centralização */
   justify-content: center; /* Centraliza horizontalmente */
   align-items: center; /* Centraliza verticalmente */
-  padding-top: 1px; /* Espaço no topo para não ficar muito colado */
-  margin-left: -310px;
-  margin-top: -2px;
+  padding-top: 50px; /* Espaço no topo para não ficar muito colado */
+  margin-left: -110px;
 }
 
 .faq-title {
@@ -705,7 +728,6 @@ button:hover {
 .faq .card .card-body p {
   margin-bottom: 14px;
 }
-
 
 
   
@@ -824,9 +846,8 @@ button:hover {
   }
 
   .notification-panel {
-    width: 90%; /* Largura da notificação para telas pequenas */
-    height: 250px; /* Altura da notificação para telas pequenas */
     left: 5%; /* Centraliza horizontalmente */
+    transform: translateX(0); /* Corrige o alinhamento */
   }
 }
 

@@ -1,0 +1,82 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center; /* Adicionando centralização */
+}
+
+
+.email {
+    font-size: 1.6em; /* Reduzindo o tamanho do email */
+    color: #666;
+    text-align: center;
+}
+
+.materias {
+    background: #e7f3fe;
+    padding: 15px;
+    border: 1px solid #b3d4fc;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.materias h2 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #0056b3;
+}
+
+.imagem-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.imagem-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #0056b3;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #004494;
+}
