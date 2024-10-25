@@ -1,19 +1,19 @@
-window.sr = ScrollReveal({ reset: true} ); // Adicionando ScrollReveal
+window.sr = ScrollReveal({ reset: true} ); 
 
 sr.reveal('.titulo', {
     duration: 2000,
     origin: 'bottom',
     distance: '100px',
-    opacity: 0, // Começa invisível
-    interval: 100 // Intervalo entre os itens
+    opacity: 0, 
+    interval: 100 
 });
 
 sr.reveal('.subtitulo', {
     duration: 2000,
     origin: 'bottom',
     distance: '100px',
-    opacity: 0, // Começa invisível
-    interval: 100 // Intervalo entre os itens
+    opacity: 0, 
+    interval: 100 
 });
 
 
@@ -21,16 +21,16 @@ sr.reveal('.main-image', {
     duration: 2000,
     origin: 'bottom',
     distance: '100px',
-    opacity: 0, // Começa invisível
-    interval: 100 // Intervalo entre os itens
+    opacity: 0, 
+    interval: 100 
 });
 
 sr.reveal('.agendar', {
     duration: 2000,
     origin: 'bottom',
     distance: '100px',
-    opacity: 0, // Começa invisível
-    interval: 100 // Intervalo entre os itens
+    opacity: 0, 
+    interval: 100 
 })
 
 sr.reveal('.calendar-integration', {
@@ -45,17 +45,17 @@ sr.reveal('.svg-container', {
     distance: '400px'
 });
 
-function toggleInfo() { // Adicionada a chave
+function toggleInfo() { 
     const infoBox = document.getElementById('info');
     let content = '';
     const currentContent = infoBox.innerHTML;
 
-    // Alterna a exibição do conteúdo
+    
     if (currentContent.includes(content)) {
-        infoBox.innerHTML = ''; // Limpa se o conteúdo já está visível
+        infoBox.innerHTML = ''; 
     } else {
-        infoBox.innerHTML = content; // Exibe o conteúdo
-        infoBox.classList.add('fade-in'); // Adiciona classe para animação
+        infoBox.innerHTML = content; 
+        infoBox.classList.add('fade-in'); 
     }
 
 
@@ -63,12 +63,12 @@ function toggleInfo() { // Adicionada a chave
     function showInfo(infoId) {
         const contents = document.querySelectorAll('.info-content');
         contents.forEach(content => {
-            content.style.display = 'none'; // Esconder todos
+            content.style.display = 'none'; 
         });
     
         const selectedContent = document.getElementById(infoId);
         if (selectedContent) {
-            selectedContent.style.display = 'block'; // Mostrar conteúdo selecionado
+            selectedContent.style.display = 'block'; 
         }
     }
 }

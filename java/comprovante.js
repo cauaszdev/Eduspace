@@ -1,4 +1,4 @@
-// Função para baixar o comprovante como arquivo de texto
+
 document.getElementById('baixar-comprovante').onclick = function() {
     const textoComprovante = `
         Comprovante de Agendamento
@@ -18,7 +18,7 @@ document.getElementById('baixar-comprovante').onclick = function() {
     URL.revokeObjectURL(url);
 };
 
-// Função para compartilhar no WhatsApp
+
 document.getElementById('compartilhar-whatsapp').onclick = function() {
     const mensagem = encodeURIComponent(`Estou compartilhando meu comprovante de agendamento:\nSala: ${comprovante.Identificacao}\nData: ${comprovante.Data}\nHora: ${comprovante.Hora}\nDuração: ${comprovante.Duracao} minutos\nMatéria: ${comprovante.Materia}`);
     const urlWhatsApp = `https://api.whatsapp.com/send?text=${mensagem}`;

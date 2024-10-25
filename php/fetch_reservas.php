@@ -1,10 +1,10 @@
 <?php
-// Exemplo da função em reservas.php
+
 function getReservations($status) {
     global $conn;
     $today = date('Y-m-d');
 
-    // Verifica o tipo de reservas a serem buscadas
+    
     switch ($status) {
         case 'abertas':
             $sql = "SELECT agendamento.*, sala.Identificacao AS sala FROM agendamento 

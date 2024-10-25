@@ -5,7 +5,7 @@ function showReservations(status) {
     fetch(`reservas.php?status=${status}`)
         .then(response => response.json())
         .then(data => {
-            // Limpa o conteúdo anterior
+            
             infoText.innerHTML = '';
 
             if (data.length > 0) {

@@ -1,22 +1,22 @@
 <?php
-// Conexão com o banco de dados
+
 $servername = "localhost";
-$username = "root"; // Altere para seu usuário
-$password = ""; // Altere para sua senha
-$dbname = "agendamentosala"; // Nome do seu banco de dados
+$username = "root"; 
+$password = ""; 
+$dbname = "agendamentosala"; 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificar conexão
+
 if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }
 
-// Recuperar salas disponíveis
+
 $sql = "SELECT * FROM sala WHERE Disponivel = 'Sim'";
 $result = $conn->query($sql);
 
-// Verificar se há salas disponíveis
+
 $salas = [];
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
@@ -24,13 +24,13 @@ if ($result->num_rows > 0) {
     }
 }
 
-// Recuperar matérias do professor logado (exemplo usando ID do professor 1)
-$idProfessor = 1; // Altere conforme necessário para obter o ID do professor logado
+
+$idProfessor = 1; 
 $sqlMaterias = "SELECT `Matérias Ensinadas` FROM professor WHERE IDprof = $idProfessor";
 $resultMaterias = $conn->query($sqlMaterias);
 $materia = ($resultMaterias->num_rows > 0) ? $resultMaterias->fetch_assoc()['Matérias Ensinadas'] : '';
 
-// Fechar conexão
+
 $conn->close();
 ?>
 

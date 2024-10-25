@@ -105,22 +105,18 @@ include('protect.php');
 
 
             <div id="notificationsContent" class="notification-panel"> 
-                <!-- Botão de Fechar no Topo -->
                 <div class="notification-header">
                     <h3>Notificações</h3>
                     <button id="close-notification" aria-label="Fechar notificações" class="close-button" onclick="closeNotifications()">✖</button>
                 </div>
                 
                 <hr class="divider">
-                
-                <!-- Janela de Notificações -->
                 <div class="notification-window">
                     <div class="notification-header1">
                         <button id="mark-all-as-read" class="btn-clear" onclick="markAllAsRead()">Marcar todas como lidas</button>
                     </div>
                     <div class="divider1"></div>
                     <div class="notification-list">
-                        <!-- Notificação -->
                         <div class="notification-item">
                             <img src="img/ceaat.jpg" alt="thumb" class="thumb">
                             <div class="notification-details">
@@ -138,7 +134,6 @@ include('protect.php');
                             </div>
                         </div>
                         <div class="divider2"></div>
-                        <!-- Repita o bloco para mais notificações -->
                     </div>
                 </div>
             </div>
@@ -150,7 +145,6 @@ include('protect.php');
                  <section class="faq-section">
           <div class="container">
               <div class="row">
-                  <!-- ***** FAQ Start ***** -->
                   <div class="col-md-6 offset-md-3">
                       <div class="faq-title text-center pb-3">
                           <h2>FAQ</h2>
@@ -158,7 +152,6 @@ include('protect.php');
                   </div>
                   <div class="col-md-6 offset-md-3">
                       <div class="faq" id="accordion">
-                          <!-- FAQ Item 1 -->
                           <div class="card">
                               <div class="card-header" id="faqHeading-1">
                                   <h5 class="mb-0">
@@ -174,7 +167,6 @@ include('protect.php');
                               </div>
                           </div>
       
-                          <!-- FAQ Item 2 -->
                           <div class="card">
                               <div class="card-header" id="faqHeading-2">
                                   <h5 class="mb-0">
@@ -190,7 +182,7 @@ include('protect.php');
                               </div>
                           </div>
       
-                          <!-- FAQ Item 3 -->
+                        
                           <div class="card">
                               <div class="card-header" id="faqHeading-3">
                                   <h5 class="mb-0">
@@ -206,7 +198,7 @@ include('protect.php');
                               </div>
                           </div>
       
-                          <!-- FAQ Item 4 -->
+                          
                           <div class="card">
                               <div class="card-header" id="faqHeading-4">
                                   <h5 class="mb-0">
@@ -222,7 +214,7 @@ include('protect.php');
                               </div>
                           </div>
       
-                          <!-- FAQ Item 5 -->
+                         
                           <div class="card">
                               <div class="card-header" id="faqHeading-5">
                                   <h5 class="mb-0">
@@ -241,7 +233,7 @@ include('protect.php');
                            </div>
                           </div>
       
-                          <!-- FAQ Item 6 -->
+                         
                           <div class="card">
                               <div class="card-header" id="faqHeading-6">
                                   <h5 class="mb-0">
@@ -259,7 +251,7 @@ include('protect.php');
                               </div>
                           </div>
       
-                          <!-- FAQ Item 7 -->
+                         
                           <div class="card">
                               <div class="card-header" id="faqHeading-7">
                                   <h5 class="mb-0">
@@ -275,7 +267,7 @@ include('protect.php');
                               </div>
                           </div>
       
-                          <!-- FAQ Item 8 -->
+                         
                           <div class="card">
                               <div class="card-header" id="faqHeading-8">
                                   <h5 class="mb-0">
@@ -291,7 +283,7 @@ include('protect.php');
                               </div>
                           </div>
       
-                          <!-- FAQ Item 9 -->
+                         
                           <div class="card">
                               <div class="card-header" id="faqHeading-9">
                                   <h5 class="mb-0">
@@ -307,7 +299,7 @@ include('protect.php');
                               </div>
                           </div>
       
-                          <!-- FAQ Item 10 -->
+                          
                           <div class="card">
                               <div class="card-header" id="faqHeading-10">
                                   <h5 class="mb-0">

@@ -1,31 +1,31 @@
 <?php
-session_start(); // Certifique-se de que a sessão está iniciada
+session_start(); 
 
-// Conexão com o banco de dados
+
 $servername = "localhost"; 
 $username = "root"; 
 $password = ""; 
 $dbname = "agendamentosala"; 
 
-// Criação da conexão
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificação da conexão
+
 if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }
 
-// Verifique se a ID do professor está definida na sessão
+
 if (isset($_SESSION['Idprof'])) {
     $idprof = $_SESSION['Idprof'];
 
-    // Prepare a consulta
+    
     $stmt = $conn->prepare("SELECT * FROM professor WHERE Idprof = ?");
     $stmt->bind_param("i", $idprof);
     $stmt->execute();
     $result = $stmt->get_result();
 
-    // Verifique se o professor foi encontrado
+    
     if ($result->num_rows > 0) {
         $professor = $result->fetch_assoc();
     } else {
@@ -35,7 +35,7 @@ if (isset($_SESSION['Idprof'])) {
     echo "ID do professor não está definido.";
 }
 
-$conn->close(); // Feche a conexão
+$conn->close(); 
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +43,7 @@ $conn->close(); // Feche a conexão
 <head>
     <meta charset="UTF-8">
     <title>Perfil do Professor</title>
-    <link rel="stylesheet" href="/tec/css/perfil.css"> <!-- Link para o seu CSS -->
+    <link rel="stylesheet" href="/tec/css/perfil.css"> 
 </head>
 <body>
     <div class="container">
@@ -65,7 +65,7 @@ $conn->close(); // Feche a conexão
             </div>
             <form action="upload.php" method="post" enctype="multipart/form-data">
                 <label for="image">Adicionar/Remover Imagem:</label>
-                <input type="file" name="imagem" id="image" accept="image/*"> <!-- Corrigido para 'imagem' -->
+                <input type="file" name="imagem" id="image" accept="image/*"> 
                 <input type="submit" value="Enviar">
             </form>
         <?php else: ?>

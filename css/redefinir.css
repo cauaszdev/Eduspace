@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,11 +7,11 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    color: #333; /* Cor do texto */
+    color: #333; 
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Ocupa toda a altura da tela */
+    height: 100vh; 
     background-image: linear-gradient(to left, white, #0a2549, white);
     background-size: 500% 100%;
     animation: degrade-animado 7s infinite alternate;
@@ -49,24 +49,24 @@ h2 {
 }
 
 p {
-    margin-bottom: 50px; /* Espaçamento abaixo do parágrafo */
-    font-size: 14px; /* Tamanho da fonte do parágrafo */
-    color: #666; /* Cor do texto do parágrafo */
+    margin-bottom: 50px; 
+    font-size: 14px; 
+    color: #666; 
 }
 
 input[type="email"], input[type="password"] {
-    width: 100%; /* Largura total */
-    padding: 10px; /* Espaçamento interno */
-    margin-bottom: 50px; /* Espaçamento abaixo dos campos */
-    border: 1px solid #ccc; /* Borda cinza clara */
-    border-radius: 13px; /* Bordas arredondadas */
-    font-size: 14px; /* Tamanho da fonte */
+    width: 100%; 
+    padding: 10px;
+    margin-bottom: 50px; 
+    border: 1px solid #ccc; 
+    border-radius: 13px; 
+    font-size: 14px; 
 }
 
 input[type="email"]:focus, input[type="password"]:focus {
-    border-color: #007BFF; /* Cor da borda quando focado */
-    outline: none; /* Remove contorno padrão */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra ao focar */
+    border-color: #007BFF; 
+    outline: none; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
 }
 
 button {
@@ -91,12 +91,12 @@ button:hover {
   }
 
 a {
-    color: #007BFF; /* Cor do link */
-    text-decoration: none; /* Remove sublinhado */
-    font-size: 14px; /* Tamanho da fonte */
+    color: #007BFF; 
+    text-decoration: none; 
+    font-size: 14px; 
 }
 
 a:hover {
-    text-decoration: underline; /* Sublinha ao passar o mouse */
+    text-decoration: underline; 
 }
 

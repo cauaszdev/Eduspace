@@ -36,8 +36,8 @@ body {
 }
 
 .card-img-top {
-    height: 200px; /* Altura fixa para as imagens */
-    object-fit: cover; /* Mantém a proporção da imagem */
+    height: 200px; 
+    object-fit: cover; 
 }
 
 footer {

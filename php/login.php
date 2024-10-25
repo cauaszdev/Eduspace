@@ -1,23 +1,23 @@
 <?php
-include('conexao.php'); // Conexão com o banco de dados
+include('conexao.php'); 
 
-$mensagem = ""; // Variável para armazenar mensagens de erro
+$mensagem = ""; 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = trim($_POST['email']);
     $senha = trim($_POST['senha']);
 
-    // Validação de campos vazios
+    
     if (strlen($email) == 0) {
         $mensagem = "Preencha seu e-mail.";
     } elseif (strlen($senha) == 0) {
         $mensagem = "Preencha sua senha.";
     } else {
-        // Escapando dados para evitar SQL Injection
+        
         $email = $mysqli->real_escape_string($email);
         $senha = $mysqli->real_escape_string($senha);
 
-        // Consulta ao banco
+        
         $sql_code = "SELECT * FROM professor WHERE Email = '$email' AND Password = '$senha'";
         $sql_query = $mysqli->query($sql_code) or die("Erro na consulta SQL: " . $mysqli->error);
 
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['Idprof'] = $professor['IDprof'];
             $_SESSION['nome'] = $professor['Nome'];
 
-            // Redireciona para a página principal
+            
             header("Location: home.php");
             exit();
         } else {
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <img src="/tec/img/font.svg" alt="Eduspace" class="logo"> 
         <p class="descricao">Proporcionamos agilidade no seu agendamento, de forma 100% gratuita.</p>
 
-        <!-- Exibe a mensagem de erro, se houver -->
+        
         <?php if ($mensagem): ?>
             <p class="erro"><?php echo $mensagem; ?></p>
         <?php endif; ?>

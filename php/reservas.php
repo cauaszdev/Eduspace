@@ -1,23 +1,23 @@
 <?php
-$servername = "localhost"; // Host do banco de dados
-$username = "root"; // Usuário do banco de dados
-$password = ""; // Senha do banco (vazio por padrão no XAMPP)
-$dbname = "agendamentosala"; // Nome do banco de dados
+$servername = "localhost"; 
+$username = "root"; 
+$password = ""; 
+$dbname = "agendamentosala"; 
 
-// Criação da conexão
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificando a conexão
+
 if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }
 
-// Função para buscar reservas
+
 function getReservations($status) {
     global $conn;
     $today = date('Y-m-d');
 
-    // Verifica o tipo de reservas a serem buscadas
+    
     switch ($status) {
         case 'abertas':
             $sql = "SELECT * FROM agendamento WHERE Data >= '$today'";
@@ -36,7 +36,7 @@ function getReservations($status) {
     $reservas = [];
 
     if ($result->num_rows > 0) {
-        // Armazena as reservas em um array
+        
         while ($row = $result->fetch_assoc()) {
             $reservas[] = $row;
         }
@@ -44,15 +44,15 @@ function getReservations($status) {
     return $reservas;
 }
 
-// Lógica para receber a solicitação e retornar dados
+
 if (isset($_GET['status'])) {
     $status = $_GET['status'];
     $reservas = getReservations($status);
     echo json_encode($reservas);
-    exit; // Encerra o script após a resposta
+    exit; 
 }
 
-// Fecha a conexão ao final
+
 $conn->close();
 ?>
 
@@ -62,7 +62,6 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minhas Reservas</title>
-    <!-- Incluindo o Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/tec/css/reservas.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

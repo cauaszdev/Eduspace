@@ -1,28 +1,28 @@
 <?php
-// Conexão com o banco de dados
+
 $servername = "localhost";
-$username = "root"; // Altere para seu usuário
-$password = ""; // Altere para sua senha
-$dbname = "agendamentosala"; // Nome do seu banco de dados
+$username = "root"; 
+$password = ""; 
+$dbname = "agendamentosala"; 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificar conexão
+
 if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }
 
-// Recuperar ID do agendamento
+
 $idAgendamento = $_GET['id'];
 
-// Obter as informações do agendamento
+
 $sqlComprovante = "SELECT a.IDagendamento, a.Data, a.Hora, a.Duracao, a.Tipoatividade AS Materia, s.Identificacao, s.Capacidade 
                    FROM agendamento a 
                    JOIN sala s ON a.IDsala = s.IDsala 
-                   WHERE a.IDagendamento = $idAgendamento"; // Corrigido para IDagendamento
+                   WHERE a.IDagendamento = $idAgendamento"; 
 $result = $conn->query($sqlComprovante);
 $comprovante = $result->fetch_assoc();
-// Fechar conexão
+
 $conn->close();
 ?>
 
@@ -56,7 +56,7 @@ $conn->close();
                 <p class="card-text">Matéria: <?php echo $comprovante['Materia']; ?></p>
                 <p class="card-text">Capacidade da Sala: <?php echo $comprovante['Capacidade']; ?></p>
 
-                <!-- Botões para compartilhar e ver reservas -->
+                
                 <div class="mt-3">
                     <button class="btn btn-success" id="baixar-comprovante">Baixar Comprovante</button>
                     <a href="reservas.php" class="btn btn-info">Ver Minhas Reservas</a>
@@ -71,9 +71,9 @@ $conn->close();
 </div>
 
 <script>
-    // Passando os dados do agendamento para o JavaScript
+    
     const comprovante = <?php echo json_encode($comprovante); ?>;
 </script>
-<script src="/tec/java/comprovante.js"></script> <!-- Incluindo o arquivo JS separado -->
+<script src="/tec/java/comprovante.js"></script> 
 </body>
 </html>

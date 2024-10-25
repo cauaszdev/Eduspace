@@ -18,12 +18,12 @@ h1 {
     font-size: 2.5em;
     color: #333;
     margin-bottom: 10px;
-    text-align: center; /* Adicionando centralização */
+    text-align: center; 
 }
 
 
 .email {
-    font-size: 1.6em; /* Reduzindo o tamanho do email */
+    font-size: 1.6em; 
     color: #666;
     text-align: center;
 }
