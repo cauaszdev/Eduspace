@@ -288,13 +288,14 @@ include('protect.php');
                               <div class="card-header" id="faqHeading-9">
                                   <h5 class="mb-0">
                                       <button class="faq-title btn btn-link" data-toggle="collapse" data-target="#faqCollapse-9" aria-expanded="false" aria-controls="faqCollapse-9">
-                                          <span class="badge">9</span> O Eduspace tem suporte para dispositivos móveis?
+                                          <span class="badge">9</span>  Onde posso aprender mais?
                                       </button>
                                   </h5>
                               </div>
                               <div id="faqCollapse-9" class="collapse" aria-labelledby="faqHeading-9" data-parent="#accordion">
                                   <div class="card-body">
-                                      <p>Sim, o Eduspace é otimizado para uso em dispositivos móveis e tablets...</p>
+                                  <p>Você pode aprender mais sobre o Eduspace conferindo o nosso manual...</p>
+                                  <a href="/tec/img/manualeduspace.pdf" download>Baixe nosso Manual aqui</a>
                                   </div>
                               </div>
                           </div>
@@ -304,16 +305,15 @@ include('protect.php');
                               <div class="card-header" id="faqHeading-10">
                                   <h5 class="mb-0">
                                       <button class="faq-title btn btn-link" data-toggle="collapse" data-target="#faqCollapse-10" aria-expanded="false" aria-controls="faqCollapse-10">
-                                          <span class="badge">10</span> Onde posso aprender mais?
+                                          <span class="badge">10</span> O Eduspace tem suporte para dispositivos móveis?
                                       </button>
                                   </h5>
                               </div>
                               <div id="faqCollapse-10" class="collapse" aria-labelledby="faqHeading-10" data-parent="#accordion">
                               <div id="faqCollapse-10" class="collapse" aria-labelledby="faqHeading-10" data-parent="#accordion">
-    <div class="card-body">
-        <p>Você pode aprender mais sobre o Eduspace conferindo o nosso manual...</p>
-        <a href="/tec/img/manualeduspace.pdf" download>Baixe nosso Manual aqui</a>
-    </div>
+                              <div class="card-body">
+                              <p>Sim, o Eduspace é otimizado para uso em dispositivos móveis e tablets...</p>
+                              </div>
 </div>
 
                               </div>
