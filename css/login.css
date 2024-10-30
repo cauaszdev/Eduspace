@@ -126,6 +126,7 @@ input:focus {
     margin-top: 10px;
     font-size: 16px;
     color: inherit; 
+    text-align: end;
     text-decoration: none; 
     cursor: pointer; 
     transition: opacity 0.2s ease-in-out; 
@@ -136,7 +137,6 @@ input:focus {
 }
 
 
-/* Botão */
 button {
     width: 100%;
     padding: 12px;
@@ -154,14 +154,27 @@ button:hover {
     box-shadow: 0 0 10px rgba(46, 89, 217, 0.5);
 }
 
-/* Responsividade */
+
 @media (max-width: 480px) {
     form {
+        width: 80%;
         padding: 30px;
+    }
+    
+    .logo{
+        width: 80%;
     }
 
     h1 {
         font-size: 24px;
+    }
+
+    .descricao{
+        font-size: 12px;
+    }
+    
+    .botao-redefinir{
+        text-align: end;
     }
 
     button {

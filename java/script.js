@@ -1,4 +1,4 @@
-window.sr = ScrollReveal({ reset: true} ); 
+window.sr = ScrollReveal({ reset: true });
 
 sr.reveal('.titulo', {
     duration: 2000,
@@ -16,7 +16,6 @@ sr.reveal('.subtitulo', {
     interval: 100 
 });
 
-
 sr.reveal('.main-image', {
     duration: 2000,
     origin: 'bottom',
@@ -31,7 +30,7 @@ sr.reveal('.agendar', {
     distance: '100px',
     opacity: 0, 
     interval: 100 
-})
+});
 
 sr.reveal('.calendar-integration', {
     duration: 2000,
@@ -45,30 +44,18 @@ sr.reveal('.svg-container', {
     distance: '400px'
 });
 
-function toggleInfo() { 
-    const infoBox = document.getElementById('info');
-    let content = '';
-    const currentContent = infoBox.innerHTML;
-
-    
-    if (currentContent.includes(content)) {
-        infoBox.innerHTML = ''; 
-    } else {
-        infoBox.innerHTML = content; 
-        infoBox.classList.add('fade-in'); 
+window.onload = function() {
+    if (!localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookie-consent').style.display = 'block';
     }
+};
 
+document.getElementById('accept-cookies').onclick = function() {
+    localStorage.setItem('cookiesAccepted', 'true');
+    document.getElementById('cookie-consent').style.display = 'none';
+};
 
- 
-    function showInfo(infoId) {
-        const contents = document.querySelectorAll('.info-content');
-        contents.forEach(content => {
-            content.style.display = 'none'; 
-        });
-    
-        const selectedContent = document.getElementById(infoId);
-        if (selectedContent) {
-            selectedContent.style.display = 'block'; 
-        }
-    }
-}
+document.getElementById('decline-cookies').onclick = function() {
+    localStorage.setItem('cookiesAccepted', 'false');
+    document.getElementById('cookie-consent').style.display = 'none';
+};

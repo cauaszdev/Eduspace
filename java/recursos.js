@@ -23,7 +23,7 @@ $(document).ready(function() {
         '105': {
             title: 'Sala Multimidía',
             description: 'Sala ideal para aulas de até 20 alunos, ideial para pequenas apresentações.',
-            features: ['Televisão', 'Conexão Wi-Fi', 'Ambiente silencioso']
+            features: ['Televisão', 'Pouca capacidade de alunos', 'Ambiente adequado para rapidas apresentações']
         }
     };
 

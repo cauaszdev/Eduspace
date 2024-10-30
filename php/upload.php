@@ -1,56 +1,44 @@
 <?php
-$servername = "localhost"; 
-$username = "root"; 
-$password = ""; 
-$dbname = "agendamentosala"; 
+session_start();
 
-
-$mysqli = new mysqli($servername, $username, $password, $dbname);
-
+$mysqli = new mysqli("localhost", "root", "", "agendamentosala");
 
 if ($mysqli->connect_error) {
-    die("Falha ao conectar ao banco de dados: " . $mysqli->connect_error);
+    die("Conexão falhou: " . $mysqli->connect_error);
 }
 
-session_start();
-$id_professor = $_SESSION['Idprof'];
+if (isset($_SESSION['IDprof'])) {
+    $id_professor = $_SESSION['IDprof'];
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['imagem'])) {
-    $imagem = $_FILES['imagem'];
-    $target_dir = "uploads/"; 
-    $target_file = $target_dir . basename($imagem["name"]);
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES['imagem'])) {
+        $imagePath = 'uploads/' . basename($_FILES['imagem']['name']);
 
-    
-    if (getimagesize($imagem["tmp_name"]) === false) {
-        die("O arquivo enviado não é uma imagem.");
-    }
+        if (move_uploaded_file($_FILES['imagem']['tmp_name'], $imagePath)) {
+            $query = "UPDATE professor SET imagem = ? WHERE IDprof = ?";
+            $stmt = $mysqli->prepare($query);
 
-    
-    if (move_uploaded_file($imagem["tmp_name"], $target_file)) {
-        
-        $sql = "UPDATE professor SET imagem = ? WHERE Idprof = ?";
-        $stmt = $mysqli->prepare($sql);
-        
-        
-        if ($stmt === false) {
-            die("Erro ao preparar a consulta: " . $mysqli->error);
-        }
+            if ($stmt) {
+                $stmt->bind_param("si", $imagePath, $id_professor);
 
-        
-        $stmt->bind_param("si", $target_file, $id_professor);
-        
-        if ($stmt->execute()) {
-            
-            echo "Imagem atualizada com sucesso.";
+                if ($stmt->execute()) {
+                    echo "Imagem atualizada com sucesso.";
+                } else {
+                    echo "Erro ao atualizar imagem: " . $stmt->error;
+                }
+
+                $stmt->close();
+            } else {
+                echo "Erro na preparação da consulta: " . $mysqli->error;
+            }
         } else {
-            echo "Erro ao atualizar a imagem: " . $stmt->error;
+            echo "Erro ao mover o arquivo para o diretório de uploads.";
         }
-    } else {
-        echo "Desculpe, houve um erro ao enviar sua imagem.";
     }
+} else {
+    echo "Usuário não está logado.";
 }
 
-
+$mysqli->close();
 header("Location: perfil.php");
-exit(); 
+exit();
 ?>

@@ -53,7 +53,7 @@ include('protect.php');
             </li>
             <li class="logout-item">
                 <a href="logout.php" class="botao-sair">
-                    <i class="fas fa-sign-out-alt"></i> Sair
+                    <i class="fas fa-sign-out-alt"></i> <span class="link-text">Sair</span>
                 </a>
             </li>
         </ul>
@@ -69,15 +69,15 @@ include('protect.php');
             <div class="content-container active" id="menuContent">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="/tec/img/destaques.jpeg" alt="Descrição da imagem 1" style="width: 100%; height: auto;">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/tec/img/destaques2.jpeg" alt="Descrição da imagem 2" style="width: 100%; height: auto;">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="/tec/img/destaques3.jpeg" alt="Descrição da imagem 3" style="width: 100%; height: auto;">
-                        </div>
+                    <div class="swiper-slide">
+                    <img src="/tec/img/destaques.jpeg" alt="Descrição da imagem 1" class="swiper-image">
+                </div>
+                <div class="swiper-slide">
+                    <img src="/tec/img/destaques2.jpeg" alt="Descrição da imagem 2" class="swiper-image">
+                </div>
+                <div class="swiper-slide">
+                <img src="/tec/img/destaques3.jpeg" alt="Descrição da imagem 3" class="swiper-image">
+               </div>
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
@@ -118,7 +118,7 @@ include('protect.php');
                     <div class="divider1"></div>
                     <div class="notification-list">
                         <div class="notification-item">
-                            <img src="img/ceaat.jpg" alt="thumb" class="thumb">
+                            <img src="/img/ceaat.jpg" alt="thumb" class="thumb">
                             <div class="notification-details">
                                 <p class="notification-title">SEM AULA 04 E 07 DE OUTUBRO</p>
                                 <p class="notification-description">A escola estará sob responsabilidade do TRE devido às eleições.</p>

@@ -3,10 +3,12 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 20px;
+    height: 100%;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 70%;
+    height: 100%;
     margin: auto;
     background: #fff;
     padding: 20px;
@@ -15,7 +17,7 @@ body {
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 40px;
     color: #333;
     margin-bottom: 10px;
     text-align: center; 
@@ -23,7 +25,7 @@ h1 {
 
 
 .email {
-    font-size: 1.6em; 
+    font-size: 20px; 
     color: #666;
     text-align: center;
 }
@@ -32,13 +34,13 @@ h1 {
     background: #e7f3fe;
     padding: 15px;
     border: 1px solid #b3d4fc;
-    border-radius: 5px;
-    margin: 10px 0;
+    border-radius:15px;
+    margin-top: 40px;
 }
 
 .materias h2 {
     margin: 0;
-    font-size: 1.8em;
+    font-size: 25px;
     color: #0056b3;
 }
 
@@ -48,35 +50,206 @@ h1 {
 }
 
 .imagem-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    border: 2px solid #0056b3;
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+    border: 2px solid #0056b3; 
 }
-
 form {
     margin-top: 20px;
 }
 
 label {
     display: block;
+    margin-top: 150px;
     margin-bottom: 10px;
     font-weight: bold;
 }
 
-input[type="file"] {
-    margin-bottom: 10px;
-}
-
 input[type="submit"] {
-    background-color: #0056b3;
+    background-color: #007bff; 
     color: white;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 input[type="submit"]:hover {
     background-color: #004494;
+}
+
+.botao-enviar {
+    background-color: #007bff; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.botao-enviar:hover {
+    background-color: #0056b3; 
+    transform: scale(1.05); 
+}
+
+
+.botao-enviar {
+    background-color: #4CAF50;  
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.botao-enviar:hover {
+    background-color: #45a049;
+    transform: scale(1.05); 
+}
+
+.remover{
+    background-color: #ff0000; 
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block; 
+    max-width: 100%; 
+    white-space: nowrap; 
+    margin-top: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.remover:hover {
+    background-color: #ff0000;
+    transform: scale(1.05); 
+}
+
+.label-upload {
+    background-color: #007bff; 
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block; 
+    max-width: 100%; 
+    white-space: nowrap; 
+    margin-top: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.label-upload:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+form {
+    display: flex;
+    gap: 10px; 
+    align-items: center;
+}
+
+.alert {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    border: 1px solid #f5c6cb;
+}
+
+@media (max-width: 450px) {
+    body {
+        height: 650px; 
+        margin: 0;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        width: 100%; 
+        max-height: 90vh;
+        margin: 0;
+        padding: 10px;
+        box-shadow: none;
+        overflow: hidden;
+    }
+
+    h1 {
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+
+    .email {
+        font-size: 17px;
+        margin-bottom: 10px;
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .materias {
+        margin-top: 15px;
+        padding: 10px;
+    }
+
+    .materias h2 {
+        font-size: 18px;
+    }
+
+    .imagem-container img {
+        width: 80px;
+        height: 80px;
+    }
+
+    form {
+        flex-direction: column; 
+        width: 100%; 
+        gap: 5px;
+    }
+
+    input[type="submit"] {
+        margin-top: 10px;
+        width: 100%;
+        padding: 8px;
+    }
+
+    .botao-enviar{
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .remover{
+        width: 100%;
+        margin-top: 10px;
+    }
+
+
+    .label-upload{
+        width: 85%;
+        text-align: center;
+    }
+
+    label {
+        margin-top: 20px;
+    }
+
+    .alert {
+        font-size: 14px;
+    }
 }

@@ -32,9 +32,12 @@ function showContent(contentId) {
   }
   
   function closeNotifications() {
-    document.getElementById('notificationsContent').classList.remove('active');
-  }
-  
+    const notificationPanel = document.getElementById('notificationsContent');
+    notificationPanel.classList.add('close'); 
+    setTimeout(() => {
+        notificationPanel.classList.remove('active', 'close'); // Remove classes após a animação
+    }, 500); 
+}
   
   document.querySelector('.nav-links li:nth-child(3) a').onclick = function(event) {
     event.preventDefault(); 

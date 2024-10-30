@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($sql_query->num_rows == 1) {
             $professor = $sql_query->fetch_assoc();
             session_start();
-            $_SESSION['Idprof'] = $professor['IDprof'];
+            $_SESSION['IDprof'] = $professor['IDprof'];
             $_SESSION['nome'] = $professor['Nome'];
 
             
@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <button type="submit">Entrar</button>
         </p>
         <p>
-            <a href="/tec/redefinir.php" class="botao-redefinir">Esqueceu sua senha?</a>
+            <a href="redefinir.php" class="botao-redefinir">Esqueci minha senha</a>
         </p>
     </form>
 </body>

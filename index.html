@@ -8,6 +8,7 @@
     <meta name="keywords" content="agendamento, salas, ensino, educação, Eduspace">
     <meta name="author" content="Cauã Souza">
     <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/telaprincipal.css">
@@ -16,53 +17,50 @@
 <body>
     <header>
         <nav>
-           <img src="img/font.svg" alt="Logo" class="logo" id="logo">
+            <img src="img/font.svg" alt="Logo" class="logo" id="logo">
             <div class="nav-buttons">
-                <button id="conectar" 
-                onclick="window.location.href='php/login.php'">
-                Conecte-se<i class="fa-solid fa-right-to-bracket"></i>
+                <button id="conectar" onclick="window.location.href='php/login.php'">
+                    Conecte-se<i class="fa-solid fa-right-to-bracket"></i>
                 </button>
-
                 <div id="menuToggle">
-
-                <input type="checkbox" />
-
-                <span></span>
-                <span></span>
-                <span></span>
-
-                <ul id="menu">
-
-                <a id="sobre"
-                onclick="window.location.href='sobre.html'">
-                    Sobre Nós <i class="fa-solid fa-circle-info"></i>
-            </a>
-
-                 <a id="recursos"
-                    onclick="window.location.href='recursos.html'">
-                        Recursos <i class="fa-solid fa-book"></i>
-                </a>
-
-                <a id="contato"
-                onclick="window.location.href='contato.html'">
-                    Contato <i class="fa-solid fa-phone"></i>
-            </a>
-                </ul>
+                    <input type="checkbox" />
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <ul id="menu">
+                        <a id="sobre" onclick="window.location.href='sobre.html'">Sobre Nós <i class="fa-solid fa-circle-info"></i></a>
+                        <a id="recursos" onclick="window.location.href='recursos.html'">Recursos <i class="fa-solid fa-book"></i></a>
+                        <a id="contato" onclick="window.location.href='contato.html'">Contato <i class="fa-solid fa-phone"></i></a>
+                    </ul>
+                </div>
             </div>
         </nav>
-            </div>
-            
+    </header>
+    
     <section class="main-content">
-        <h1 class="titulo"> Simples, rápido e prático.</h1>
-        <h3 class="subtitulo"> Simplificamos o seu agendamento, maximizamos o seu ensino.</h3>
+        <h1 class="titulo">Simples, rápido e prático.</h1>
+        <h3 class="subtitulo">Simplificamos o seu agendamento, maximizamos o seu ensino.</h3>
         <button id="agendar" class="agendar" onclick="window.location.href='php/login.php'">Quero agendar agora!</button>
         <img src="img/note.png" alt="Imagem principal" class="main-image" id="main-image">
     </section>
 
-    
     <footer class="footer">
         © 2024 Eduspace - Todos os direitos reservados.
     </footer>
+
+    <div class="chat-icons">
+        <button id="whatsapp-btn" onclick="window.open('https://w.app/p2xYiC')"> 
+            <i class="fab fa-whatsapp"></i>
+        </button>
+    </div>
+    
+
+    <div id="cookie-consent">
+        Este site usa cookies para garantir que você tenha a melhor experiência. 
+        <button id="accept-cookies">Aceitar</button>
+        <button id="decline-cookies">Recusar</button>
+        <a id="politicas" href="politicas.html">Políticas e Segurança</a>
+    </div>
 
     <script src="java/script.js"></script>
 </body>

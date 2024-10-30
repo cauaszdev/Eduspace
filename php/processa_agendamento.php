@@ -1,39 +1,50 @@
-<?php
+<?php 
+session_start();
 
 $servername = "localhost";
-$username = "root"; 
-$password = ""; 
-$dbname = "agendamentosala"; 
+$username = "root";
+$password = "";
+$dbname = "agendamentosala";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-
 if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
+    die(json_encode(['status' => 'error', 'message' => 'Erro na conexão com o banco de dados.']));
 }
-$idProfessor = 1;
+
+$idProfessor = $_SESSION['IDprof'];
 $sala_id = $_POST['sala'];
 $data = $_POST['data'];
-$hora = $_POST['hora'];
-$duracao = $_POST['duracao'];
 $materia = $_POST['materia'];
-$sqlVerificacao = "SELECT * FROM agendamento WHERE Data = '$data' AND Hora = '$hora' AND IDsala = '$sala_id'";
-$resultVerificacao = $conn->query($sqlVerificacao);
+$duracao_id = $_POST['duracao']; 
+
+$sqlVerificacao = "SELECT * FROM agendamento WHERE Data = ? AND IDsala = ? AND Tipoatividade = ?";
+$stmtVerificacao = $conn->prepare($sqlVerificacao);
+$stmtVerificacao->bind_param('sis', $data, $sala_id, $materia);
+$stmtVerificacao->execute();
+$resultVerificacao = $stmtVerificacao->get_result();
 
 if ($resultVerificacao->num_rows > 0) {
-    echo "<p style='color: red;'>A sala já está agendada neste horário. Por favor, escolha outro.</p>";
-} else {
-    
-    $inserir = "INSERT INTO agendamento (Data, Hora, IDprof, IDsala, Tipoatividade, Status) 
-                VALUES ('$data', '$hora', '$idProfessor', '$sala_id', '$materia', 'Agendado')";
-
-    if ($conn->query($inserir) === TRUE) {
-        header("Location: comprovante.php?id=" . $conn->insert_id);
-    } else {
-        echo "<p style='color: red;'>Erro ao agendar: " . $conn->error . "</p>";
-    }
+    echo json_encode(['status' => 'error', 'message' => 'A sala já está agendada neste horário. Por favor, escolha outra.']);
+    exit; 
 }
 
+$inserir = "INSERT INTO agendamento (Data, Tipoatividade, IDprof, IDsala, Status, IDduracao) 
+            VALUES (?, ?, ?, ?, 'Agendado', ?)";
+$stmtInserir = $conn->prepare($inserir);
+
+if ($stmtInserir) {
+    $stmtInserir->bind_param('siiis', $data, $materia, $idProfessor, $sala_id, $duracao_id);
+
+    if ($stmtInserir->execute()) {
+        $IDagendamento = $conn->insert_id; 
+        echo json_encode(['status' => 'success', 'message' => 'Agendamento realizado com sucesso!', 'IDagendamento' => $IDagendamento]);
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'Erro ao agendar: ' . $conn->error]);
+    }
+} else {
+    echo json_encode(['status' => 'error', 'message' => 'Erro ao preparar a consulta: ' . $conn->error]);
+}
 
 $conn->close();
 ?>

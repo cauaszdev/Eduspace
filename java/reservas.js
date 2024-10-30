@@ -1,36 +1,71 @@
 function showReservations(status) {
-    const infoText = document.getElementById('infoText');
-    infoText.innerHTML = '<div class="alert alert-info" role="alert">Carregando reservas...</div>';
-
     fetch(`reservas.php?status=${status}`)
         .then(response => response.json())
         .then(data => {
-            
+            const infoText = document.getElementById('infoText');
             infoText.innerHTML = '';
 
             if (data.length > 0) {
                 data.forEach(reserva => {
-                    const card = `
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">${reserva.Tipoatividade}</h5>
-                                <p class="card-text">
-                                    <strong>Data:</strong> ${reserva.Data}<br>
-                                    <strong>Hora:</strong> ${reserva.Hora}<br>
-                                    <strong>Status:</strong> ${reserva.Status}<br>
-                                    <strong>Sala:</strong> ${reserva.sala}<br> <!-- Exibindo o nome da sala -->
-                                </p>
-                                <a href="/tec/php/comprovante.php?id=${reserva.IDagendamento}" class="btn btn-secondary">Mostrar Comprovante</a> <!-- Botão para baixar o comprovante -->
-                            </div>
-                        </div>`;
-                    infoText.innerHTML += card;
+                    let buttons = '';
+                    if (status === 'abertas') {
+                        buttons = `
+                            <a href="comprovante.php?id=${reserva.IDagendamento}" class="btn btn-secondary">Ver Comprovante</a>
+                            <button class="btn btn-danger ml-2" onclick="confirmDelete(${reserva.IDagendamento})">Excluir</button>
+                        `;
+                    }
+
+                    infoText.innerHTML += `
+                        <div class="reserva mb-3">
+                            ${reserva.Professor ? `<strong>Professor:</strong> ${reserva.Professor}<br>` : ''}
+                            <strong>Sala:</strong> ${reserva.Sala}<br>
+                            <strong>Data:</strong> ${reserva.Data}<br>
+                            <strong>Duração:</strong> ${reserva.Inicio} - ${reserva.Fim}<br>
+                            <strong>Status:</strong> ${reserva.Status}<br>
+                            <strong>Matéria:</strong> ${reserva.Materia}<br>
+                            ${buttons}
+                            <hr>
+                        </div>
+                    `;
                 });
             } else {
-                infoText.innerHTML = '<div class="alert alert-warning" role="alert">Nenhuma reserva encontrada.</div>';
+                infoText.innerHTML = '<p>Nenhuma reserva encontrada.</p>';
             }
         })
-        .catch(error => {
-            console.error('Erro:', error);
-            infoText.innerHTML = '<div class="alert alert-danger" role="alert">Erro ao carregar reservas.</div>';
-        });
+        .catch(error => console.error('Erro:', error));
+}
+
+function confirmDelete(id) {
+    Swal.fire({
+        title: 'Tem certeza?',
+        text: "Esta ação não pode ser desfeita!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Sim, excluir!',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            deleteReservation(id);
+        }
+    });
+}
+
+function deleteReservation(id) {
+    fetch('reservas.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ delete_id: id })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            Swal.fire('Excluído!', 'A reserva foi excluída.', 'success');
+            showReservations('abertas');
+        } else {
+            Swal.fire('Erro!', 'Não foi possível excluir a reserva.', 'error');
+        }
+    })
+    .catch(error => console.error('Erro:', error));
 }

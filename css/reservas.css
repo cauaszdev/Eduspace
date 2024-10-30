@@ -32,3 +32,23 @@ h1 {
     font-size: 18px; 
     text-align: center; 
 }
+
+@media (max-width: 450px) {
+    .container {
+        width: 100%;
+        padding: 15px; 
+    }
+
+    h1 {
+        font-size: 24px; 
+        text-align: center; 
+    }
+
+    .info-text {
+        font-size: 16px; 
+    }
+    
+    .btn-info.reservas-button{
+        margin-top: 10px;
+    }
+}
