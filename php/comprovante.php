@@ -56,7 +56,6 @@ $conn->close();
 </head>
 
 <style>
-/* Estilos conforme o que você já possui */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {

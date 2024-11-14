@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('conexao.php');
+include('conexao.php'); 
 
 if (isset($_POST['IDagendamento']) && isset($_SESSION['IDprof'])) {
     $IDagendamento = intval($_POST['IDagendamento']);

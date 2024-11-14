@@ -1,24 +1,32 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
     padding: 20px;
     height: 100%;
+    overflow: hidden;
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
 }
 
 .container {
     max-width: 70%;
     height: 100%;
     margin: auto;
-    background: #fff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
     font-size: 40px;
-    color: #333;
+    color: #000000;
     margin-bottom: 10px;
     text-align: center; 
 }
@@ -31,17 +39,15 @@ h1 {
 }
 
 .materias {
-    background: #e7f3fe;
-    padding: 15px;
-    border: 1px solid #b3d4fc;
-    border-radius:15px;
     margin-top: 40px;
+    padding: 15px;
+    border-radius: 10px;
 }
 
 .materias h2 {
     margin: 0;
     font-size: 25px;
-    color: #0056b3;
+    color: #000000;
 }
 
 .imagem-container {
@@ -57,6 +63,9 @@ h1 {
 }
 form {
     margin-top: 20px;
+    display: flex;
+    gap: 10px; 
+    align-items: center;
 }
 
 label {
@@ -67,7 +76,7 @@ label {
 }
 
 input[type="submit"] {
-    background-color: #007bff; 
+    background-color: #004494; 
     color: white;
     border: none;
     border-radius: 5px;
@@ -82,7 +91,7 @@ input[type="submit"]:hover {
 }
 
 .botao-enviar {
-    background-color: #007bff; 
+    background-color: #004494; 
     color: white;
     border: none;
     border-radius: 5px;
@@ -97,25 +106,8 @@ input[type="submit"]:hover {
     transform: scale(1.05); 
 }
 
-
-.botao-enviar {
-    background-color: #4CAF50;  
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 25px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.botao-enviar:hover {
-    background-color: #45a049;
-    transform: scale(1.05); 
-}
-
 .remover{
-    background-color: #ff0000; 
+    background-color: #000000; 
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -134,7 +126,7 @@ input[type="submit"]:hover {
 }
 
 .label-upload {
-    background-color: #007bff; 
+    background-color: #004494; 
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -154,12 +146,6 @@ input[type="submit"]:hover {
 
 input[type="file"] {
     display: none;
-}
-
-form {
-    display: flex;
-    gap: 10px; 
-    align-items: center;
 }
 
 .alert {

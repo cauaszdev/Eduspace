@@ -60,66 +60,181 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eduspace Agendamento</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-    <link rel="stylesheet" href="/tec/css/agendamento.css">
+    <title>Eduspace - Agendamento de Salas</title>
+    <link rel="stylesheet" href="/css/agendamento.css"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
-
-<div class="container">
-    <h2>Agendamento de Salas</h2>
-    <form id="formAgendamento" method="POST">
-        <input type="hidden" name="idProfessor" value="<?php echo $idProfessor; ?>">
-        
-        <div class="form-group">
-            <label for="sala" class="label-sala">Selecione uma sala disponível:</label>
-            <select class="form-control" id="sala" name="sala" required>
-                <option value="">Escolha uma sala</option>
-                <?php foreach ($salas as $sala): ?>
-                    <option value="<?php echo $sala['IDsala']; ?>">
-                        <?php echo $sala['Identificacao']; ?> - Capacidade: <?php echo $sala['Capacidade']; ?>
-                    </option>
-                <?php endforeach; ?>
-            </select>
+    <div id="particles-js" style="position: absolute; width: 100%; height: 100%; z-index: -1;"></div>
+    <div class="background-animation"></div>
+    <div class="container animate__animated animate__fadeInUp">
+        <div class="text-center mb-5">
+            <img src="/tec/img/font.svg" alt="Logo Eduspace" style="width: 100px; height: 100px;">
+            <h2 class="text-3xl font-semibold text-gray-800">Agende uma Sala <span class="highlight">Eduspace</span></h2>
+            <p class="text-gray-600 mt-2">Simplifique o seu agendamento com um toque.</p>
         </div>
+        <form id="formAgendamento">
+            <div class="mb-4">
+                <label for="sala" class="form-label text-lg">Selecione uma sala disponível</label>
+                <select class="form-select text-gray-800" id="sala" name="sala" required>
+                    <option value="">Escolha uma sala</option>
+                    <?php foreach ($salas as $sala): ?>
+                        <option value="<?php echo $sala['IDsala']; ?>">
+                            <?php echo $sala['Identificacao']; ?> - Capacidade: <?php echo $sala['Capacidade']; ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
 
-        <div class="form-group">
-            <label for="materia">Selecione a matéria:</label>
-            <select class="form-control" id="materia" name="materia" required>
-                <option value="">Escolha uma matéria</option>
-                <?php foreach ($materias as $materia): ?>
-                    <option value="<?php echo $materia['IDmateria']; ?>">
-                        <?php echo $materia['Nome']; ?>
-                    </option>
-                <?php endforeach; ?>
-            </select>
-        </div>
+            <div class="mb-4">
+                <label for="materia" class="form-label text-lg">Selecione a matéria</label>
+                <select class="form-select text-gray-800" id="materia" name="materia" required>
+                    <option value="">Escolha uma matéria</option>
+                    <?php foreach ($materias as $materia): ?>
+                        <option value="<?php echo $materia['IDmateria']; ?>">
+                            <?php echo $materia['Nome']; ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
 
-        <div class="form-group">
-            <label for="data">Data:</label>
-            <input type="date" class="form-control" id="data" name="data" required>
-        </div>
+            <div class="mb-4">
+                <label for="data" class="form-label text-lg">Data</label>
+                <input type="date" class="form-control text-gray-800" id="data" name="data" required>
+            </div>
 
-        <div class="form-group">
-            <label for="duracao">Selecione a duração:</label>
-            <select class="form-control" id="duracao" name="duracao" required>
-                <option value="">Escolha uma duração</option>
-                <?php foreach ($duracoes as $duracao): ?>
-                    <option value="<?php echo $duracao['IDduracao']; ?>">
-                        <?php echo $duracao['Inicio'] . ' - ' . $duracao['Fim']; ?>
-                    </option>
-                <?php endforeach; ?>
-            </select>
-        </div>
+            <div class="mb-4">
+                <label for="duracao" class="form-label text-lg">Duração</label>
+                <select class="form-select text-gray-800" id="duracao" name="duracao" required>
+                    <option value="">Escolha a duração</option>
+                    <?php foreach ($duracoes as $duracao): ?>
+                        <option value="<?php echo $duracao['IDduracao']; ?>">
+                            <?php echo $duracao['Inicio'] . ' - ' . $duracao['Fim']; ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
 
-        <button type="button" class="btn btn-primary" id="confirmButton">Agendar</button>
+        <button type="button" class="btn btn-primary" id="confirmButton">
+        <i class="fas fa-calendar-check mr-2"></i> Confirmar Agendamento
+        </button>
     </form>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
 <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 20, 
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#3b82f6" 
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 5,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#3b82f6", 
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1, 
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse" 
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 100, 
+                        "duration": 0.8 
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
     $('#confirmButton').on('click', function() {
         Swal.fire({
             title: 'Confirmação de Agendamento',

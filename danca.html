@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informações da Sala de Dança</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #1a1a1a;
+      color: #eaeaea;
+    }
+    .carousel-item img {
+        border-radius: 20px;
+        width: 100%;
+        height: 500px; 
+        object-fit: cover; 
+    }
+    .header-section {
+      background-color: #333;
+      padding: 40px 0;
+      text-align: center;
+    }
+    .featurette-divider {
+      border-top: 1px solid #555;
+    }
+    .featurette {
+      padding: 40px 0;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+    }
+    .icon-circle {
+      width: 80px;
+      height: 80px;
+      background-color: #555;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #eaeaea;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div id="roomCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#roomCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#roomCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#roomCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/tec/img/saladedanca.jpeg" alt="Espelhos amplos na sala de dança">
+            </div>
+            <div class="carousel-item">
+                <img src="/tec/img/danca1.jpeg" alt="Sistema de som de alta qualidade">
+            </div>
+            <div class="carousel-item">
+                <img src="/tec/img/danca2.jpeg" alt="Piso especial para dança">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#roomCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#roomCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+<div class="container py-5">
+  <div class="row text-center">
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="icon-circle">
+        <i class="fas fa-music"></i>
+      </div>
+      <h4>Sistema de Som</h4>
+      <p>Áudio de alta qualidade para aulas e apresentações.</p>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="icon-circle">
+        <i class="fas fa-users"></i>
+      </div>
+      <h4>Capacidade</h4>
+      <p>Espaço para até 50 dançarinos.</p>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="icon-circle">
+        <i class="fas fa-snowflake"></i>
+      </div>
+      <h4>Ambiente Amplo</h4>
+      <p>Um grande espaço para conforto dos dançarinos.</p>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="icon-circle">
+        <i class="fas fa-chalkboard-teacher"></i>
+      </div>
+      <h4>Espelhos Amplos</h4>
+      <p>Espelhos grandes para facilitar a prática e correções.</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">Espelhos para Aperfeiçoamento</h2>
+      <p class="lead">Com espelhos amplos, a sala permite visualização completa para ajustes de postura e movimentos.</p>
+    </div>
+    <div class="col-md-5">
+        <img src="/tec/img/saladedanca.jpeg" alt="Espelhos amplos" class="featurette-image img-fluid mx-auto" width="500" height="500">
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-5 order-md-2">
+      <h2 class="featurette-heading">Piso de Qualidade</h2>
+      <p class="lead">O piso especial proporciona segurança e conforto para práticas intensivas de dança.</p>
+    </div>
+    <div class="col-md-7 order-md-1">
+        <img src="/tec/img/saladedanca.jpeg" alt="Piso para dança" class="featurette-image img-fluid mx-auto" width="500" height="500">
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">Som de Alta Qualidade</h2>
+      <p class="lead">Sistema de som potente para atender às necessidades de diferentes estilos de dança.</p>
+    </div>
+    <div class="col-md-5">
+        <img src="/tec/img/danca2.jpeg" alt="Sistema de som" class="featurette-image img-fluid mx-auto" width="500" height="500">
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+</div>
+
+<footer class="container text-center py-3">
+  <p>&copy; 2024 Eduspace - Todos os direitos reservados</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+</body>
+</html>

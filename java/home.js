@@ -35,7 +35,7 @@ function showContent(contentId) {
     const notificationPanel = document.getElementById('notificationsContent');
     notificationPanel.classList.add('close'); 
     setTimeout(() => {
-        notificationPanel.classList.remove('active', 'close'); // Remove classes após a animação
+        notificationPanel.classList.remove('active', 'close'); 
     }, 500); 
 }
   

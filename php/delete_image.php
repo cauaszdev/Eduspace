@@ -45,4 +45,4 @@ if (isset($_SESSION['IDprof'])) {
 $mysqli->close();
 header("Location: perfil.php");
 exit();
-?>
+
