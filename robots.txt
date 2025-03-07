@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /cadastro/
+Allow: /
+
+Sitemap: https://eduspace.infinityfreeapp.com/sitemap.xml
