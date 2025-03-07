@@ -55,7 +55,7 @@ function enviarEmail($email, $token) {
                 <p>Olá,</p>
                 <p>Recebemos um pedido para redefinir sua senha. Se você não solicitou essa alteração, por favor, ignore este e-mail.</p>
                 <p>Para redefinir sua senha, clique no link abaixo:</p>
-                <p><a href="http://localhost/tec/php/redefinir-senha.php?token=' . $token . '">Redefinir Senha</a></p>
+                <p><a href="http://localhost/assets/php/redefinir-senha.php?token=' . $token . '">Redefinir Senha</a></p>
                 <footer>
                     <p>&copy; ' . date('Y') . ' Eduspace. Todos os direitos reservados.</p>
                     <p>Este é um e-mail automático, por favor, não responda.</p>
@@ -137,7 +137,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redefinir Senha</title>
-    <link rel="stylesheet" href="/tec/css/redefinir.css">
+    <link rel="stylesheet" href="/assets/css/redefinir.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
 </head>
@@ -146,7 +146,7 @@ $conn->close();
 
 <div class="flex justify-center items-center h-screen">
     <div class="container max-w-md p-6 bg-white rounded shadow-lg">
-        <img src="/tec/img/font.svg" alt="Eduspace" class="logo mx-auto mb-4" id="logo">
+        <img src="/assets/imagens/font.svg" alt="Eduspace" class="logo mx-auto mb-4" id="logo">
         <p class="text-center mb-4">Proporcionamos agilidade no seu agendamento, de forma 100% gratuita.</p>
 
         <h2 class="text-2xl text-center mb-4">Redefinir Senha</h2>

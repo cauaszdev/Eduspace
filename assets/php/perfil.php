@@ -62,7 +62,7 @@ $mysqli->close();
     <title>Perfil do Professor</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="/tec/css/perfil.css">
+    <link rel="stylesheet" href="/assets/css/perfil.css">
 </head>
 <body>
 <div id="particles-js" style="position: absolute; width: 100%; height: 100%; z-index: -1;"></div>

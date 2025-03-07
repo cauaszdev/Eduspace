@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/tec/css/login.css">
+    <link rel="stylesheet" href="/assets/css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
     <title>Login</title>
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <div class="flex justify-center items-center h-screen">
     <div class="container max-w-md p-6">
-        <img src="/tec/img/font.svg" alt="Eduspace" class="logo mx-auto mb-4" id="logo"> 
+        <img src="/assets/imagens/font.svg" alt="Eduspace" class="logo mx-auto mb-4" id="logo"> 
         <p class="text-center mb-4">Proporcionamos agilidade no seu agendamento, de forma 100% gratuita.</p>
 
         <?php if ($mensagem): ?>

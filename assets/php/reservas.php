@@ -108,7 +108,7 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minhas Reservas</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/tec/css/reservas.css">
+    <link rel="stylesheet" href="/assets/css/reservas.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -124,7 +124,7 @@ $conn->close();
     </div>
     <div class="particles" id="particles-js"></div>
 
-    <script src="/tec/java/reservas.js"></script>
+    <script src="/assets/js/reservas.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
 <script>
     particlesJS("particles-js", {

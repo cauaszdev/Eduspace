@@ -9,7 +9,7 @@ include('protect.php');
 <head>
   <meta charset="UTF-8">
   <title>Eduspace</title>
-  <link rel="stylesheet" href="/tec/css/home.css">
+  <link rel="stylesheet" href="/css/home.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -70,13 +70,13 @@ include('protect.php');
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                    <img src="/tec/img/destaques.jpeg" alt="Descrição da imagem 1" class="swiper-image">
+                    <img src="/assets/imagens/destaques.jpeg" alt="Descrição da imagem 1" class="swiper-image">
                 </div>
                 <div class="swiper-slide">
-                    <img src="/tec/img/destaques2.jpeg" alt="Descrição da imagem 2" class="swiper-image">
+                    <img src="/assets/imagens/destaques2.jpeg" alt="Descrição da imagem 2" class="swiper-image">
                 </div>
                 <div class="swiper-slide">
-                <img src="/tec/img/destaques3.jpeg" alt="Descrição da imagem 3" class="swiper-image">
+                <img src="/assets/imagens/destaques3.jpeg" alt="Descrição da imagem 3" class="swiper-image">
                </div>
                     </div>
                     <div class="swiper-button-next"></div>
@@ -336,6 +336,6 @@ include('protect.php');
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <script src="/tec/java/home.js"></script>
+  <script src="/assets/js/home.js"></script>
 </body>
 </html>
