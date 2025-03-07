@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Eduspace - Plataforma de agendamento de salas de forma rápida e fácil.">
+    <meta name="keywords" content="agendamento, salas, ensino, educação, Eduspace">
+    <meta name="author" content="Cauã Souza">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/telaprincipal.css">
+    <title>Eduspace</title>
+</head>
+<body class="light-mode" id="body">
+    <div class="particles" id="particles-js"></div>
+        <header>
+            <nav>
+                <img src="img/font.svg" alt="Logo" class="logo" id="logo">
+                <div class="nav-buttons">
+                    <button type="button" id="theme-toggle" class="theme-toggle-button">
+                        <i class="fas fa-moon"></i> 
+                        <i class="fas fa-sun"></i>                    
+                        <span id="theme-text">Dark</span>
+                    </button>
+                    <button id="conectar" onclick="window.location.href='php/login.php'">
+                        Conecte-se <i class="fa-solid fa-right-to-bracket"></i>
+                    </button>
+                    <div id="menuToggle">
+                        <input type="checkbox" />
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <ul id="menu">
+                            <a href="sobre.html"><li>Sobre</li></a>
+                            <a href="recursos.html"><li>Recursos</li></a>
+                            <a href="contato.html"><li>Contato</li></a>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+    
+    <section class="main-content">
+        <h1 class="titulo">Simples, rápido e prático.</h1>
+        <h3 class="subtitulo">Simplificamos o seu agendamento, maximizamos o seu ensino.</h3>
+        <button id="agendar" class="agendar" onclick="window.location.href='php/login.php'">Quero agendar agora!</button>
+        <img src="img/note.png" alt="Imagem principal" class="main-image" id="main-image">
+    </section>
+
+    <footer class="footer">
+        © 2024 Eduspace - Todos os direitos reservados.
+    </footer>
+
+    <div class="chat-icons">
+        <button id="whatsapp-btn" onclick="window.open('https://w.app/p2xYiC')"> 
+            <i class="fab fa-whatsapp"></i>
+        </button>
+    </div>
+    
+
+    <div id="cookie-consent" class="fixed bottom-0 z-[60] inset-x-0" style="display: none;">
+        <div class="p-4 bg-white border border-gray-200 shadow-sm">
+            <div class="max-w-sm w-full mx-auto">
+                <h2 class="font-semibold text-gray-800">
+                    Configurações de Cookies
+                </h2>
+                <p class="mt-2 text-sm text-gray-600">
+                    Usamos cookies para melhorar sua experiência e para marketing. Visite nossa 
+                    <a class="inline-flex items-center gap-x-1.5 text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium" href="politicas.html">Política de Cookies</a> para saber mais.
+                </p>
+                <div class="mt-5 inline-flex gap-x-2">
+                    <button type="button" id="accept-cookies" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                        Aceitar
+                    </button>
+                    <button type="button" id="decline-cookies" class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none">
+                        Rejeitar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="java/script.js"></script>
+    <script>
+    particlesJS("particles-js", {
+        "particles": {
+            "number": {
+                "value": 20, 
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#3b82f6" 
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                }
+            },
+            "opacity": {
+                "value": 0.5,
+                "random": false,
+                "anim": {
+                    "enable": false,
+                    "speed": 1,
+                    "opacity_min": 0.1,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 5,
+                "random": true,
+                "anim": {
+                    "enable": false,
+                    "speed": 40,
+                    "size_min": 0.1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#3b82f6", 
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 1, 
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "repulse" 
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 400,
+                    "line_linked": {
+                        "opacity": 1
+                    }
+                },
+                "bubble": {
+                    "distance": 400,
+                    "size": 40,
+                    "duration": 2,
+                    "opacity": 8,
+                    "speed": 3
+                },
+                "repulse": {
+                    "distance": 100, 
+                    "duration": 0.8 
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
+    });
+</script>
+</body>
+</html>

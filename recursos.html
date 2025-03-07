@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" type="text/css" href="css/recursos.css"> <!-- Verifique o caminho -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eduspace Recursos</title>
+</head>
+<body>
+<section class="portfolio">
+    <header class="section-head">
+        <h1>Salas Disponiveis para Agendamento</h1>
+    </header>
+
+    <main class="mainContainer">
+        <div class="button-group">
+            <button class="button active" data-filter="*">Todas</button>
+            <button class="button" data-filter=".gerais">Salas Gerais</button>
+            <button class="button" data-filter=".tec">Salas Técnicas</button>
+			<button class="button" data-filter=".quimica">Sala Quimica</button>
+        </div>
+
+        <div class="gallery">
+            <div class="item gerais">
+                <img src="img/audi.jpeg"> 
+                <div class="overlay">
+                    <a href="audi.html">VEJA MAIS</a>
+                </div>
+            </div>
+            <div class="item tec">
+                <img src="img/chrome.jpg"> 
+                <div class="overlay">
+                    <a href="chrome.html">VEJA MAIS</a>
+                </div>
+            </div>
+            <div class="item gerais">
+                <img src="img/multi.jpg"> 
+                <div class="overlay">
+                    <a href="multi.html">VEJA MAIS</a>
+                </div>
+            </div>
+            <div class="item quimica">
+                <img src="img/quimica.jpeg">
+                <div class="overlay">
+                    <a href="labquimica.html">VEJA MAIS</a>
+                </div>
+            </div>
+            <div class="item tec">
+                <img src="img/info.jpg"> 
+                <div class="overlay">
+                    <a href="labinfo.html">VEJA MAIS</a>
+                </div>
+            </div>
+            <div class="item gerais">
+                <img src="img/saladedanca.jpeg"> 
+                <div class="overlay">
+                    <a href="danca.html">VEJA MAIS</a>
+                </div>
+            </div>
+            <div class="item gerais">
+                <img src="img/biblioteca.jpeg"> 
+                <div class="overlay">
+                    <a href="biblioteca.html">VEJA MAIS</a>
+                </div>
+            </div>  
+        </div>
+    </main>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        var $galleryContainer = $('.gallery').isotope({
+            itemSelector: '.item',
+            layoutMode: 'fitRows'
+        });
+
+        $('.button-group .button').on('click', function(){
+            $('.button-group .button').removeClass('active');
+            $(this).addClass('active');
+
+            var value = $(this).attr('data-filter');
+            $galleryContainer.isotope({
+                filter: value 
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informações da Sala</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #1a1a1a;
+      color: #eaeaea;
+    }
+    .carousel-item img {
+        border-radius: 20px;
+        width: 100%;
+        height: 500px; 
+        object-fit: cover; 
+        }
+    .header-section {
+      background-color: #333;
+      padding: 40px 0;
+      text-align: center;
+    }
+    .featurette-divider {
+      border-top: 1px solid #555;
+    }
+    .featurette {
+      padding: 40px 0;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+    }
+    .icon-circle {
+      width: 80px;
+      height: 80px;
+      background-color: #555;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #eaeaea;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div id="roomCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#roomCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#roomCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#roomCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/tec/img/info.jpg" alt="Descrição da imagem 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="/tec/img/ar.jpeg" alt="Descrição da imagem 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="/tec/img/quadro1.jpeg" alt="Descrição da imagem 3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#roomCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#roomCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+<div class="container py-5">
+  <div class="row text-center">
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="icon-circle">
+        <i class="fas fa-tv"></i>
+      </div>
+      <h4>Projetores</h4>
+      <p>Equipamento visual para apresentações.</p>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="icon-circle">
+        <i class="fas fa-users"></i>
+      </div>
+      <h4>Capacidade</h4>
+      <p>Espaço para até 35 pessoas.</p>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="icon-circle">
+        <i class="fas fa-snowflake"></i>
+      </div>
+      <h4>Ambiente Climatizado</h4>
+      <p>Conforto térmico para os usuários.</p>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="icon-circle">
+        <i class="fas fa-chalkboard"></i>
+      </div>
+      <h4>Quadros</h4>
+      <p>Disponibilidade de quadros para escrita.</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2 class="featurette-heading">Computadores de Alta Tecnologia</h2>
+      <p class="lead">Esta sala é equipada com o que há de melhor em tecnologia para apoiar apresentações e aulas interativas.</p>
+    </div>
+    <div class="col-md-5">
+        <img src="/tec/img/pc.jpeg" alt="Imagem de destaque" class="featurette-image img-fluid mx-auto" width="500" height="500">
+    </div>
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="row featurette">
+    <div class="col-md-5 order-md-2">
+      <h2 class="featurette-heading">Ar Condicionados de Alta Qualidade</h2>
+      <p class="lead">Com espaço amplo e climatização, essa sala oferece um ambiente confortável e funcional.</p>
+    </div>
+    <div class="col-md-7 order-md-1">
+        <img src="/tec/img/ar.jpeg" alt="Imagem de destaque" class="featurette-image img-fluid mx-auto" width="500" height="500">
+    </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <hr class="featurette-divider">
+  
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Um Espaço Perfeito para Apresentações</h2>
+        <p class="lead">Equipamento de ponta, como projetor, para facilitar a comunicação visual.</p>
+      </div>
+      <div class="col-md-5">
+          <img src="/tec/img/quadro.jpeg" alt="Imagem de destaque" class="featurette-image img-fluid mx-auto" width="500" height="500">
+      </div>
+    </div>
+  
+    <hr class="featurette-divider">
+  </div>
+
+<footer class="container text-center py-3">
+  <p>&copy; 2024 Eduspace - Todos os direitos reservados</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+</body>
+</html>
